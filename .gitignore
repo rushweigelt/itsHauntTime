@@ -1,0 +1,35 @@
+# Unity .gitignore
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Unity Folders
+Library
+Library/*
+ExportedObj
+ExportedObj/*
+obj/
+obj/*
+Temp/
+Temp/*
+
+# Local Project Files
+*.csproj
+*.sln
+*.suo
+*.unityproj
+*.userprefs
+*.unitypackage
+*.pidb
+*buildinfo*
+*~*
+
+# Custom Local/Optional
+Build
+Assets/Resources/version.*
+Assets/Resources/target.*
+
+.vs/*
+*.ide
+
