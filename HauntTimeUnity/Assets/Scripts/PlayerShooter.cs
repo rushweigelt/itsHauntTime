@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerShooter : MonoBehaviour
 {
-    public GameObject bullet; //bullet prefab
+    //public GameObject bullet; //bullet prefab
     //public GameObject player; //player this shooter is attached to
     public float bulletSpeed; //initial speed of bullet
     public float fireTime; //Cooldown before next fire
@@ -44,10 +44,10 @@ public class PlayerShooter : MonoBehaviour
         if ((((-.5f > rsHor) || (.5f < rsHor)) || ((-.5f > rsVer) || (.5f < rsVer))) && timeToFire <= 0f)
         {
             timeToFire = fireTime;
-            FireBullet();
+            //FireBullet();
         }
     }
-
+    /*Deprecated, maybe use to have a tentacle or something?
     public void FireBullet()
     {
         //assign the players Vector to to a variable so we can shoot in the right direction. Then instantiate and fire
@@ -56,6 +56,7 @@ public class PlayerShooter : MonoBehaviour
         GameObject b = Instantiate(bullet, shotFrom.transform.position, shotFrom.transform.rotation) as GameObject;
         b.GetComponent<Rigidbody2D>().velocity = (playerVec * bulletSpeed); //+ playerRB.velocity.normalized *GetComponentInParent<PlayerMover>().moveSpeed;
     }
+    */
     //A routine and coroutine for upgrading fire rate within a certain time limit
     public void UpgradeFireRate(float x)
     {
