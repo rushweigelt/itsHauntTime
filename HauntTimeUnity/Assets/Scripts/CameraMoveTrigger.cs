@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraMoveTrigger : MonoBehaviour
 {
+    public CameraController cameraController;
 
     public Transform leftCameraViewpoint;
 
@@ -22,13 +23,15 @@ public class CameraMoveTrigger : MonoBehaviour
         // Collision from right
         if(collisionPoint.x > transform.position.x) {
             // Switch to left room
-            CameraController.MoveCamera(leftCameraViewpoint);
+            Debug.Log("Moving to left room");
+            cameraController.MoveCamera(leftCameraViewpoint);
         }
 
         // Collision from left
         else if(collisionPoint.x < transform.position.x) {
             // Switch to right room
-            CameraController.MoveCamera(rightCameraViewpoint);
+            Debug.Log("Moving to right room");
+            cameraController.MoveCamera(rightCameraViewpoint);
         }
     }
 }
