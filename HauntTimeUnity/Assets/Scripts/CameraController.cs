@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public Transform leftRoomViewpoint;
-    public Transform rightRoomViewpoint;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -16,15 +13,10 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.A)) {
-            MoveCamera(leftRoomViewpoint);
-        }
-        else if(Input.GetKeyDown(KeyCode.D)) {
-            MoveCamera(rightRoomViewpoint);
-        }
+        
     }
 
-    void MoveCamera(Transform room)
+    public static void MoveCamera(Transform room)
     {
         Camera.main.transform.position = room.position;
     }
