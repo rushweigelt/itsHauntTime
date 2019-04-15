@@ -18,20 +18,22 @@ public class CameraMoveTrigger : MonoBehaviour
     /// <param name="other">The other Collider2D involved in this collision.</param>
     void OnTriggerEnter2D(Collider2D other)
     {
-        Vector2 collisionPoint = other.gameObject.transform.position;
+        if(other.gameObject.tag == "Player") {
+            Vector2 collisionPoint = other.gameObject.transform.position;
 
-        // Collision from right
-        if(collisionPoint.x > transform.position.x) {
-            // Switch to left room
-            Debug.Log("Moving to left room");
-            cameraController.MoveCamera(leftCameraViewpoint);
-        }
+            // Collision from right
+            if(collisionPoint.x > transform.position.x) {
+                // Switch to left room
+                Debug.Log("Moving to left room");
+                cameraController.MoveCamera(leftCameraViewpoint);
+            }
 
-        // Collision from left
-        else if(collisionPoint.x < transform.position.x) {
-            // Switch to right room
-            Debug.Log("Moving to right room");
-            cameraController.MoveCamera(rightCameraViewpoint);
+            // Collision from left
+            else if(collisionPoint.x < transform.position.x) {
+                // Switch to right room
+                Debug.Log("Moving to right room");
+                cameraController.MoveCamera(rightCameraViewpoint);
+            }
         }
     }
 }

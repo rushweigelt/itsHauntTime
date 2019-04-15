@@ -16,6 +16,10 @@ public class CameraController : MonoBehaviour
     [Range(.5f, 2)]
     public float panSpeed = 1.5f;
 
+    /// <summary>
+    /// Moves camera from current position to the specified room
+    /// </summary>
+    /// <param name="room">Room viewpoint to move camera to</param>
     public void MoveCamera(Transform room)
     {
         switch(mode) {
@@ -28,6 +32,12 @@ public class CameraController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Performs smooth camera transition between rooms
+    /// </summary>
+    /// <param name="start">Starting camera position</param>
+    /// <param name="end">Ending camera position</param>
+    /// <returns></returns>
     IEnumerator PanCamera(Vector3 start, Vector3 end) 
     {
         // Ease camera towards next room
