@@ -42,8 +42,4 @@ public class Fan : Electronic
             FanOn();
         }
     }
-
-
-
-
 }
