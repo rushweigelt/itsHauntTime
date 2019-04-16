@@ -6,6 +6,7 @@ TagManager:
   tags:
   - TV
   - Fan
+  - FanOutlet
   layers:
   - Default
   - TransparentFX

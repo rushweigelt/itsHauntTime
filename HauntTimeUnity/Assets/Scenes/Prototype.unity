@@ -269,13 +269,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcc12ea3867f0584697278d5c47e74e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDefaultState: 1
   interactRange: {fileID: 195100557}
   interactPrompt: {fileID: 1474901859}
   isOn: 1
+  outlet: {fileID: 461057314}
   fanRange: {fileID: 1801305700}
-  player: {fileID: 1341365650}
-  fanRangeObj: {fileID: 1801305698}
 --- !u!212 &195100556
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -370,7 +368,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!1 &251679626
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,9 +445,10 @@ GameObject:
   - component: {fileID: 461057311}
   - component: {fileID: 461057313}
   - component: {fileID: 461057312}
+  - component: {fileID: 461057314}
   m_Layer: 0
   m_Name: ElectricalPlug
-  m_TagString: Untagged
+  m_TagString: FanOutlet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -542,6 +541,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &461057314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461057310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7493438cb4ccbb84cb25ec4acff2c053, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactRange: {fileID: 461057312}
+  interactPrompt: {fileID: 1474901859}
+  pluggedIn: 0
+  inOutletCollider: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,6 +1313,7 @@ GameObject:
   - component: {fileID: 1341365653}
   - component: {fileID: 1341365652}
   - component: {fileID: 1341365651}
+  - component: {fileID: 1341365656}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1429,6 +1445,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1341365656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341365650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfdd34a30c527454689ffe0696c86493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactPrompt: {fileID: 1474901859}
 --- !u!1 &1409309754
 GameObject:
   m_ObjectHideFlags: 0
@@ -1629,7 +1658,7 @@ GameObject:
   - component: {fileID: 1801305700}
   m_Layer: 0
   m_Name: fanRange
-  m_TagString: Untagged
+  m_TagString: Fan
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1642,7 +1671,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1801305698}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.52, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 195100554}
@@ -1661,7 +1690,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 5.380548, y: 0.13718987}
+  m_Offset: {x: 6.8077855, y: 1.6925912}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1672,5 +1701,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 11.761098, y: 9.871555}
+  m_Size: {x: 8.906623, y: 12.982358}
   m_EdgeRadius: 0

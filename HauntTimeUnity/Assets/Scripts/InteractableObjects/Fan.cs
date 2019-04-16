@@ -4,49 +4,42 @@ using UnityEngine;
 
 public class Fan : Electronic
 {
-    public BoxCollider2D fanRange;
-    public GameObject player;
-    public GameObject fanRangeObj;
+    public BoxCollider2D fanRange;//game object that is a collider, used to prevent the player from advancing, simulating push back
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    // Update is called once per frame. We use update, not fixed update, as fixed update interferes with Electronic.
+    protected override void Update()
     {
-        
+        CheckPowerStatus();
     }
-
-    
-    /*
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        if (col.gameObject.CompareTag("Player") && this.isOn == true)
-        {
-            //push player via basic physics or changing their transform location over time.
-
-        }
-    }
-    */
-
+    //the specific outcome of the electronic-level component being toggled;
+    //here, we toggle a box collider on and off that represents a fan preventing 
+    //the ghost from moving forward.
     void FanOn()
     {
-        if (this.isOn == false)
-        {
-            this.TurnOn();
-            fanRangeObj.SetActive(true);
-        }
+        fanRange.enabled = true;        
     }
 
     void FanOff()
     {
+        fanRange.enabled = false;
+    }
+    //a function that will run constantly, checking the status of fan by 
+    //looking at the electronic-level subclass.
+    void CheckPowerStatus()
+    {
+        if (this.isOn == false)
+        {
+            FanOff();
+        }
         if (this.isOn == true)
         {
-            this.TurnOff();
-            fanRangeObj.SetActive(false);
+            FanOn();
         }
     }
 
