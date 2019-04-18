@@ -6,20 +6,16 @@ public class InteractableObject : MonoBehaviour
 {
     public BoxCollider2D interactRange; //a box collider that represents the range at which the player can interact with the object.
     public GameObject interactPrompt; //visual popup
-
-
     // Start is called before the first frame update. Leave empty, to not interfere with initializing subclasses
     protected virtual void Start()
     {
    
     }
-
     // Update is called once per frame. Again, leave empty to avoid interfering with subclass update functions
     protected virtual void Update()
     {
         
     }
-
     //if the player nears an interactable object, a thought bubble appears above the players head.
     void OnTriggerEnter2D(Collider2D col)
     {

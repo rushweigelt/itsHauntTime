@@ -44,3 +44,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 2912403265
+    locked: 0
+  - name: BottomEnviorn
+    uniqueID: 2019090047
+    locked: 0
+  - name: MidEnviorn
+    uniqueID: 4015550857
+    locked: 0
+  - name: TopEnviorn
+    uniqueID: 3930984303
+    locked: 0
+  - name: Player
+    uniqueID: 49273803
+    locked: 0
