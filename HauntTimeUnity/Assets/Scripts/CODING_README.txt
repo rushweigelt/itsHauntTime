@@ -2,6 +2,7 @@ Our most basic three abstract classes, in my opinion, should be InteractableObje
 
 Section I. InteractableObjects
 
+
 InteractableObjects must have at least the following three attributes, thus we mandate it by inhereting these traits onto every interactable obj in our game:
 1) BoxCollider bc --needed to detect when player is in range of item
 2) GameObject interactPrompt -- the GameObject that indicates we have an interactable object. 
@@ -74,6 +75,8 @@ public class SaltShaker : InteractableObject
 
 
 Section II. ScareTarget
+
+
 ScareTargets must all have the following attributes:
 1) GameObject scareIcon -- a prompt that pops up over the user's head to indicate a scare is possible.
 2) string ScareState -- a string that indicates the target's current level of timidity (default, alert, scareable!)
@@ -99,3 +102,6 @@ Functions:
             scareIcon.SetActive(false);
         }
     }
+
+
+Section III. 
