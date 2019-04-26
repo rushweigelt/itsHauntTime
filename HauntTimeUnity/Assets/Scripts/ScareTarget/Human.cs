@@ -5,14 +5,14 @@ using UnityEngine;
 public class Human : ScareTarget
 {
     public string name;
-    public Animator animator;
-    public RuntimeAnimatorController[] anim;
-
+    public Animator anim;
+    int idleHash = Animator.StringToHash("human_fakeIdle");
+    int gettingUpHash = Animator.StringToHash("human_gettingUp");
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -20,9 +20,10 @@ public class Human : ScareTarget
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
+            //AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
             if (inRange == true)
             {
-                //animator.runtimeAnimatorController(anim[1]);
+                anim.SetTrigger(gettingUpHash);
             }
         }
     }

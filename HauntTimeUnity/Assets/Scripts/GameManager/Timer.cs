@@ -17,7 +17,7 @@ public class Timer : MonoBehaviour
     {
         seconds -= Time.deltaTime;
         SecondsToMmSs(seconds);
-        Debug.Log(SecondsToMmSs(seconds));
+        //Debug.Log(SecondsToMmSs(seconds));
     }
     void SetTime(float seconds)
     {

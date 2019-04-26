@@ -19,7 +19,7 @@ public class ScareTarget : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        bc = GetComponent<BoxCollider2D>();
     }
 
     protected void InitialState()

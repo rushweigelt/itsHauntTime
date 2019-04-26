@@ -782,8 +782,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.58, y: 2.51}
-    newSize: {x: 3.34, y: 4.77}
+    oldSize: {x: 1.29, y: 1.255}
+    newSize: {x: 2.58, y: 2.51}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -833,7 +833,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.34, y: 4.77}
+  m_Size: {x: 2.58, y: 2.51}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -854,13 +854,10 @@ MonoBehaviour:
   scareIcon: {fileID: 1474901859}
   scareState: 
   fears: []
+  bc: {fileID: 0}
+  inRange: 0
   name: 
-  animator: {fileID: 459383998}
-  anim:
-  - {fileID: 9100000, guid: 143c426302bdac042b65f141f1cb53d6, type: 2}
-  - {fileID: 9100000, guid: 3b85609c52438a74a89de78b2f2583e6, type: 2}
-  - {fileID: 9100000, guid: 806b61f666a59c74497ba7aa7dbb394d, type: 2}
-  - {fileID: 9100000, guid: f6cb6565eaac31445b210f964a8e8236, type: 2}
+  anim: {fileID: 0}
 --- !u!95 &459383998
 Animator:
   serializedVersion: 3
@@ -871,7 +868,7 @@ Animator:
   m_GameObject: {fileID: 459383993}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 736b033e5708cf948aba3d8aa3730690, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
