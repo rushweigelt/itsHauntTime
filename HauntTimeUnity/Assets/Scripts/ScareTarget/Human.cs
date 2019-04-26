@@ -20,7 +20,7 @@ public class Human : ScareTarget
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            if (isInRange == true)
+            if (inRange == true)
             {
                 //animator.runtimeAnimatorController(anim[1]);
             }
