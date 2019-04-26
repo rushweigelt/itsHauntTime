@@ -10,25 +10,23 @@ public class ElectricalOutlet : InteractableObject
     // Start is called before the first frame update
     protected override void Start()
     {
+        base.Start();
         inOutletCollider = false;
         pluggedIn = true;
     }
 
-    // Update is called once per frame. Use update, as we use FixedUpdate for mid-classes (like electronic)
-    protected override void Update()
+    protected override void Interact()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (pluggedIn == true && inOutletCollider == true)
         {
-            if (pluggedIn == true && inOutletCollider == true)
-            {
-                Unplug();
-            }
-            else if (pluggedIn == false && inOutletCollider == true)
-            {
-                PlugIn();
-            }
+            Unplug();
+        }
+        else if (pluggedIn == false && inOutletCollider == true)
+        {
+            PlugIn();
         }
     }
+
     //a function to unplug, simply change boolean. Will add animation here when ready.
     public void Unplug()
     {
