@@ -7,11 +7,13 @@ public class ScareTarget : MonoBehaviour
     public GameObject scareIcon;
     public string scareState;
     public string[] fears;
+    public BoxCollider2D bc;
+    public bool inRange;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        inRange = false;
     }
 
     // Update is called once per frame
@@ -20,17 +22,17 @@ public class ScareTarget : MonoBehaviour
         
     }
 
-    protected void initialState()
+    protected void InitialState()
     {
 
     }
 
-    protected void scaredState()
+    protected void ScaredState()
     {
 
     }
 
-    protected void alertedState()
+    protected void AlertedState()
     {
 
     }
@@ -40,6 +42,7 @@ public class ScareTarget : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
+            inRange = true;
             scareIcon.SetActive(true);
         }
     }
@@ -48,6 +51,7 @@ public class ScareTarget : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
+            inRange = false;
             scareIcon.SetActive(false);
         }
     }

@@ -8,6 +8,7 @@ public class SaltShaker : InteractableObject
     public Sprite fallenOver;
     public SpriteRenderer saltRenderer;
     public bool isUpright;
+
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -20,12 +21,12 @@ public class SaltShaker : InteractableObject
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            if (isUpright == true)
+            if (isUpright == true && inRange == true)
             {
                 isUpright = false;
                 KnockOver();
             }
-            else if (isUpright == false)
+            else if (isUpright == false && inRange == true )
             {
                 isUpright = true;
                 Fix();
@@ -42,4 +43,5 @@ public class SaltShaker : InteractableObject
     {
         saltRenderer.sprite = upright;
     }
+
 }

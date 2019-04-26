@@ -6,6 +6,7 @@ public class InteractableObject : MonoBehaviour
 {
     public BoxCollider2D interactRange; //a box collider that represents the range at which the player can interact with the object.
     public GameObject interactPrompt; //visual popup
+    public bool inRange;
     // Start is called before the first frame update. Leave empty, to not interfere with initializing subclasses
     protected virtual void Start()
     {
@@ -21,6 +22,7 @@ public class InteractableObject : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
+            inRange = true;
             interactPrompt.SetActive(true);
         }
     }
@@ -29,6 +31,7 @@ public class InteractableObject : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
+            inRange = false;
             interactPrompt.SetActive(false);
         }
     }

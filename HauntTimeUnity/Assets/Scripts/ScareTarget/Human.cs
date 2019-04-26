@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : ScareTarget
+public class Human : ScareTarget
 {
     public string name;
-    public string[] fears;
+    public Animator animator;
+    public RuntimeAnimatorController[] anim;
 
 
     // Start is called before the first frame update
@@ -17,7 +18,13 @@ public class NewBehaviourScript : ScareTarget
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            if (isInRange == true)
+            {
+                //animator.runtimeAnimatorController(anim[1]);
+            }
+        }
     }
 
     void Walk()
@@ -40,17 +47,17 @@ public class NewBehaviourScript : ScareTarget
 
     }
 
-    protected new void initialState()
+    protected new void InitialState()
     {
 
     }
 
-    protected new void scaredState()
+    protected new void ScaredState()
     {
 
     }
 
-    protected new void alertedState()
+    protected new void AlertedState()
     {
 
     }
