@@ -356,10 +356,6 @@ GameObject:
   m_Component:
   - component: {fileID: 175328419}
   - component: {fileID: 175328418}
-  - component: {fileID: 175328423}
-  - component: {fileID: 175328422}
-  - component: {fileID: 175328421}
-  - component: {fileID: 175328420}
   m_Layer: 0
   m_Name: Outlet
   m_TagString: Untagged
@@ -429,62 +425,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &175328420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 175328417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65d8e78368afa8842accb6097dd29bb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bar: {fileID: 0}
-  emptyBar: {fileID: 0}
-  fillSliver: {fileID: 0}
---- !u!114 &175328421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 175328417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30d7e1a22b0719c4dbf126cd75dcfe42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hud: {fileID: 0}
---- !u!114 &175328422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 175328417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 881915288ea5a9f45af1fcbb5b2f5c0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  seconds: 0
-  time: 
---- !u!114 &175328423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 175328417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45dcc314bef99464b97db0a16d32d48c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scareBar: {fileID: 0}
-  timer: {fileID: 0}
 --- !u!1 &195100553
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,6 +480,7 @@ MonoBehaviour:
   isOn: 1
   outlet: {fileID: 461057314}
   fanRange: {fileID: 1801305700}
+  eo: {fileID: 461057314}
 --- !u!212 &195100556
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -999,9 +940,8 @@ MonoBehaviour:
   interactRange: {fileID: 461057312}
   interactPrompt: {fileID: 1474901859}
   inRange: 0
-  canInteract: 0
+  canInteract: 1
   pluggedIn: 0
-  inOutletCollider: 0
 --- !u!1 &480957764
 GameObject:
   m_ObjectHideFlags: 0

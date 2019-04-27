@@ -5,23 +5,23 @@ using UnityEngine;
 public class ElectricalOutlet : InteractableObject
 {
     public bool pluggedIn; //is the power plug in the outlet?
-    public bool inOutletCollider; //is the player in range of the outlet
+    //public bool inOutletCollider; //is the player in range of the outlet<-this is depricated, same info in baseclass.
 
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
-        inOutletCollider = false;
+        //inOutletCollider = false;
         pluggedIn = true;
     }
 
     protected override void Interact()
     {
-        if (pluggedIn == true && inOutletCollider == true)
+        if (pluggedIn == true && inRange == true)
         {
             Unplug();
         }
-        else if (pluggedIn == false && inOutletCollider == true)
+        else if (pluggedIn == false && inRange == true)
         {
             PlugIn();
         }
@@ -45,12 +45,13 @@ public class ElectricalOutlet : InteractableObject
             pluggedIn = true;
         }
     }
+    /*
     //detect if player is near the outlet collider; all electronics will require an outlet
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            inOutletCollider = true;
+            inRange = true;
         }
     }
     //when we leave outlet collider, inverse previous func.
@@ -58,7 +59,8 @@ public class ElectricalOutlet : InteractableObject
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            inOutletCollider = false;
+            inRange = false;
         }
     }
+    */
 }

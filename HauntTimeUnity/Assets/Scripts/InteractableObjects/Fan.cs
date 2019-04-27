@@ -5,11 +5,12 @@ using UnityEngine;
 public class Fan : Electronic
 {
     public BoxCollider2D fanRange;//game object that is a collider, used to prevent the player from advancing, simulating push back
+    public ElectricalOutlet eo; //bind an electronic to it's outlet
 
     // Start is called before the first frame update
     protected override void Start()
     {
-        
+        fanRange.enabled = true;
     }
 
     // Update is called once per frame. We use update, not fixed update, as fixed update interferes with Electronic.
@@ -33,11 +34,11 @@ public class Fan : Electronic
     //looking at the electronic-level subclass.
     void CheckPowerStatus()
     {
-        if (this.isOn == false)
+        if (eo.pluggedIn == false)
         {
             FanOff();
         }
-        if (this.isOn == true)
+        if (eo.pluggedIn == true)
         {
             FanOn();
         }
