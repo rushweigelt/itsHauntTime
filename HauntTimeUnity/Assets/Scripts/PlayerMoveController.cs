@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,8 @@ public class PlayerMoveController : MonoBehaviour
     SpriteRenderer spriteRenderer;
     public float horizontalSpeed;
     public float verticalSpeed;
+
+    public TouchInput touchInput;
 
     enum Direction {
         LEFT,
@@ -24,6 +27,42 @@ public class PlayerMoveController : MonoBehaviour
 
     void Update()
     {
+        // Get raw input (normalized vector)
+        Vector2 input = touchInput.GetInput();
+        Move(input);
+        Animate(input);
+        
+    }
+
+    private void Animate(Vector2 input)
+    {
+        // Face left
+        if(input.x < 0) {
+            spriteRenderer.flipX = false;
+            facingDirection = Direction.LEFT;
+        }
+        // Face right
+        else if(input.x > 0) {
+            spriteRenderer.flipX = true;
+            facingDirection = Direction.RIGHT;
+        }
+    }
+
+    private void Move(Vector2 input)
+    {
+        // Scale input by move speed
+        Vector2 movement = input;
+        movement.x *= horizontalSpeed;
+        movement.y *= verticalSpeed;
+
+        if(movement != Vector2.zero) {
+            Debug.Log("movement: " + movement);
+        }
+        rb.MovePosition((Vector2)transform.position + movement);
+    }
+
+    Vector2 GetKeyboardInput()
+    {
         Vector2 movement = Vector2.zero;
 
         // Up
@@ -38,20 +77,12 @@ public class PlayerMoveController : MonoBehaviour
         // Left
         if(Input.GetKey(KeyCode.A)){
             movement += Vector2.left * horizontalSpeed;
-
-            // Face left
-            spriteRenderer.flipX = false;
-            facingDirection = Direction.LEFT;
         }
         // Right
         else if(Input.GetKey(KeyCode.D)){
             movement += Vector2.right * horizontalSpeed;
-
-            // Face right
-            spriteRenderer.flipX = true;
-            facingDirection = Direction.RIGHT;
         }
 
-        rb.MovePosition((Vector2)transform.position + movement);
+        return movement;
     }
 }
