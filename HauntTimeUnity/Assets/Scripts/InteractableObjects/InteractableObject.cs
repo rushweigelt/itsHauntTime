@@ -32,12 +32,34 @@ public abstract class InteractableObject : MonoBehaviour
     // Update is called once per frame. Again, leave empty to avoid interfering with subclass update functions
     protected virtual void Update()
     {
-        if(canInteract && inRange) {
-            if(Input.GetKeyDown(KeyCode.E)) {
-                Debug.Log(name + ".Interact()");
-                Interact();
+        if(inRange) {
+            // TODO: replace mouse detection with touch detection before building to mobile
+            // TODO: check if this is the first frame of the touch
+            if(Input.GetMouseButtonDown(0)) {
+                Vector2 touchPos = Input.mousePosition;
+                if(CheckTouch(touchPos) && canInteract) {
+                    Interact();
+                }
             }
         }
+    }
+
+    /// <summary>
+    /// Returns true if touch hit collider, false otherwise
+    /// </summary>
+    /// <param name="touchPos">Position of player toucb</param>
+    /// <returns></returns>
+    private bool CheckTouch(Vector2 touchPos)
+    {
+        // Get touch position in world space
+        Vector2 touchPosWorld = Camera.main.ScreenToWorldPoint(touchPos);
+
+        // Check for raycast collisions in Interacatable layer only
+        int layermask = 1 << LayerMask.NameToLayer("Interactable");
+        RaycastHit2D raycast = Physics2D.Raycast(touchPosWorld, Camera.main.transform.forward, Mathf.Infinity, layermask);
+
+        // Return true if raycast hit collider
+        return raycast.collider == interactRange;
     }
 
     /// <summary>

@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 74530899}
   - component: {fileID: 74530900}
   - component: {fileID: 74530901}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Saltshaker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,7 +326,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.5}
+  m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
 --- !u!114 &74530901
 MonoBehaviour:
@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 195100555}
   - component: {fileID: 195100557}
   - component: {fileID: 195100558}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TempFan
   m_TagString: Fan
   m_Icon: {fileID: 0}
@@ -830,7 +830,7 @@ GameObject:
   - component: {fileID: 461057313}
   - component: {fileID: 461057312}
   - component: {fileID: 461057314}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ElectricalPlug
   m_TagString: FanOutlet
   m_Icon: {fileID: 0}
