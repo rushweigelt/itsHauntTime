@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMoveController : MonoBehaviour
+public class PlayerMoveController : Singleton<PlayerMoveController>
 {
     Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
@@ -54,10 +54,7 @@ public class PlayerMoveController : MonoBehaviour
         Vector2 movement = input;
         movement.x *= horizontalSpeed;
         movement.y *= verticalSpeed;
-
-        if(movement != Vector2.zero) {
-            Debug.Log("movement: " + movement);
-        }
+        
         rb.MovePosition((Vector2)transform.position + movement);
     }
 

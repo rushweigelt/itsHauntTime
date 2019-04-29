@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class TouchInput : MonoBehaviour {
 
-	public Transform player;
-
 	/// <summary>
 	/// Threshold after which player input will be registered as movement
 	/// </summary>
@@ -71,7 +69,7 @@ public class TouchInput : MonoBehaviour {
 				Debug.Log("TouchInput | user touching at " + currentTouchPos);
 				
 				// Get touch direction relative to player
-				Vector2 touchDelta = currentTouchPos - (Vector2)player.position;
+				Vector2 touchDelta = currentTouchPos - (Vector2)Player.Instance.transform.position;
 
 				// Clamp within square with width touchRadius
 				touchInput = touchDelta.normalized;
@@ -92,7 +90,7 @@ public class TouchInput : MonoBehaviour {
 			Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
 			// Get touch direction relative to player
-			Vector2 touchDelta = mousePosition - (Vector2)player.position;
+			Vector2 touchDelta = mousePosition - (Vector2)Player.Instance.transform.position;
 
 			// Ignore input if below threshold
 			if(touchDelta.magnitude < touchThreshold) {

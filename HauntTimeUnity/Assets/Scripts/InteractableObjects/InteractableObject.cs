@@ -52,6 +52,9 @@ public abstract class InteractableObject : MonoBehaviour
         {
             inRange = true;
             interactPrompt.SetActive(true);
+
+            // Set player to transparent
+            Player.Instance.SetTransparent(true);
         }
     }
     //if the player leaves the range, disable thought bubble
@@ -61,6 +64,9 @@ public abstract class InteractableObject : MonoBehaviour
         {
             inRange = false;
             interactPrompt.SetActive(false);
+
+            // Set player to opaque
+            Player.Instance.SetTransparent(false);
         }
     }
 }

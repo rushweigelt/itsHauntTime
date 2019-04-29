@@ -1317,7 +1317,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15d60d8138c424308b1fdc4c4b09a501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1341365655}
   touchThreshold: 0.2
   controlScheme: 0
 --- !u!1 &644566214
@@ -2110,6 +2109,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPrompt: {fileID: 1474901859}
+  transparencyChangeSpeed: 2
+  minTransparency: 0.467
+  maxTransparency: 1
 --- !u!95 &1341365657
 Animator:
   serializedVersion: 3
