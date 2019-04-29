@@ -34,7 +34,6 @@ public abstract class InteractableObject : MonoBehaviour
     {
         if(inRange) {
             // TODO: replace mouse detection with touch detection before building to mobile
-            // TODO: check if this is the first frame of the touch
             if(Input.GetMouseButtonDown(0)) {
                 Vector2 touchPos = Input.mousePosition;
                 if(CheckTouch(touchPos) && canInteract) {
@@ -45,12 +44,18 @@ public abstract class InteractableObject : MonoBehaviour
     }
 
     /// <summary>
-    /// Returns true if touch hit collider, false otherwise
+    /// Returns true if touch hit collider, false otherwise.
+    /// Object must be on Interactable layer to receive raycasts.
     /// </summary>
-    /// <param name="touchPos">Position of player toucb</param>
-    /// <returns></returns>
+    /// <param name="touchPos">Position of player touch</param>
     private bool CheckTouch(Vector2 touchPos)
     {
+        // Return false with warning if not tagged properly
+        if(!gameObject.CompareTag("Interactable")) {
+            Debug.LogWarningFormat("Warning: {0} not tagged as Interactable - will not receive touch input", name);
+            return false;
+        }
+
         // Get touch position in world space
         Vector2 touchPosWorld = Camera.main.ScreenToWorldPoint(touchPos);
 
@@ -67,11 +72,16 @@ public abstract class InteractableObject : MonoBehaviour
     /// </summary>
     protected virtual void Interact() {}
     
-    //if the player nears an interactable object, a thought bubble appears above the players head.
+    
+    /// <summary>
+    /// Called when player enters interact range
+    /// </summary>
+    /// <param name="col"></param>
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
+            // Enable inRange and interact prompt
             inRange = true;
             interactPrompt.SetActive(true);
 
@@ -79,11 +89,15 @@ public abstract class InteractableObject : MonoBehaviour
             Player.Instance.SetTransparent(true);
         }
     }
-    //if the player leaves the range, disable thought bubble
+    
+    /// <summary>
+    /// Called when player leaves interact range
+    /// </summary>
     void OnTriggerExit2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
+            // Disable inRange and interact prompt
             inRange = false;
             interactPrompt.SetActive(false);
 
