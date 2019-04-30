@@ -5,9 +5,20 @@ using UnityEngine.Events;
 
 public class Transformation : MonoBehaviour
 {
+    /// <summary>
+    /// Priority determining order of execution relative to other Transformations.
+    /// Lower number = higher priority.
+    /// </summary>
     public int priority;
+
+    /// <summary>
+    /// True if Apply has finished running
+    /// </summary>
     public bool finished;
 
+    /// <summary>
+    /// Called at end of Apply()
+    /// </summary>
     public UnityAction onFinished;
 
     // Start is called before the first frame update

@@ -14,7 +14,7 @@ public class Interaction : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Ensure transformations are sorted by order ascending
+        // Ensure transformations are sorted by priority
         transformations = transformations.OrderBy(t => t.priority).ToList();
 
         // Set finished to false
@@ -29,15 +29,17 @@ public class Interaction : MonoBehaviour
 
     public IEnumerator Interact()
     {
-        // perform interactions over time
         if(unlocked)
         {
-            // Iterate over priorities present in list
             int maxPriority = transformations[transformations.Count - 1].priority;
+
+            // Iterate over items by priority
             for(int currentPriority = 1; currentPriority <= maxPriority; currentPriority++)
             {
                 // Get all transformations that have current priority
-                List<Transformation> tformations = transformations.Where(t => t.priority == currentPriority).ToList();
+                List<Transformation> tformations = transformations.Where(t => t.priority == currentPriority).ToList();\
+                
+                // Apply each transformation
                 tformations.ForEach(t => t.Apply());
                 
                 // Wait until each transformation in this priority is finished
