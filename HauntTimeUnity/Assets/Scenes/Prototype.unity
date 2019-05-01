@@ -440,7 +440,7 @@ GameObject:
   - component: {fileID: 195100558}
   m_Layer: 9
   m_Name: TempFan
-  m_TagString: Fan
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -481,7 +481,7 @@ MonoBehaviour:
   isOn: 1
   outlet: {fileID: 461057314}
   fanRange: {fileID: 1801305700}
-  eo: {fileID: 461057314}
+  pSystem: {fileID: 1026133198}
 --- !u!212 &195100556
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -942,50 +942,18 @@ MonoBehaviour:
   interactPrompt: {fileID: 1474901859}
   inRange: 0
   canInteract: 1
+  pluggedIn: 1
+  electronic: {fileID: 195100555}
   onUnplugged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1026133198}
-        m_MethodName: Stop
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1026133198}
-        m_MethodName: Clear
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   onPlugged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1026133198}
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  pluggedIn: 0
 --- !u!1 &480957764
 GameObject:
   m_ObjectHideFlags: 0

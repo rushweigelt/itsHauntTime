@@ -4,43 +4,35 @@ using UnityEngine;
 
 public class Fan : Electronic
 {
-    public BoxCollider2D fanRange;//game object that is a collider, used to prevent the player from advancing, simulating push back
-    public ElectricalOutlet eo; //bind an electronic to it's outlet
+    //game object that is a collider, used to prevent the player from advancing, simulating push back
+    public BoxCollider2D fanRange;
 
-    // Start is called before the first frame update
+    public ParticleSystem pSystem;
+
+    ParticleSystem.MainModule pSystemMain;
+
+    // public ElectricalOutlet eo; //bind an electronic to it's outlet
+
     protected override void Start()
     {
         fanRange.enabled = true;
+        pSystemMain = pSystem.main;
     }
+    
+    /// <summary>
+    /// Toggle fan collider on/off
+    /// </summary>
+    /// <param name="active"></param>
+    public override void SetActive(bool active)
+    {
+        // Call base method first
+        base.SetActive(active);
 
-    // Update is called once per frame. We use update, not fixed update, as fixed update interferes with Electronic.
-    protected override void Update()
-    {
-        CheckPowerStatus();
-    }
-    //the specific outcome of the electronic-level component being toggled;
-    //here, we toggle a box collider on and off that represents a fan preventing 
-    //the ghost from moving forward.
-    void FanOn()
-    {
-        fanRange.enabled = true;        
-    }
+        // Set fan collider off
+        fanRange.enabled = active;
 
-    void FanOff()
-    {
-        fanRange.enabled = false;
-    }
-    //a function that will run constantly, checking the status of fan by 
-    //looking at the electronic-level subclass.
-    void CheckPowerStatus()
-    {
-        if (eo.pluggedIn == false)
-        {
-            FanOff();
-        }
-        if (eo.pluggedIn == true)
-        {
-            FanOn();
-        }
+        // Stop particle system
+        ParticleSystem.EmissionModule emission = pSystem.emission;
+        emission.enabled = active;
     }
 }
