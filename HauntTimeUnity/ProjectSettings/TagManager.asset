@@ -17,7 +17,7 @@ TagManager:
   - 
   - 
   - lowestBackground
-  - 
+  - Interactable
   - 
   - 
   - 
@@ -58,4 +58,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 49273803
+    locked: 0
+  - name: UI
+    uniqueID: 3669333895
     locked: 0

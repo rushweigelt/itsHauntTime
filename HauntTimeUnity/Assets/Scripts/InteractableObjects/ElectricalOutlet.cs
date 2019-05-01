@@ -5,30 +5,28 @@ using UnityEngine;
 public class ElectricalOutlet : InteractableObject
 {
     public bool pluggedIn; //is the power plug in the outlet?
-    public bool inOutletCollider; //is the player in range of the outlet
+    //public bool inOutletCollider; //is the player in range of the outlet<-this is depricated, same info in baseclass.
 
     // Start is called before the first frame update
     protected override void Start()
     {
-        inOutletCollider = false;
+        base.Start();
+        //inOutletCollider = false;
         pluggedIn = true;
     }
 
-    // Update is called once per frame. Use update, as we use FixedUpdate for mid-classes (like electronic)
-    protected override void Update()
+    protected override void Interact()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (pluggedIn == true && inRange == true)
         {
-            if (pluggedIn == true && inOutletCollider == true)
-            {
-                Unplug();
-            }
-            else if (pluggedIn == false && inOutletCollider == true)
-            {
-                PlugIn();
-            }
+            Unplug();
+        }
+        else if (pluggedIn == false && inRange == true)
+        {
+            PlugIn();
         }
     }
+
     //a function to unplug, simply change boolean. Will add animation here when ready.
     public void Unplug()
     {
@@ -47,12 +45,13 @@ public class ElectricalOutlet : InteractableObject
             pluggedIn = true;
         }
     }
+    /*
     //detect if player is near the outlet collider; all electronics will require an outlet
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            inOutletCollider = true;
+            inRange = true;
         }
     }
     //when we leave outlet collider, inverse previous func.
@@ -60,7 +59,8 @@ public class ElectricalOutlet : InteractableObject
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            inOutletCollider = false;
+            inRange = false;
         }
     }
+    */
 }
