@@ -37,7 +37,7 @@ public class Interaction : MonoBehaviour
             for(int currentPriority = 1; currentPriority <= maxPriority; currentPriority++)
             {
                 // Get all transformations that have current priority
-                List<Transformation> tformations = transformations.Where(t => t.priority == currentPriority).ToList();\
+                List<Transformation> tformations = transformations.Where(t => t.priority == currentPriority).ToList();
                 
                 // Apply each transformation
                 tformations.ForEach(t => t.Apply());
