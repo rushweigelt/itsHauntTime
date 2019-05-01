@@ -1,49 +1,54 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ElectricalOutlet : InteractableObject
 {
-    public bool pluggedIn; //is the power plug in the outlet?
-    //public bool inOutletCollider; //is the player in range of the outlet<-this is depricated, same info in baseclass.
+    public bool pluggedIn;
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// Event called when unplugged
+    /// </summary>
+    public UnityEvent onUnplugged;
+
+    /// <summary>
+    /// Event called when plugged in
+    /// </summary>
+    public UnityEvent onPlugged;
+    
     protected override void Start()
     {
         base.Start();
         //inOutletCollider = false;
         pluggedIn = true;
+
+        // Add default listeners to plug events
+        onUnplugged.AddListener(Unplug);
+        onPlugged.AddListener(PlugIn);
     }
 
     protected override void Interact()
     {
-        if (pluggedIn == true && inRange == true)
-        {
-            Unplug();
+        if (pluggedIn) {
+            onUnplugged.Invoke();
         }
-        else if (pluggedIn == false && inRange == true)
-        {
-            PlugIn();
+        else {
+            onPlugged.Invoke();
         }
     }
 
     //a function to unplug, simply change boolean. Will add animation here when ready.
     public void Unplug()
     {
-        if (pluggedIn == true)
-        {
-            Debug.Log("Unplugged the outlet");
-            pluggedIn = false;
-        }
+        Debug.Log("Unplugged the outlet");
+        pluggedIn = false;
     }
     //opposite of above
     public void PlugIn()
     {
-        if (pluggedIn == false)
-        {
-            Debug.Log("plugged the outlet in");
-            pluggedIn = true;
-        }
+        Debug.Log("plugged the outlet in");
+        pluggedIn = true;
     }
     /*
     //detect if player is near the outlet collider; all electronics will require an outlet
