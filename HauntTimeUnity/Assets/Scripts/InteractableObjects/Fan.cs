@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Fan : Electronic
 {
+    public ParticleSystem pSystem;
+    ParticleSystem.EmissionModule emission;
     public BoxCollider2D fanRange;//game object that is a collider, used to prevent the player from advancing, simulating push back
     public ElectricalOutlet eo; //bind an electronic to it's outlet
     public SaltShaker saltS;
@@ -13,6 +15,7 @@ public class Fan : Electronic
     protected override void Start()
     {
         fanRange.enabled = true;
+        emission = pSystem.emission;
     }
 
     // Update is called once per frame. We use update, not fixed update, as fixed update interferes with Electronic.
@@ -26,6 +29,9 @@ public class Fan : Electronic
     void FanOn()
     {
         fanRange.enabled = true;
+        emission.enabled = true;
+
+
         if (saltS.state == "spilled")
         {
             saltS.state = "blown";
@@ -36,6 +42,7 @@ public class Fan : Electronic
     void FanOff()
     {
         fanRange.enabled = false;
+        emission.enabled = false;
     }
     //a function that will run constantly, checking the status of fan by 
     //looking at the electronic-level subclass.
