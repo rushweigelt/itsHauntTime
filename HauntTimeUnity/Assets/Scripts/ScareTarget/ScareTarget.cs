@@ -15,7 +15,7 @@ public class ScareTarget : InteractableObject
     // Update is called once per frame
     protected override void Update()
     {
-
+        base.Update();
     }
 
     protected void InitialState()

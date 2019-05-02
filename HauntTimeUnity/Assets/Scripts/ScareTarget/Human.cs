@@ -25,12 +25,11 @@ public class Human : ScareTarget
     // Update is called once per frame
     protected override void Update()
     {
+        base.Update();
         if (fan.isOn != true)
         {
             //Walk(fridgeTrans.position.x, fridgeTrans.position.y);
             Walk(trans.position.x, fridgeTrans.position.x);
-
-            state = "Fridge";
         }
 
     }
@@ -39,6 +38,7 @@ public class Human : ScareTarget
     {
         float t = (Time.time - this.StartTime) / duration;
         trans.position = new Vector3(Mathf.SmoothStep(posX, posX2, t), 0, 0);
+        state = "Fridge";
 
     }
 
@@ -60,11 +60,6 @@ public class Human : ScareTarget
     protected new void InitialState()
     {
 
-    }
-
-    public void Scare()
-    {
-        Interact();
     }
 
     protected new void AlertedState()
