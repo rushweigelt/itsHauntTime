@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 11287984}
   - component: {fileID: 11287985}
   m_Layer: 9
-  m_Name: New Sprite
+  m_Name: cord
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,7 +137,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 11287983}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.15, y: -0.97, z: 0}
+  m_LocalPosition: {x: -4.65, y: -0.97, z: 0}
   m_LocalScale: {x: 1.4625, y: 0.01955078, z: 1}
   m_Children: []
   m_Father: {fileID: 461057311}
@@ -558,12 +558,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 195100553}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.7, y: -1.33, z: 0}
+  m_LocalPosition: {x: -6.32, y: -1.33, z: 0}
   m_LocalScale: {x: 1, y: 0.74, z: 1}
   m_Children:
   - {fileID: 461057311}
   - {fileID: 1801305699}
-  - {fileID: 1423559793}
   m_Father: {fileID: 1329907141}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -736,7 +735,7 @@ MonoBehaviour:
   state: 
   anim: {fileID: 459383998}
   fan: {fileID: 195100555}
-  transform: {fileID: 0}
+  trans: {fileID: 0}
   fridgeTrans: {fileID: 520194052}
   StartTime: 0
   duration: 0
@@ -1083,7 +1082,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 461057310}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.91, y: -2.05, z: 0}
+  m_LocalPosition: {x: 9.5, y: -2.05, z: 0}
   m_LocalScale: {x: 1.0236688, y: 1.3626418, z: 2.9589221}
   m_Children:
   - {fileID: 11287984}
@@ -1236,7 +1235,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: af6777d592ddb3440bb6216a8f3f3fb4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.3160377, b: 0.5691435, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2105,7 +2104,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1214756263}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.24, y: 1.78, z: 0}
+  m_LocalPosition: {x: 4.86, y: 1.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1801305699}
@@ -2520,6 +2519,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1423559793}
   - component: {fileID: 1423559794}
+  - component: {fileID: 1423559795}
   m_Layer: 9
   m_Name: Wind
   m_TagString: Untagged
@@ -2534,12 +2534,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423559792}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 7.12, y: 0, z: 0}
+  m_LocalScale: {x: 0.55172, y: 0.55172, z: 0.55172}
   m_Children: []
-  m_Father: {fileID: 195100554}
-  m_RootOrder: 2
+  m_Father: {fileID: 1801305699}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1423559794
 SpriteRenderer:
@@ -2575,8 +2575,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -363982993
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 072b42e4964bcf04e9708382b59263bb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2589,6 +2589,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1423559795
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423559792}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f78b841e363009f4fabf6c1675a68ea8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1474901859
 GameObject:
   m_ObjectHideFlags: 0
@@ -3015,6 +3034,7 @@ GameObject:
   - component: {fileID: 1801305702}
   - component: {fileID: 1801305701}
   - component: {fileID: 1801305703}
+  - component: {fileID: 1801305704}
   m_Layer: 0
   m_Name: fanRange
   m_TagString: Fan
@@ -3030,10 +3050,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1801305698}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.62, y: 0, z: 0}
+  m_LocalPosition: {x: -5.26, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1214756264}
+  - {fileID: 1423559793}
   m_Father: {fileID: 195100554}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3061,7 +3082,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.29, y: 12.982358}
+  m_Size: {x: 3.05, y: 12.982358}
   m_EdgeRadius: 0
 --- !u!199 &1801305701
 ParticleSystemRenderer:
@@ -7749,6 +7770,19 @@ AreaEffector2D:
   m_ForceTarget: 0
   m_Drag: 0
   m_AngularDrag: 0
+--- !u!114 &1801305704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801305698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e99c278b1d6c774598c25a65093019f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerSource: {fileID: 461057310}
 --- !u!1 &1812343645
 GameObject:
   m_ObjectHideFlags: 0
