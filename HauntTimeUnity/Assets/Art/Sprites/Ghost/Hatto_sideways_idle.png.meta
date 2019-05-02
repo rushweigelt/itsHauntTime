@@ -1,11 +1,18 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 2ee723b4c6678ca40af6f781d95be269
-=======
-guid: d4ee6306fb64eb04c8141e216a3598f5
->>>>>>> b0572ce391f509d3029a28ffcf74548659e4ea02
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Hatto_sideways_idle_0
+    21300002: Hatto_sideways_idle_1
+    21300004: Hatto_sideways_idle_2
+    21300006: Hatto_sideways_idle_3
+    21300008: Hatto_sideways_idle_4
+    21300010: Hatto_sideways_idle_5
+    21300012: Hatto_sideways_idle_6
+    21300014: Hatto_sideways_idle_7
+    21300016: Hatto_sideways_idle_8
+    21300018: Hatto_sideways_idle_9
+    21300020: Hatto_sideways_idle_10
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -40,11 +47,11 @@ TextureImporter:
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -73,17 +80,244 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Hatto_sideways_idle_0
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 39
+        width: 284
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72b272d611835ff4cb5386f874bcae38
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hatto_sideways_idle_1
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 42
+        width: 286
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c280870fb3e3ccd479d99f17d3cbd8e1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hatto_sideways_idle_2
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 45
+        width: 286
+        height: 353
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a292775c95ddfac42b57d6e55d32a819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hatto_sideways_idle_3
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 50
+        width: 287
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0619111c75126724d9d414df8aa953dc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hatto_sideways_idle_4
+      rect:
+        serializedVersion: 2
+        x: 1710
+        y: 54
+        width: 286
+        height: 353
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 671b3cc67f35ba248888c84481a79bc2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hatto_sideways_idle_5
+      rect:
+        serializedVersion: 2
+        x: 2122
+        y: 0
+        width: 284
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 029c9c549faa34741bdef2bc94453cbd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hatto_sideways_idle_6
+      rect:
+        serializedVersion: 2
+        x: 2531
+        y: 54
+        width: 284
+        height: 353
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b52890def12ef51458baff2a2a32ddab
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hatto_sideways_idle_7
+      rect:
+        serializedVersion: 2
+        x: 2941
+        y: 50
+        width: 286
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 599214f4e105bef4bb75e59f2a541a8a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hatto_sideways_idle_8
+      rect:
+        serializedVersion: 2
+        x: 3351
+        y: 45
+        width: 286
+        height: 353
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d6f29f8c4a11ef44a463b94b4165451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hatto_sideways_idle_9
+      rect:
+        serializedVersion: 2
+        x: 3760
+        y: 42
+        width: 286
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b8c7974d17738d44b24c074842273e0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hatto_sideways_idle_10
+      rect:
+        serializedVersion: 2
+        x: 4172
+        y: 39
+        width: 284
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e694e73dddccf7e45bbc4981f5cb39f1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-<<<<<<< HEAD
-    spriteID: bc3d4f07eb08850429d0ead9e4549860
-=======
-    spriteID: c809a70d83083ef42a2585f3fbaf3483
->>>>>>> b0572ce391f509d3029a28ffcf74548659e4ea02
+    spriteID: 0f7d68bebb4a2df4d959a2770fb497e8
     vertices: []
     indices: 
     edges: []
