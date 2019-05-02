@@ -18,7 +18,6 @@ public class Human : ScareTarget
         anim = GetComponent<Animator>();
         trans = GetComponent<Transform>();
         StartTime = Time.time;
-        duration = 5.0f;
 
     }
 
@@ -36,7 +35,7 @@ public class Human : ScareTarget
 
     public void Walk(float posX, float posX2)
     {
-        float t = (Time.time - this.StartTime) / duration;
+        float t = (Time.time - StartTime) / duration;
         trans.position = new Vector3(Mathf.SmoothStep(posX, posX2, t), 0, 0);
         state = "Fridge";
 

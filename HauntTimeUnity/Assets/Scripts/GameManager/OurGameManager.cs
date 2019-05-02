@@ -1,15 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OurGameManager : MonoBehaviour
 {
     public HUDManager hud;
     public Timer timer;
     public ScareTarget target;
+    public Text winText;
+    public GameObject textObj;
+    
     // Start is called before the first frame update
     void Start()
     {
+        textObj.SetActive(false);
         timer = GetComponent<Timer>();
     }
 
@@ -24,6 +29,9 @@ public class OurGameManager : MonoBehaviour
     {
         if(target.state.Equals("Scared"))
         {
+            textObj.SetActive(true);
+            winText.text = "Player has Won!";
+            Time.timeScale = 0;
             Debug.Log("Player has won");
             //gold
             if (timer.seconds > timer.maxSecs/2)
@@ -48,8 +56,11 @@ public class OurGameManager : MonoBehaviour
     {
         if (t.seconds <= 0)
         {
+            textObj.SetActive(true);
+            winText.text = "Player has Lost!";
             Debug.Log("The Player Has Lost");
             timer.seconds = 0;
+            Time.timeScale = 0;
             //bring up restart/exit menu here?
         }
     }
