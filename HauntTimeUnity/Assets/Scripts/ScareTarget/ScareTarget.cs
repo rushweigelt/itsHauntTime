@@ -9,7 +9,7 @@ public class ScareTarget : InteractableObject
     // Start is called before the first frame update
     protected override void Start()
     {
-        inRange = false;
+        //inRange = false;
     }
 
     // Update is called once per frame

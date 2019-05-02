@@ -6,7 +6,7 @@ public class Human : ScareTarget
 {
     public Animator anim;
     public Fan fan;
-    public Transform transform;
+    public Transform trans;
     public Transform fridgeTrans;
     public float StartTime;
     public float duration;
@@ -16,7 +16,7 @@ public class Human : ScareTarget
     {
         state = "Initial";
         anim = GetComponent<Animator>();
-        transform = GetComponent<Transform>();
+        trans = GetComponent<Transform>();
         StartTime = Time.time;
         duration = 5.0f;
 
@@ -28,7 +28,9 @@ public class Human : ScareTarget
         if (fan.isOn != true)
         {
             //Walk(fridgeTrans.position.x, fridgeTrans.position.y);
-            Walk(transform.position.x, fridgeTrans.position.x);
+            Walk(trans.position.x, fridgeTrans.position.x);
+
+            state = "Fridge";
         }
 
     }
@@ -36,8 +38,7 @@ public class Human : ScareTarget
     public void Walk(float posX, float posX2)
     {
         float t = (Time.time - this.StartTime) / duration;
-        transform.position = new Vector3(Mathf.SmoothStep(posX, posX2, t), 0, 0);
-        state = "Fridge";
+        trans.position = new Vector3(Mathf.SmoothStep(posX, posX2, t), 0, 0);
 
     }
 
