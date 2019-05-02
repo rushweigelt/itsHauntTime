@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScareTarget : MonoBehaviour
+public class ScareTarget : InteractableObject
 {
     public GameObject scareIcon;
-    public string scareState;
+    public string state;
     public string[] fears;
     public BoxCollider2D bc;
     public bool inRange;

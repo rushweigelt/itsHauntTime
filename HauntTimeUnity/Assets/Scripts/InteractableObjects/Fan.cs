@@ -6,6 +6,8 @@ public class Fan : Electronic
 {
     public BoxCollider2D fanRange;//game object that is a collider, used to prevent the player from advancing, simulating push back
     public ElectricalOutlet eo; //bind an electronic to it's outlet
+    public SaltShaker saltS;
+    public GameObject saltWall;
 
     // Start is called before the first frame update
     protected override void Start()
@@ -23,7 +25,12 @@ public class Fan : Electronic
     //the ghost from moving forward.
     void FanOn()
     {
-        fanRange.enabled = true;        
+        fanRange.enabled = true;
+        if (saltS.state == "spilled")
+        {
+            saltS.state = "blown";
+            saltWall.SetActive(false);
+        }
     }
 
     void FanOff()

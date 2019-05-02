@@ -5,6 +5,7 @@ using UnityEngine;
 public class Human : ScareTarget
 {
     public string name;
+    //public string State;
     public Animator anim;
     public Fan fan;
     int idleHash = Animator.StringToHash("human_fakeIdle");
@@ -17,6 +18,7 @@ public class Human : ScareTarget
     // Start is called before the first frame update
     void Start()
     {
+        state = "Initial";
         anim = GetComponent<Animator>();
         transform = GetComponent<Transform>();
         StartTime = Time.time;
@@ -42,10 +44,11 @@ public class Human : ScareTarget
         }
     }
 
-    void Walk(float posX, float posX2)
+    public void Walk(float posX, float posX2)
     {
         float t = (Time.time - this.StartTime) / duration;
         transform.position = new Vector3(Mathf.SmoothStep(posX, posX2, t), 0, 0);
+        state = "Fridge";
 
     }
 
@@ -69,13 +72,22 @@ public class Human : ScareTarget
 
     }
 
-    protected new void ScaredState()
+    protected new void Scared()
     {
-
+        if(state == "Scareable")
+        {
+            Interact();
+        }
     }
 
     protected new void AlertedState()
     {
 
+    }
+
+    protected override void Interact()
+    {
+        base.Interact();
+        state = "Scared";
     }
 }

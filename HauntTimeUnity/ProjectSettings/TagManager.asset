@@ -8,7 +8,8 @@ TagManager:
   - Fan
   - FanOutlet
   - Interactable
-  - NPC
+  - Npc
+  - saltWall
   layers:
   - Default
   - TransparentFX

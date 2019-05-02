@@ -6,13 +6,13 @@ public class SpriteSwapInteraction : InteractableObject
 {
     public Sprite initialSprite;
     public Sprite finalSprite;
-    SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     protected override void Start()
     {
         // isUpright = true;
-        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        //spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     protected override void Interact()
