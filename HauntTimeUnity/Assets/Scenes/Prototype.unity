@@ -368,6 +368,7 @@ MonoBehaviour:
   initialSprite: {fileID: 21300000, guid: 62400d32e67a84021bd4c76e264c9daf, type: 3}
   finalSprite: {fileID: 21300000, guid: 1cf83f1b68af64479ababad5c0877431, type: 3}
   spriteRenderer: {fileID: 74530899}
+  state: 
   human: {fileID: 217037851}
   npcTouched: 0
   saltWall: {fileID: 1795605995}
@@ -506,6 +507,8 @@ MonoBehaviour:
   outlet: {fileID: 461057314}
   fanRange: {fileID: 1801305700}
   eo: {fileID: 461057314}
+  saltS: {fileID: 74530902}
+  saltWall: {fileID: 1795605995}
 --- !u!212 &195100556
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -612,9 +615,9 @@ GameObject:
   - component: {fileID: 217037850}
   - component: {fileID: 217037851}
   - component: {fileID: 217037852}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ScareTarget
-  m_TagString: Npc
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -646,13 +649,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e324b7eb1d02fa4aa7da246fde25d11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scareIcon: {fileID: 1474901859}
-  scareState: 
-  fears: []
-  bc: {fileID: 217037852}
+  interactRange: {fileID: 217037852}
+  interactPrompt: {fileID: 1474901859}
   inRange: 0
-  name: 
-  State: 
+  canInteract: 1
+  state: 
   anim: {fileID: 459383998}
   fan: {fileID: 195100555}
   transform: {fileID: 0}
@@ -669,10 +670,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.04407072, y: -0.5904305}
+  m_Offset: {x: 0.04407072, y: -0.41284204}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -683,7 +684,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.0956106, y: 3.3251538}
+  m_Size: {x: 2.0956106, y: 3.6803308}
   m_EdgeRadius: 0
 --- !u!1 &251679626
 GameObject:
@@ -861,9 +862,9 @@ GameObject:
   - component: {fileID: 459383996}
   - component: {fileID: 459383995}
   - component: {fileID: 459383998}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HumanTemp
-  m_TagString: Npc
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1254,7 +1255,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.882459, y: 0, z: -10}
+  m_LocalPosition: {x: -8.6, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 948227264}
@@ -1419,9 +1420,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30d7e1a22b0719c4dbf126cd75dcfe42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerState: 
   hud: {fileID: 0}
   timer: {fileID: 609866838}
+  target: {fileID: 217037851}
 --- !u!114 &609866838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1434,7 +1435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 881915288ea5a9f45af1fcbb5b2f5c0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seconds: 120
+  seconds: 60
   maxSecs: 0
   time: 
 --- !u!114 &609866839
@@ -2250,7 +2251,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1341365650}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.56, y: -0.38, z: 0}
+  m_LocalPosition: {x: -1.9, y: -0.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1474901860}
@@ -2695,7 +2696,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1795605996
 Transform:
   m_ObjectHideFlags: 0
@@ -2723,7 +2724,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.38253915}
+  m_Offset: {x: 0, y: 1.0383903}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2734,7 +2735,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1, y: 1.1050782}
+  m_Size: {x: 1.1, y: 2.4167802}
   m_EdgeRadius: 0
 --- !u!212 &1795605998
 SpriteRenderer:

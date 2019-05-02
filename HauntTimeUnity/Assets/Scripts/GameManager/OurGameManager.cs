@@ -4,21 +4,20 @@ using UnityEngine;
 
 public class OurGameManager : MonoBehaviour
 {
-    public string playerState;
     public HUDManager hud;
     public Timer timer;
     public ScareTarget target;
     // Start is called before the first frame update
     void Start()
     {
-        playerState = "Playing";
         timer = GetComponent<Timer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        WinState(target.state);
+        LoseState(timer);
     }
 
     void WinState(string state)
@@ -47,9 +46,10 @@ public class OurGameManager : MonoBehaviour
 
     void LoseState(Timer t)
     {
-        if (t.seconds <= -0.1)
+        if (t.seconds <= 0)
         {
             Debug.Log("The Player Has Lost");
+            timer.seconds = 0;
             //bring up restart/exit menu here?
         }
     }

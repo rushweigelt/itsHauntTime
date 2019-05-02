@@ -33,6 +33,7 @@ public class SaltShaker : SpriteSwapInteraction
     }
 
     //NPC interact with salt shaker
+    /* DEPRECATED, HANDLED VIA STATES NOW
     protected override void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Npc"))
@@ -45,4 +46,5 @@ public class SaltShaker : SpriteSwapInteraction
             Debug.Log("Test");
         }
     }
+    */
 }
