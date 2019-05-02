@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HUDManager : MonoBehaviour
 {
     public ScareBar scareBar;
     public Timer timer;
+    public Text timerText;
+
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +19,11 @@ public class HUDManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        timerText.text = DisplayTimer(timer);
+    }
+
+    public string DisplayTimer( Timer t)
+    {
+        return t.SecondsToMmSs(t.seconds);
     }
 }

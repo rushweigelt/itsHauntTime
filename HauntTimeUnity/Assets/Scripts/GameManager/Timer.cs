@@ -6,11 +6,12 @@ public class Timer : MonoBehaviour
 {
     //public int minutes;
     public float seconds;
+    public float maxSecs;
     public string time;
     // Start is called before the first frame update
     void Start()
     {
-
+        maxSecs = seconds;
     }
     // Update is called once per frame
     void Update()
@@ -27,7 +28,7 @@ public class Timer : MonoBehaviour
     {
 
     }
-    string SecondsToMmSs(float seconds)
+    public string SecondsToMmSs(float seconds)
     {
         return string.Format("{0}:{1}", Mathf.Floor(seconds/60), Mathf.RoundToInt(seconds%60));
     }
