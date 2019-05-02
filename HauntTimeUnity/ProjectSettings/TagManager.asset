@@ -8,6 +8,7 @@ TagManager:
   - Fan
   - FanOutlet
   - Interactable
+  - NPC
   layers:
   - Default
   - TransparentFX
@@ -33,7 +34,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - NPC
   - Player
   - 
   - 

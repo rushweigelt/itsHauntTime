@@ -38,14 +38,14 @@ public class Human : ScareTarget
         if (fan.isOn != true)
         {
             //Walk(fridgeTrans.position.x, fridgeTrans.position.y);
-            Walk(14.0f, -0.8f);
+            Walk(transform.position.x, fridgeTrans.position.x);
         }
     }
 
-    void Walk(float posX, float posY)
+    void Walk(float posX, float posX2)
     {
         float t = (Time.time - this.StartTime) / duration;
-        transform.position = new Vector3(Mathf.SmoothStep(posX, posY, t), 0, 0);
+        transform.position = new Vector3(Mathf.SmoothStep(posX, posX2, t), 0, 0);
 
     }
 

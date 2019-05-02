@@ -77,7 +77,7 @@ public abstract class InteractableObject : MonoBehaviour
     /// Called when player enters interact range
     /// </summary>
     /// <param name="col"></param>
-    void OnTriggerEnter2D(Collider2D col)
+    protected virtual void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
@@ -93,7 +93,7 @@ public abstract class InteractableObject : MonoBehaviour
     /// <summary>
     /// Called when player leaves interact range
     /// </summary>
-    void OnTriggerExit2D(Collider2D col)
+    protected virtual void OnTriggerExit2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
