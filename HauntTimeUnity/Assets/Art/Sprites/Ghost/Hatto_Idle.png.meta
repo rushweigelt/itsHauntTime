@@ -1,17 +1,15 @@
 fileFormatVersion: 2
-guid: c6dfd3f9c0d89411b8046a6dc436b71b
+guid: 1e395b4e62958bb4280eae8370de95d0
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Ghost_Idle_1_Sheet_0
-    21300002: Ghost_Idle_1_Sheet_1
-    21300004: Ghost_Idle_1_Sheet_2
-    21300006: Ghost_Idle_1_Sheet_3
-    21300008: Ghost_Idle_1_Sheet_4
-    21300010: Ghost_Idle_1_Sheet_5
-    21300012: Ghost_Idle_1_Sheet_6
-    21300014: Ghost_Idle_1_Sheet_7
-    21300016: Ghost_Idle_1_Sheet_8
-    21300018: Ghost_Idle_1_Sheet_9
+    21300000: Hatto_Idle_0
+    21300002: Hatto_Idle_1
+    21300004: Hatto_Idle_2
+    21300006: Hatto_Idle_3
+    21300008: Hatto_Idle_4
+    21300010: Hatto_Idle_5
+    21300012: Hatto_Idle_6
+    21300014: Hatto_Idle_7
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -41,12 +39,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -55,7 +53,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 256
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -90,17 +88,28 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ghost_Idle_1_Sheet_0
+      name: Hatto_Idle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1080
-        height: 1080
+        width: 410
+        height: 410
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -108,19 +117,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae9b0b6e13e2c421382a976f4ce110c7
+      spriteID: c9e2ecf8ba4bd472fae658d77ba944a4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ghost_Idle_1_Sheet_1
+      name: Hatto_Idle_1
       rect:
         serializedVersion: 2
-        x: 1080
+        x: 410
         y: 0
-        width: 1080
-        height: 1080
+        width: 410
+        height: 410
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,19 +137,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ccabf8b3a994b49be9490fc449f61994
+      spriteID: 00e5393d32ba34c8b987ed74efa244f0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ghost_Idle_1_Sheet_2
+      name: Hatto_Idle_2
       rect:
         serializedVersion: 2
-        x: 2160
+        x: 820
         y: 0
-        width: 1080
-        height: 1080
+        width: 410
+        height: 410
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,19 +157,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d8805de336644720a9fbd22c4cc454b
+      spriteID: e78c76c97c68440c6b7cdb601d6626d7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ghost_Idle_1_Sheet_3
+      name: Hatto_Idle_3
       rect:
         serializedVersion: 2
-        x: 3240
+        x: 1230
         y: 0
-        width: 1080
-        height: 1080
+        width: 410
+        height: 410
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,19 +177,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0705d06c70b1a43ab903b728815e6ada
+      spriteID: d50f275aac4ef4d32a7cb4e1a1c7773b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ghost_Idle_1_Sheet_4
+      name: Hatto_Idle_4
       rect:
         serializedVersion: 2
-        x: 4320
+        x: 1640
         y: 0
-        width: 1080
-        height: 1080
+        width: 410
+        height: 410
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,19 +197,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd42066cccbf24ac0805b3e1eb7290d6
+      spriteID: f81e82718bea94a8494b73f91a81fe18
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ghost_Idle_1_Sheet_5
+      name: Hatto_Idle_5
       rect:
         serializedVersion: 2
-        x: 5400
+        x: 2050
         y: 0
-        width: 1080
-        height: 1080
+        width: 410
+        height: 410
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,19 +217,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0078d6c203924e659bc19b695386474
+      spriteID: 1106170a952814926ac2637dfca05194
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ghost_Idle_1_Sheet_6
+      name: Hatto_Idle_6
       rect:
         serializedVersion: 2
-        x: 6480
+        x: 2460
         y: 0
-        width: 1080
-        height: 1080
+        width: 410
+        height: 410
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,19 +237,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b369983378bd428da433a500ce7b5e6
+      spriteID: 5cc22045790cd4c1ab61fd9b41022d1d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ghost_Idle_1_Sheet_7
+      name: Hatto_Idle_7
       rect:
         serializedVersion: 2
-        x: 7560
+        x: 2870
         y: 0
-        width: 1080
-        height: 1080
+        width: 410
+        height: 410
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,47 +257,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb63c05fe60a74bbd8b5c09e7643767e
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ghost_Idle_1_Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 8640
-        y: 0
-        width: 1080
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 335406395eb34412da822dc56f7d3aa4
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ghost_Idle_1_Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 9720
-        y: 0
-        width: 1080
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: df448775baa604b09ab3c12244792113
+      spriteID: 54fd1f3fad1444689a3162118adb677f
       vertices: []
       indices: 
       edges: []
@@ -296,7 +265,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 3d4b3c585835e4110a6dbc19886cfacc
+    spriteID: 2ec24f188856e408b9fac56d5dce8f08
     vertices: []
     indices: 
     edges: []
