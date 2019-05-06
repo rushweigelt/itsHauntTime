@@ -31,8 +31,15 @@ public class PlayerMoveController : Singleton<PlayerMoveController>
         Vector2 input = touchInput.GetInput();
         
         MoveTowards(input);
-        //Animate(input);
-        Animate(input - (Vector2)transform.position);
+
+        if(touchInput.controlScheme.Equals(TouchInput.ControlScheme.FOLLOW_TAP))
+        {
+            Animate(input - (Vector2)transform.position);
+        }
+        else
+        {
+            Animate(input);
+        }
     }
 
     private void Animate(Vector2 input)
