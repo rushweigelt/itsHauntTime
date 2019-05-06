@@ -6,12 +6,12 @@ public class Timer : MonoBehaviour
 {
     //public int minutes;
     public float seconds;
-    public float maxSecs;
+    // public float maxSecs;
     public string time;
     // Start is called before the first frame update
     void Start()
     {
-        maxSecs = seconds;
+        // maxSecs = seconds;
     }
     // Update is called once per frame
     void Update()
@@ -39,7 +39,7 @@ public class Timer : MonoBehaviour
     IEnumerator StartTimer()
     {
         yield return new WaitForSeconds(1);
-        seconds -= 1;
+        seconds += 1;
     }
 
 }

@@ -2,20 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScareTarget : InteractableObject
+public class ScareTarget : MonoBehaviour
 {
-    public string state; //used to communicate states between objects, change to enum
+    public GameObject scareIcon;
+    public string scareState;
+    public string[] fears;
+    public BoxCollider2D bc;
+    public bool inRange;
 
     // Start is called before the first frame update
-    protected override void Start()
+    void Start()
     {
-        //inRange = false;
+        inRange = false;
     }
 
     // Update is called once per frame
-    protected override void Update()
+    void Update()
     {
-        base.Update();
+        bc = GetComponent<BoxCollider2D>();
     }
 
     protected void InitialState()
@@ -33,16 +37,22 @@ public class ScareTarget : InteractableObject
 
     }
 
-    protected override void Interact()
+    //if the player nears an interactable object, a thought bubble appears above the players head.
+    void OnTriggerEnter2D(Collider2D col)
     {
-        if (state == "Scareable")
+        if (col.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Scare Target was Scared");
-            state = "Scared";
+            inRange = true;
+            scareIcon.SetActive(true);
         }
-        else
+    }
+    //if the player leaves the range, disable thought bubble
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Tried to interact, but target is not yet scareable!");
+            inRange = false;
+            scareIcon.SetActive(false);
         }
     }
 }

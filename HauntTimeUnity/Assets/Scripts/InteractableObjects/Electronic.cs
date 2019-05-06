@@ -1,53 +1,38 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Electronic : InteractableObject
 {
     public bool isOn;
-    public ElectricalOutlet outlet; 
+    public ElectricalPlug outlet; 
+
+    /// <summary>
+    /// Event called when unplugged
+    /// </summary>
+    public UnityEvent onPoweredOn;
+
+    /// <summary>
+    /// Event called when plugged in
+    /// </summary>
+    public UnityEvent onPoweredOff;
 
     // Start is called before the first frame update
     protected override void Start()
     {
-        isOn = true;
+        base.Start();
+
+        // Add default listeners to plug events
+        onPoweredOn.AddListener(() => SetActive(true));
+        onPoweredOff.AddListener(() => SetActive(false));
     }
 
-    //Since this is a mid-class, we are going to use FixedUpdate here, that way we can use Update in the lowest class.
-    protected void FixedUpdate()
-    {
-        //check any electronic to see whether it is plugged in or not
-        CheckOutlet();
-    }
-
-    //the most skeleton of an electronic, this simply toggles it on and off via checking if it's plugged in. 
+    //the most skeleton of an electronic, this simply toggles it on and off
     //More complex, specific code will be used in a class-down. See Fan for an example
-    public void TurnOn()
+    public virtual void SetActive(bool active) 
     {
-        if (isOn == false)
-        {
-            isOn = true;
-        }
-    }
-
-    public void TurnOff()
-    {
-        if (isOn == true)
-        {
-            isOn = false;
-        }
-    }
-    //a function to check on any electronic's electricity status via checking the outlet.
-    //Will be run constantly via update.
-    public void CheckOutlet()
-    {
-        if (outlet.pluggedIn == false)
-        {
-            TurnOff();
-        }
-        else if (outlet.pluggedIn == true)
-        {
-            TurnOn();
-        }
+        // Debug.Log("Electronic.SetActive(" + active + ")");
+        isOn = active;
     }
 }

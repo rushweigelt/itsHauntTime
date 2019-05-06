@@ -6,13 +6,12 @@ public class SpriteSwapInteraction : InteractableObject
 {
     public Sprite initialSprite;
     public Sprite finalSprite;
-    public SpriteRenderer spriteRenderer;
+    SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     protected override void Start()
     {
-        // isUpright = true;
-        //spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
     protected override void Interact()
@@ -24,15 +23,4 @@ public class SpriteSwapInteraction : InteractableObject
             spriteRenderer.sprite = initialSprite;
         }
     }
-
-    void KnockOver()
-    {
-        spriteRenderer.sprite = finalSprite;
-    }
-
-    void Fix()
-    {
-        spriteRenderer.sprite = initialSprite;
-    }
-
 }

@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System;
  
+  /// <summary>
+ /// Provides helpful curve functions not found in System.Mathf
+ /// https://wiki.unity3d.com/index.php/Mathfx
+ /// </summary>
 public sealed class Mathfx
 {
     

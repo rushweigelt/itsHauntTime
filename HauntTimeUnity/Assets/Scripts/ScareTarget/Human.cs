@@ -4,40 +4,32 @@ using UnityEngine;
 
 public class Human : ScareTarget
 {
+    public string name;
     public Animator anim;
-    public Fan fan;
-    public Transform trans;
-    public Transform fridgeTrans;
-    public float StartTime;
-    public float duration;
+    int idleHash = Animator.StringToHash("human_fakeIdle");
+    int gettingUpHash = Animator.StringToHash("human_gettingUp");
 
     // Start is called before the first frame update
-    protected override void Start()
+    void Start()
     {
-        state = "Initial";
         anim = GetComponent<Animator>();
-        trans = GetComponent<Transform>();
-        StartTime = Time.time;
-
     }
 
     // Update is called once per frame
-    protected override void Update()
+    void Update()
     {
-        base.Update();
-        if (fan.isOn != true)
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            //Walk(fridgeTrans.position.x, fridgeTrans.position.y);
-            Walk(trans.position.x, fridgeTrans.position.x);
+            //AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
+            if (inRange == true)
+            {
+                anim.SetTrigger(gettingUpHash);
+            }
         }
-
     }
 
-    public void Walk(float posX, float posX2)
+    void Walk()
     {
-        float t = (Time.time - StartTime) / duration;
-        trans.position = new Vector3(Mathf.SmoothStep(posX, posX2, t), 0, 0);
-        state = "Fridge";
 
     }
 
@@ -61,10 +53,13 @@ public class Human : ScareTarget
 
     }
 
-    protected new void AlertedState()
+    protected new void ScaredState()
     {
 
     }
 
-    
+    protected new void AlertedState()
+    {
+
+    }
 }
