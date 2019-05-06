@@ -30,7 +30,8 @@ Build
 Assets/Resources/version.*
 Assets/Resources/target.*
 
-.vs/*
+#.vs/*
+.vs/
 *.ide
 *.vscode/
 
