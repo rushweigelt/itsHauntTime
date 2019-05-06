@@ -27,11 +27,12 @@ public class PlayerMoveController : Singleton<PlayerMoveController>
 
     void Update()
     {
-        // Get raw input (normalized vector)
+        // Get input (position of last touch)
         Vector2 input = touchInput.GetInput();
-        Move(input);
-        Animate(input);
         
+        MoveTowards(input);
+        //Animate(input);
+        Animate(input - (Vector2)transform.position);
     }
 
     private void Animate(Vector2 input)
@@ -48,10 +49,29 @@ public class PlayerMoveController : Singleton<PlayerMoveController>
         }
     }
 
+    /// <summary>
+    /// Move towards position at fixed speed
+    /// </summary>
+    /// <param name="target"></param>
+    public void MoveTowards(Vector2 target)
+    {
+        // Get vector towards target
+        Vector2 delta = target - (Vector2)transform.position;
+
+        // Ignore if not long enough (to avoid jittering around target)
+        if(delta.magnitude > touchInput.touchThreshold) {
+            Move(delta);
+        }
+    }
+
+    /// <summary>
+    /// Move in direction of input
+    /// </summary>
+    /// <param name="input"></param>
     private void Move(Vector2 input)
     {
-        // Scale input by move speed
-        Vector2 movement = input;
+        // Normalize input and scale by move speed
+        Vector2 movement = input.normalized;
         movement.x *= horizontalSpeed;
         movement.y *= verticalSpeed;
         

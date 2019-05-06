@@ -4,18 +4,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TouchInput : MonoBehaviour {
+public class TouchInput : Singleton<TouchInput> {
 
 	/// <summary>
 	/// Threshold after which player input will be registered as movement
 	/// </summary>
 	public float touchThreshold;
 
-	/// <summary>
-	/// Control scheme used for testing
-	/// </summary>
-	public enum ControlScheme {
-		FOLLOW_TOUCH
+    public Vector2 lastTouchPos;
+
+    /// <summary>
+    /// Control scheme used for testing
+    /// </summary>
+    public enum ControlScheme {
+		FOLLOW_DRAG,
+        FOLLOW_TAP
 	}
 
 	/// <summary>
@@ -23,24 +26,33 @@ public class TouchInput : MonoBehaviour {
 	/// </summary>
 	public ControlScheme controlScheme;
 
-	/// <summary>
-	/// Get input from touch screen
-	/// </summary>
-	public Vector2 GetInput()
+    private void Start()
+    {
+        lastTouchPos = Player.Instance.transform.position;
+    }
+
+    /// <summary>
+    /// Get input from touch screen
+    /// </summary>
+    public Vector2 GetInput()
 	{
 		// Touch input
 		Vector2 touchDelta = Vector2.zero;
 
-		// Handle using selected control scheme
-		switch(controlScheme) {
+        // Handle using selected control scheme
+        // TODO: determine platform and check for mouse/touch accordingly
+        switch (controlScheme) {
 			
-			// Follow touch
-			case ControlScheme.FOLLOW_TOUCH:
-				// Track mouse if being used
+			// Follow drag
+			case ControlScheme.FOLLOW_DRAG:
 				if(Input.GetMouseButton(0)) {
-					return GetFollowClickInput();
+					return GetFollowClickDragInput();
 				}
-				else return GetFollowTouchInput();
+				else return GetFollowDragInput();
+
+            // Follow tap (move towards last touched position)
+            case ControlScheme.FOLLOW_TAP:
+                return GetFollowClickTapInput();
 
 			default:
 				break;
@@ -49,13 +61,37 @@ public class TouchInput : MonoBehaviour {
 		return touchDelta;
 	}
 
-	// ------------------------------------------------------------------------------------
-    // --------------------------------- FOLLOW TOUCH INPUT -------------------------------
+    // ------------------------------------------------------------------------------------
+    // --------------------------------- FOLLOW TAP INPUT ---------------------------------
 
-	/// <summary>
-	/// Gets touch input for FOLLOW_TOUCH control scheme
-	/// </summary>
-    private Vector2 GetFollowTouchInput()
+    /// <summary>
+    /// Returns position of most recent touch
+    /// </summary>
+    /// <returns></returns>
+    private Vector2 GetFollowClickTapInput()
+    {
+        if (Input.GetMouseButtonDown(0)) {
+            lastTouchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Debug.Log("Received tap at " + lastTouchPos);
+        }
+
+        return lastTouchPos;
+    }
+
+    private Vector2 GetFollowTapInput()
+    {
+
+
+        return Vector2.zero;
+    }
+
+    // ------------------------------------------------------------------------------------
+    // --------------------------------- FOLLOW DRAG INPUT --------------------------------
+
+    /// <summary>
+    /// Gets touch input for FOLLOW_TOUCH control scheme
+    /// </summary>
+    private Vector2 GetFollowDragInput()
     {
         Vector2 touchInput = Vector2.zero;
 
@@ -72,7 +108,7 @@ public class TouchInput : MonoBehaviour {
 				Vector2 touchDelta = currentTouchPos - (Vector2)Player.Instance.transform.position;
 
 				// Clamp within square with width touchRadius
-				touchInput = touchDelta.normalized;
+				//touchInput = touchDelta.normalized;
 			}
 		}
 		
@@ -82,7 +118,7 @@ public class TouchInput : MonoBehaviour {
 	/// <summary>
 	/// Gets mouse input for FOLLOW_TOUCH control scheme
 	/// </summary>
-	private Vector2 GetFollowClickInput()
+	private Vector2 GetFollowClickDragInput()
 	{
 		Vector2 touchInput = Vector2.zero;
 		if(Input.GetMouseButton(0)) {

@@ -1024,7 +1024,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   touchThreshold: 0.2
-  controlScheme: 0
+  lastTouchPos: {x: 0, y: 0}
+  controlScheme: 1
 --- !u!1 &644566214
 GameObject:
   m_ObjectHideFlags: 0

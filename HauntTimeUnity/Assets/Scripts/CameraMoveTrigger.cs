@@ -26,6 +26,8 @@ public class CameraMoveTrigger : MonoBehaviour
                 // Switch to left room
                 Debug.Log("Moving to left room");
                 cameraController.MoveCamera(leftCameraViewpoint);
+
+                // TODO: move player fully past trigger
             }
 
             // Collision from left
@@ -33,6 +35,8 @@ public class CameraMoveTrigger : MonoBehaviour
                 // Switch to right room
                 Debug.Log("Moving to right room");
                 cameraController.MoveCamera(rightCameraViewpoint);
+
+                // TODO: move player fully past trigger
             }
         }
     }
