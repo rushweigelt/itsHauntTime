@@ -780,7 +780,7 @@ SpriteRenderer:
   m_SortingLayerID: -279416439
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fd9dcf43a6b9e4b27bf5cf3a260ddd45, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fb613196086592344bb88b5f96135a47, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -808,8 +808,6 @@ MonoBehaviour:
   fears: []
   bc: {fileID: 0}
   inRange: 0
-  name: 
-  anim: {fileID: 0}
 --- !u!95 &459383998
 Animator:
   serializedVersion: 3
