@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class Fan : Electronic
 {
@@ -12,20 +11,12 @@ public class Fan : Electronic
 
     ParticleSystem.MainModule pSystemMain;
 
-    AudioSource source;
-
-    public AudioClip rattle;
-
-    public Cat cat;
-
-
     protected override void Start()
     {
         base.Start();
 
         fanRange.enabled = true;
         pSystemMain = pSystem.main;
-        source = GetComponent<AudioSource>();
     }
     
     /// <summary>
@@ -45,17 +36,5 @@ public class Fan : Electronic
         // Stop particle system
         ParticleSystem.EmissionModule emission = pSystem.emission;
         emission.enabled = active;
-    }
-
-    //rattle
-    protected override void Interact()
-    {
-        Rattle();        
-    }
-
-    public void Rattle()
-    {
-        source.PlayOneShot(rattle);
-        cat.FanRattle.Invoke();
     }
 }
