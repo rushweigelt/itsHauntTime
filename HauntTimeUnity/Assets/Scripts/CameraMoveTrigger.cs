@@ -6,11 +6,22 @@ public class CameraMoveTrigger : MonoBehaviour
 {
     public CameraController cameraController;
 
-    public Transform leftCameraViewpoint;
+    //public Transform leftCameraViewpoint;
 
-    public Transform rightCameraViewpoint;
+    //public Transform rightCameraViewpoint;
 
-    
+    //public Transform MiddleCameraViewpoint;
+
+    public List<Transform> rooms = new List<Transform>();
+
+    int currentRoom;
+
+    public void Start()
+    {
+        currentRoom = 0;
+    }
+
+
     /// <summary>
     /// Sent when another object enters a trigger collider attached to this
     /// object (2D physics only).
@@ -25,7 +36,8 @@ public class CameraMoveTrigger : MonoBehaviour
             if(collisionPoint.x > transform.position.x) {
                 // Switch to left room
                 Debug.Log("Moving to left room");
-                cameraController.MoveCamera(leftCameraViewpoint);
+                cameraController.MoveCamera(rooms[currentRoom-1]);
+                currentRoom -= 1;
 
                 // TODO: move player fully past trigger
             }
@@ -34,7 +46,8 @@ public class CameraMoveTrigger : MonoBehaviour
             else if(collisionPoint.x < transform.position.x) {
                 // Switch to right room
                 Debug.Log("Moving to right room");
-                cameraController.MoveCamera(rightCameraViewpoint);
+                cameraController.MoveCamera(rooms[currentRoom+1]);
+                currentRoom += 1;
 
                 // TODO: move player fully past trigger
             }
