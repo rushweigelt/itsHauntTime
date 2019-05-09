@@ -907,6 +907,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6593173092333258042}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &359812443 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2090728073486744839, guid: c38324c6bae282b4c954d9796bef71c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 5520879944455379237}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &388285160
 GameObject:
   m_ObjectHideFlags: 0
@@ -3554,9 +3560,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 268284163932920933, guid: e9010e43ac45748db806a81278ffe203,
         type: 3}
-      propertyPath: scareIcon
+      propertyPath: interactPrompt
       value: 
-      objectReference: {fileID: 1474901859}
+      objectReference: {fileID: 359812443}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9010e43ac45748db806a81278ffe203, type: 3}
 --- !u!1001 &3637598694120802650

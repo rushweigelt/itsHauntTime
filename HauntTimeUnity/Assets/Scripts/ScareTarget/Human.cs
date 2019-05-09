@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Human : ScareTarget
+public class Human : InteractableObject
 {
     Animator anim;
 
-    public enum AnimationState { SITTING, STANDING_UP, SPOOKED, CLEANING, WALKING }
+    public enum AnimationState { SITTING, STANDING_UP, WALKING }
 
     /// <summary>
     /// Tells Animator which animation to play
@@ -17,19 +17,22 @@ public class Human : ScareTarget
     void Start()
     {
         anim = GetComponent<Animator>();
-        // TODO: set starting animation state
+    }
+
+    public void SetAnimationState(AnimationState state) 
+    {
+        // Set starting animation state
+        anim.SetInteger("State", (int)state);
+
+        // Update current state
+        animationState = state;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.R))
-        //{
-        //    //AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
-        //    if (inRange == true)
-        //    {
-        //        anim.SetTrigger(gettingUpHash);
-        //    }
-        //}
+        SetAnimationState(animationState);
     }
+
+    
 }
