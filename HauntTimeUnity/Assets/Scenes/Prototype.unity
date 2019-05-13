@@ -874,7 +874,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   dest: {fileID: 1207893555}
-  moveRate: 5
+  slowRate: 5
   Vacuum:
     m_PersistentCalls:
       m_Calls:

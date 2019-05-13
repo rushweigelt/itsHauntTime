@@ -51,7 +51,7 @@ public class Roomba : RemoteElectronic
     public void TurnOn()
     {
         Debug.Log("Roomba was turned on");
-        StartCoroutine(MoveToPosition(dest.transform.position, moveRate));
+        StartCoroutine(MoveToPosition(dest.transform.position, slowRate));
         isOn = true;
     }
 
