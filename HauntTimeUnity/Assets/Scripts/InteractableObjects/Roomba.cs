@@ -1,21 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Roomba : RemoteElectronic
 {
-    public ParticleSystem pSystem;
+    //public ParticleSystem pSystem;
 
     public GameObject dest;
 
-    ParticleSystem.MainModule pSystemMain;
+    //ParticleSystem.MainModule pSystemMain;
 
-    public float moveRate;
+    public float slowRate;
+
+    //Event listener for after thbe vacuum reaches it's destination.
+    public UnityEvent Vacuum;
+
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
-        pSystemMain = pSystem.main;
+        //pSystemMain = pSystem.main;
         isOn = false;
     }
 
@@ -27,8 +32,8 @@ public class Roomba : RemoteElectronic
         Debug.Log("Roomba.SetActive(" + active + ")");
 
         // Stop particle system
-        ParticleSystem.EmissionModule emission = pSystem.emission;
-        emission.enabled = active;
+        //ParticleSystem.EmissionModule emission = pSystem.emission;
+        //emission.enabled = active;
     }
 
     protected override void Interact()
@@ -46,16 +51,36 @@ public class Roomba : RemoteElectronic
     public void TurnOn()
     {
         Debug.Log("Roomba was turned on");
-        Vector3 velo = new Vector3 (moveRate, 0, 0);
-        while(dest.transform.position.x != transform.position.x)
-        {
-            transform.position += velo * Time.deltaTime;
-        }
+        StartCoroutine(MoveToPosition(dest.transform.position, moveRate));
         isOn = true;
     }
 
     public void TurnOff()
     {
         isOn = false;
+    }
+
+    //Drew's move code, for consistency's sake I reuse it here.
+    IEnumerator MoveToPosition(Vector3 target, float duration)
+    {
+        // Save original position
+        Vector3 originalPos = transform.position;
+
+        // Calculate speed from duration
+        float speed = 1 / duration;
+
+        // Lerp x towards target
+        float t = 0;
+        while (t < 1)
+        {
+            transform.position = Vector3.Lerp(originalPos, target, t);
+            t += speed * Time.deltaTime;
+            yield return null;
+        }
+        // Ensure we don't miss target
+        transform.position = target;
+
+        // Invoke post-move listener
+        Vacuum.Invoke();
     }
 }
