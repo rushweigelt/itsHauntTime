@@ -16,12 +16,17 @@ public class Roomba : RemoteElectronic
     //Event listener for after thbe vacuum reaches it's destination.
     public UnityEvent Vacuum;
 
+    //audio source and audio clip for indicating boomba is full post salt
+    AudioSource aSource;
+    public AudioClip fullBeep;
+
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
         //pSystemMain = pSystem.main;
         isOn = false;
+        aSource = GetComponent<AudioSource>();
     }
 
     public override void SetActive(bool active)
@@ -82,5 +87,9 @@ public class Roomba : RemoteElectronic
 
         // Invoke post-move listener
         Vacuum.Invoke();
+
+        aSource.PlayOneShot(fullBeep);
+
+        isOn = false;
     }
 }
