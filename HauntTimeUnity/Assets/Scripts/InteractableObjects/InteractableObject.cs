@@ -18,7 +18,7 @@ public abstract class InteractableObject : MonoBehaviour
     /// <summary>
     /// True if player is within interactRange
     /// </summary>
-    public bool inRange;
+    bool inRange;
 
     /// <summary>
     /// True if the player can interact with this object

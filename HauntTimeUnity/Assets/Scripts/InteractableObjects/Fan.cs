@@ -16,9 +16,6 @@ public class Fan : Electronic
 
     public AudioClip rattle;
 
-    public Cat cat;
-
-
     protected override void Start()
     {
         base.Start();
