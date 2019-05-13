@@ -18,6 +18,11 @@ public class Cat : InteractableObject
 
     public BoxCollider2D detectRange;
 
+    /// <summary>
+    /// Called after cat jumps (as soon as he lands)
+    /// </summary>
+    public UnityEvent afterJump;
+
     public float moveRate;
 
     //additional box collider for hiss-range
@@ -48,14 +53,23 @@ public class Cat : InteractableObject
 
     public void Jump()
     {
+        // Trigger jump on anim controller
+        anim.SetTrigger("Jump");
+
         Vector3 velo = new Vector3(moveRate, 0, 0);
         Debug.Log("Fan was rattled, cat should jump and the hitbox for hissing should be disabled.");
         hissBox.enabled = false;
+
         while(saltOb.transform.position.x >= transform.position.x)
         {
             transform.position += velo * Time.deltaTime;
         }
-        salt.CatJump.Invoke();
+
+        // Knock over salt
+        //salt.CatJump.Invoke();
+
+        // Invoke afterJump listeners
+        afterJump.Invoke();
     }
 
     void OnTriggerStay2D(Collider2D col)
@@ -64,6 +78,8 @@ public class Cat : InteractableObject
         {
             Debug.Log("Hiss");
             animationState = AnimationState.HISSING;
+
+            
         }
     }
 }

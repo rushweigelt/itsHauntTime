@@ -5,19 +5,15 @@ using UnityEngine.Events;
 
 public class SaltShaker : SpriteSwapInteraction
 {
-
     /// <summary>
-    /// Event called when cat jumps
+    /// Collider preventing player from passing
     /// </summary>
-    public UnityEvent CatJump;
-
     public GameObject saltWall;
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
         saltWall.SetActive(false);
-        CatJump.AddListener(() => Spill());
     }
 
     // Update is called once per frame
