@@ -12,27 +12,24 @@ public class Cat : InteractableObject
 
     public AnimationState animationState;
 
-    public SaltShaker salt;
+    public Transform jumpTarget;
 
-    public GameObject saltOb;
-
-    public BoxCollider2D detectRange;
+    public float jumpSpeed;
 
     /// <summary>
     /// Called after cat jumps (as soon as he lands)
     /// </summary>
     public UnityEvent afterJump;
 
-    public float moveRate;
-
     //additional box collider for hiss-range
     public BoxCollider2D hissBox;
+
+    public BoxCollider2D detectRange;
 
 
     // Start is called before the first frame update
     protected override void Start()
     {
-
         base.Start();
         anim = GetComponent<Animator>();
 
@@ -45,41 +42,69 @@ public class Cat : InteractableObject
         base.Update();
     }
 
-    public void Hiss()
+    public void SetHiss(bool hissing)
     {
-        Debug.Log("Hiss");
-        hissBox.enabled = true;
+        Debug.Log("Cat hissing: " + hissing);
+
+        // Set hiss collider active
+        hissBox.enabled = hissing;
+
+        // Set anim hissing field
+        anim.SetBool("Hissing", hissing);
+
+        //animationState = AnimationState.HISSING;
     }
 
     public void Jump()
     {
         // Trigger jump on anim controller
         anim.SetTrigger("Jump");
+        anim.SetBool("Sitting", false);
 
-        Vector3 velo = new Vector3(moveRate, 0, 0);
         Debug.Log("Fan was rattled, cat should jump and the hitbox for hissing should be disabled.");
         hissBox.enabled = false;
 
-        while(saltOb.transform.position.x >= transform.position.x)
-        {
-            transform.position += velo * Time.deltaTime;
-        }
+        // Jump towards target
+        float jumpHeight = 3f;
+        StartCoroutine(MoveToPosition(jumpTarget.position, jumpSpeed, jumpHeight));
+    }
 
-        // Knock over salt
-        //salt.CatJump.Invoke();
+    IEnumerator MoveToPosition(Vector3 target, float duration, float height) {
+        // Save original position
+        Vector3 originalPos = transform.position;
+
+        // Calculate speed from duration
+        float speed = 1 / duration;
+
+        // Lerp x towards target
+        float t = 0;
+        while(t < 1) {
+            transform.position = Vector3.Lerp(originalPos, target, t);
+            t += speed * Time.deltaTime;
+            yield return null;
+        }
+        // Ensure we don't miss target
+        transform.position = target;
 
         // Invoke afterJump listeners
         afterJump.Invoke();
     }
 
-    void OnTriggerStay2D(Collider2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
             Debug.Log("Hiss");
-            animationState = AnimationState.HISSING;
+            SetHiss(true);
+        }
+    }
 
-            
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Hiss");
+            SetHiss(false);
         }
     }
 }
