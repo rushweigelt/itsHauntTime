@@ -3767,6 +3767,11 @@ PrefabInstance:
       propertyPath: cat
       value: 
       objectReference: {fileID: 1398707450}
+    - target: {fileID: 3637598693976061649, guid: f41c14a60e5727d418844516f134b812,
+        type: 3}
+      propertyPath: rattle
+      value: 
+      objectReference: {fileID: 8300000, guid: 3415e36a7763c214f8797206a4ecc527, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f41c14a60e5727d418844516f134b812, type: 3}
 --- !u!1001 &5520879944455379237
