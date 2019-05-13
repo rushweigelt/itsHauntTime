@@ -20,16 +20,6 @@ public class Cat : InteractableObject
 
     public float moveRate;
 
-    /// <summary>
-    /// Event called when fan is rattled
-    /// </summary>
-    public UnityEvent FanRattle;
-
-    /// <summary>
-    /// Event called when plugged in
-    /// </summary>
-    public UnityEvent onPoweredOff;
-
     //additional box collider for hiss-range
     public BoxCollider2D hissBox;
 
@@ -41,13 +31,7 @@ public class Cat : InteractableObject
         base.Start();
         anim = GetComponent<Animator>();
 
-        //Listener for rattle
-
-        FanRattle.AddListener(() => Jump());
-        onPoweredOff.AddListener(() => Hiss());
-
         hissBox.enabled = true;
-
     }
 
     // Update is called once per frame
@@ -74,7 +58,6 @@ public class Cat : InteractableObject
         salt.CatJump.Invoke();
     }
 
-    /*
     void OnTriggerStay2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Player"))
@@ -83,5 +66,4 @@ public class Cat : InteractableObject
             animationState = AnimationState.HISSING;
         }
     }
-    */
 }

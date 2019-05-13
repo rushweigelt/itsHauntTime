@@ -47,15 +47,19 @@ public class Fan : Electronic
         emission.enabled = active;
     }
 
-    //rattle
     protected override void Interact()
     {
         Rattle();
     }
 
+    /// <summary>
+    /// Plays rattle sounds and shakes the fan a bit
+    /// </summary>
     public void Rattle()
     {
+        // Play sound effect
         source.PlayOneShot(rattle);
-        cat.FanRattle.Invoke();
+
+        // TODO: shake the fan a bit to show we rattled it
     }
 }

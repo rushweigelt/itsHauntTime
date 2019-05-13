@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public abstract class InteractableObject : MonoBehaviour
 {
@@ -37,6 +38,10 @@ public abstract class InteractableObject : MonoBehaviour
             if(Input.GetMouseButtonDown(0)) {
                 Vector2 touchPos = Input.mousePosition;
                 if(CheckTouch(touchPos) && canInteract) {
+                    // Call onInteract listeners
+                    onInteract.Invoke();
+
+                    // Call derived Interact() method
                     Interact();
                 }
             }
@@ -71,8 +76,13 @@ public abstract class InteractableObject : MonoBehaviour
     /// Must be overridden by derived class
     /// </summary>
     protected virtual void Interact() {}
-    
-    
+
+    /// <summary>
+    /// Event called on interaction
+    /// </summary>
+    public UnityEvent onInteract;
+
+
     /// <summary>
     /// Called when player enters interact range
     /// </summary>
