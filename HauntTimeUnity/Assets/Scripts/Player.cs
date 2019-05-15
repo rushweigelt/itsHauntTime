@@ -43,7 +43,7 @@ public class Player : Singleton<Player>
         // Update reflection sprite
         reflection.sprite = spriteRenderer.sprite;
         reflection.flipX = spriteRenderer.flipX;
-        reflection.color = spriteRenderer.color;
+        reflection.color = new Color (spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, spriteRenderer.color.a - .5f);
     }
 
     public void SetTransparent(bool transparent)

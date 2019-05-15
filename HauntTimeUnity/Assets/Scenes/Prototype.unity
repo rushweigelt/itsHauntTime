@@ -2109,7 +2109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1009614346}
   m_Layer: 0
-  m_Name: Bounds
+  m_Name: Impassable Boundaries
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3761,6 +3761,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2058407563 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6593173092376624454, guid: 28d7fe99fe7320c49a63f0868699062e,
+    type: 3}
+  m_PrefabInstance: {fileID: 6593173092333258042}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2058407567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058407563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc4f6fa73faab42b8ac835d700afc7e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCam: {fileID: 0}
+  constantBase: 4
 --- !u!1001 &268284163788126424
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4109,6 +4129,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.917542
+      objectReference: {fileID: 0}
+    - target: {fileID: 6593173092376624453, guid: 28d7fe99fe7320c49a63f0868699062e,
+        type: 3}
+      propertyPath: orthographic size
+      value: 6.72584
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28d7fe99fe7320c49a63f0868699062e, type: 3}
