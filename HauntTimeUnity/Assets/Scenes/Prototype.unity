@@ -894,6 +894,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   fullBeep: {fileID: 8300000, guid: 0fef49653dc1ab34386c27dddc6e2276, type: 3}
+  roombaAnimator: {fileID: 388285166}
 --- !u!82 &388285165
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3620,7 +3621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 0}
-  constantBase: 4
+  constantBase: 4.2
 --- !u!1001 &268284163788126424
 PrefabInstance:
   m_ObjectHideFlags: 0

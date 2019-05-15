@@ -20,11 +20,14 @@ public class Roomba : RemoteElectronic
     AudioSource aSource;
     public AudioClip fullBeep;
 
+    //Animator
+    public Animator roombaAnimator;
+
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
-        //pSystemMain = pSystem.main;
+        //pSystemMain = pSystem.main
         isOn = false;
         aSource = GetComponent<AudioSource>();
     }
@@ -58,11 +61,13 @@ public class Roomba : RemoteElectronic
         Debug.Log("Roomba was turned on");
         StartCoroutine(MoveToPosition(dest.transform.position, slowRate));
         isOn = true;
+        roombaAnimator.SetBool("TurnedOn", true);
     }
 
     public void TurnOff()
     {
         isOn = false;
+        roombaAnimator.SetBool("TurnedOn", false);
     }
 
     //Drew's move code, for consistency's sake I reuse it here.
