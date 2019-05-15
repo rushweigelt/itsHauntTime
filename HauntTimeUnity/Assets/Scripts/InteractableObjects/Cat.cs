@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -61,15 +62,26 @@ public class Cat : InteractableObject
         anim.SetTrigger("Jump");
         anim.SetBool("Sitting", false);
 
-        Debug.Log("Fan was rattled, cat should jump and the hitbox for hissing should be disabled.");
         hissBox.enabled = false;
 
-        // Jump towards target
+        // Height of jump
+        // TODO: actually use this height
         float jumpHeight = 3f;
-        StartCoroutine(MoveToPosition(jumpTarget.position, jumpSpeed, jumpHeight));
+
+        // Get jump duration
+        float duration = 0;
+        AnimationClip[] clips = anim.runtimeAnimatorController.animationClips;
+        foreach (AnimationClip clip in clips.Where(c => c.name.Contains("jump"))) {
+            duration += clip.length;
+        }
+
+        // Jump towards target
+        StartCoroutine(MoveToPosition(jumpTarget.position, duration, jumpHeight));
     }
 
     IEnumerator MoveToPosition(Vector3 target, float duration, float height) {
+        Debug.Log("Cat is jumping");
+
         // Save original position
         Vector3 originalPos = transform.position;
 
@@ -79,12 +91,15 @@ public class Cat : InteractableObject
         // Lerp x towards target
         float t = 0;
         while(t < 1) {
+            Debug.Log("T: " + t);
             transform.position = Vector3.Lerp(originalPos, target, t);
             t += speed * Time.deltaTime;
             yield return null;
         }
         // Ensure we don't miss target
         transform.position = target;
+
+        Debug.Log("Cat has landed");
 
         // Invoke afterJump listeners
         afterJump.Invoke();
