@@ -15,10 +15,11 @@ public class CameraSizer : MonoBehaviour
 
     void Start()
     {
-        float aspectDifference = 2 - mainCam.aspect;
+        float aspectDifference = 2.2f - mainCam.aspect;
 
-        Debug.Log(mainCam.aspect + "+" + mainCam.orthographicSize);
-        mainCam.orthographicSize = aspectDifference + constantBase*(aspectDifference + .95f);
+        Debug.Log(mainCam.aspect + "-----" + aspectDifference);
+        mainCam.orthographicSize = aspectDifference + constantBase*(aspectDifference + .9f);
+        Debug.Log(mainCam.orthographicSize);
     }
 
     // Update is called once per frame
