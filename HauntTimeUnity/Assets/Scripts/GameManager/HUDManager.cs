@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class HUDManager : MonoBehaviour
 {
-    public ScareBar scareBar;
     public Timer timer;
 
     // Start is called before the first frame update

@@ -827,7 +827,7 @@ SpriteRenderer:
   m_Size: {x: 5.01, y: 1.51}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &388285163
@@ -1455,7 +1455,6 @@ GameObject:
   - component: {fileID: 609866839}
   - component: {fileID: 609866838}
   - component: {fileID: 609866837}
-  - component: {fileID: 609866836}
   - component: {fileID: 609866841}
   m_Layer: 0
   m_Name: GameManager
@@ -1464,21 +1463,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &609866836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 609866835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65d8e78368afa8842accb6097dd29bb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bar: {fileID: 0}
-  emptyBar: {fileID: 0}
-  fillSliver: {fileID: 0}
 --- !u!114 &609866837
 MonoBehaviour:
   m_ObjectHideFlags: 0
