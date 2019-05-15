@@ -1475,6 +1475,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30d7e1a22b0719c4dbf126cd75dcfe42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  paused: 0
+  onPaused:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1923636009}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1295999392}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onUnpaused:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1923636009}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1295999392}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   hud: {fileID: 0}
 --- !u!114 &609866838
 MonoBehaviour:
@@ -1502,7 +1557,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45dcc314bef99464b97db0a16d32d48c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scareBar: {fileID: 0}
   timer: {fileID: 0}
 --- !u!4 &609866840
 Transform:
@@ -2665,6 +2719,12 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &1295999392 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1434135564, guid: c382b2fb5cdc954489fd32d4fab5b9cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 6866967280219852570}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1329907140
 GameObject:
   m_ObjectHideFlags: 0
@@ -3409,6 +3469,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1923636009 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6279781037761844631, guid: c382b2fb5cdc954489fd32d4fab5b9cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 6866967280219852570}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1953344833
 GameObject:
   m_ObjectHideFlags: 0
@@ -4170,6 +4236,20 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1434135566, guid: c382b2fb5cdc954489fd32d4fab5b9cc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 609866837}
+    - target: {fileID: 2086098828208172409, guid: c382b2fb5cdc954489fd32d4fab5b9cc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 609866837}
+    - target: {fileID: 508900569259206937, guid: c382b2fb5cdc954489fd32d4fab5b9cc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 609866837}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c382b2fb5cdc954489fd32d4fab5b9cc, type: 3}
 --- !u!1001 &8858565933930820416
