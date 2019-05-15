@@ -6,6 +6,8 @@ public class Player : Singleton<Player>
 {
     public GameObject interactPrompt;
 
+    public SpriteRenderer reflection;
+
     private SpriteRenderer spriteRenderer;
 
     /// <summary>
@@ -38,7 +40,10 @@ public class Player : Singleton<Player>
     // Update is called once per frame
     void Update()
     {
-        
+        // Update reflection on sprite
+        reflection.sprite = spriteRenderer.sprite;
+        reflection.flipX = spriteRenderer.flipX;
+        reflection.color = spriteRenderer.color;
     }
 
     public void SetTransparent(bool transparent)
