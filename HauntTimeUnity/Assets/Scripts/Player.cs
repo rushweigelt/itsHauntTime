@@ -40,7 +40,7 @@ public class Player : Singleton<Player>
     // Update is called once per frame
     void Update()
     {
-        // Update reflection on sprite
+        // Update reflection sprite
         reflection.sprite = spriteRenderer.sprite;
         reflection.flipX = spriteRenderer.flipX;
         reflection.color = spriteRenderer.color;
@@ -50,12 +50,12 @@ public class Player : Singleton<Player>
     {
         // Lerp towards transparent
         if(transparent) {
-            Debug.Log("Setting ghost to transparent");
+            //Debug.Log("Setting ghost to transparent");
             StartCoroutine(FadeTransparency(minTransparency));
         }
         // Lerp towards opaque
         else {
-            Debug.Log("Setting ghost to opaque");
+            //Debug.Log("Setting ghost to opaque");
             StartCoroutine(FadeTransparency(maxTransparency));
         }
     }
