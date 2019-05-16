@@ -5,3 +5,7 @@ Beep:
 
 Rattle:
 "Hit on Metal using Metal.arff" by Jorickhoofd of Freesound.org
+
+Clang:
+"Clang" by Morganpurkis of Freesound.org
+

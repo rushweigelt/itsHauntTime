@@ -59,6 +59,9 @@ TagManager:
   - name: TopEnviorn
     uniqueID: 3930984303
     locked: 0
+  - name: Furniture
+    uniqueID: 403760551
+    locked: 0
   - name: Player
     uniqueID: 49273803
     locked: 0
