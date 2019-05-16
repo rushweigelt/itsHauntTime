@@ -1,7 +1,14 @@
 fileFormatVersion: 2
 guid: e948db27948b543b892400129d4d3b9a
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Hatto2_idle_V3_sheet_0
+    21300002: Hatto2_idle_V3_sheet_1
+    21300004: Hatto2_idle_V3_sheet_2
+    21300006: Hatto2_idle_V3_sheet_3
+    21300008: Hatto2_idle_V3_sheet_4
+    21300010: Hatto2_idle_V3_sheet_5
+    21300012: Hatto2_idle_V3_sheet_6
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -40,7 +47,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,9 +76,160 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Hatto2_idle_V3_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 26
+        width: 227
+        height: 359
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39718207dbccf5745b20d94d7ce20e0a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hatto2_idle_V3_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 30
+        width: 225
+        height: 359
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 635ebbc28c8fd9c4c92a046d626101cf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hatto2_idle_V3_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 33
+        width: 226
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79a3786cd30389247ac028f88992a080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hatto2_idle_V3_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1305
+        y: 37
+        width: 227
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 496ad5389e09f1647a3d17cc8035fde4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hatto2_idle_V3_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1716
+        y: 33
+        width: 226
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2514d02560181fa409600d78b04e5f6c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hatto2_idle_V3_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 2125
+        y: 30
+        width: 227
+        height: 359
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12f36f8fb03489a4fa0e6d37ce29d5f6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hatto2_idle_V3_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 2536
+        y: 26
+        width: 225
+        height: 359
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba2824123ac706f498ca763f16884466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

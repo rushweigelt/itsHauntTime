@@ -1,7 +1,21 @@
 fileFormatVersion: 2
 guid: 34244685c50715f4aafc0c4c71be9a03
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Hatto2_idle_sheet_0
+    21300002: Hatto2_idle_sheet_1
+    21300004: Hatto2_idle_sheet_2
+    21300006: Hatto2_idle_sheet_3
+    21300008: Hatto2_idle_sheet_4
+    21300010: Hatto2_idle_sheet_5
+    21300012: Hatto2_idle_sheet_6
+    21300014: Hatto2_idle_sheet_7
+    21300016: Hatto2_idle_sheet_8
+    21300018: Hatto2_idle_sheet_9
+    21300020: Hatto2_idle_sheet_10
+    21300022: Hatto2_idle_sheet_11
+    21300024: Hatto2_idle_sheet_12
+    21300026: Hatto2_idle_sheet_13
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -40,7 +54,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,9 +83,300 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Hatto2_idle_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 1252
+        width: 232
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b07b3091e5009846a1563b4f9294eb9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hatto2_idle_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 1256
+        width: 229
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4687c285ca651e4fb19077a36c1d1c8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hatto2_idle_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 1264
+        width: 240
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7917543107cbc5e44882a3a4290a7f27
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hatto2_idle_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1304
+        y: 1267
+        width: 237
+        height: 357
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c1e24d18f9e08a48b9de3e83c09622a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hatto2_idle_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 860
+        width: 241
+        height: 357
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f1836f74f2e73f41842bcf176f005c8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hatto2_idle_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 864
+        width: 240
+        height: 357
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0b4d162b4c5d394cb5a94726d961c68
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hatto2_idle_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 858
+        width: 240
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0ee9238457205543a98b14a878cdaf2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hatto2_idle_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1304
+        y: 852
+        width: 237
+        height: 358
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 940da3abffcbb0d48a68b0dc133b2c8a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hatto2_idle_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 440
+        width: 232
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7de068f4072cce24991d4db997f01762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hatto2_idle_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 436
+        width: 229
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffd7f755300de7349964dac66cd41da6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hatto2_idle_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 432
+        width: 239
+        height: 357
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e45f5f8806d29ea44a21a309e94d4456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hatto2_idle_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1304
+        y: 428
+        width: 237
+        height: 357
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 966cf9ea1c82b864d865d0d3e30269df
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hatto2_idle_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 24
+        width: 241
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f03febe5466ab8348ad680f05a69619d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hatto2_idle_sheet_13
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 23
+        width: 237
+        height: 357
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bce8a1f456cad674c8460ec061e95d37
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
