@@ -14,6 +14,8 @@ public class Fan : Electronic
 
     AudioSource source;
 
+    Animator animator;
+
     public AudioClip rattle;
 
     protected override void Start()
@@ -23,6 +25,7 @@ public class Fan : Electronic
         fanRange.enabled = true;
         pSystemMain = pSystem.main;
         source = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
     }
 
     /// <summary>
@@ -42,6 +45,9 @@ public class Fan : Electronic
         // Stop particle system
         ParticleSystem.EmissionModule emission = pSystem.emission;
         emission.enabled = active;
+
+        // Start/stop fan animation
+        animator.SetBool("isOn", active);
     }
 
     protected override void Interact()
