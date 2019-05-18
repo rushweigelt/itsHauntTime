@@ -1187,7 +1187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRange: {fileID: 461057312}
   interactPrompt: {fileID: 1474901859}
-  canInteract: 1
+  canInteract: 0
   onInteract:
     m_PersistentCalls:
       m_Calls: []

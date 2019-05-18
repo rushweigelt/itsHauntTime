@@ -25,24 +25,43 @@ public abstract class InteractableObject : MonoBehaviour
     /// </summary>
     public bool canInteract = true;
 
+    UnityEvent onPlayerEnterTrigger = new UnityEvent();
+
+    UnityAction interactListener;
+
     // Start is called before the first frame update. Leave empty, to not interfere with initializing subclasses
     protected virtual void Start()
     {
-   
+        interactListener = (() => {
+            Debug.Log(name + ".Interact()");
+
+            // Call onInteract listeners
+            onInteract.Invoke();
+
+            // Call derived Interact() method
+            Interact();
+        });
     }
     // Update is called once per frame. Again, leave empty to avoid interfering with subclass update functions
     protected virtual void Update()
     {
-        if(inRange) {
-            // TODO: replace mouse detection with touch detection before building to mobile
-            if(Input.GetMouseButtonDown(0)) {
-                Vector2 touchPos = Input.mousePosition;
-                if(CheckTouch(touchPos) && canInteract) {
-                    // Call onInteract listeners
-                    onInteract.Invoke();
+        if (Input.GetMouseButtonDown(0))
+        {
+            // Reset listeners on click
+            onPlayerEnterTrigger.RemoveAllListeners();
 
-                    // Call derived Interact() method
-                    Interact();
+            // Get touch position
+            Vector2 touchPos = Input.mousePosition;
+            if (CheckTouch(touchPos) && canInteract) {
+                // Interact immediately if already in range
+                if(inRange) {
+                    interactListener.Invoke();
+                }
+                // Otherwise wait until we are in range to interact
+                else
+                {
+                    Debug.Log(name + " | Adding Interact() listener");
+                    onPlayerEnterTrigger.AddListener(interactListener);
                 }
             }
         }
@@ -91,6 +110,10 @@ public abstract class InteractableObject : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
+            // Invoke listeners, then remove them
+            onPlayerEnterTrigger.Invoke();
+            onPlayerEnterTrigger.RemoveAllListeners();
+
             // Enable inRange and interact prompt
             inRange = true;
             interactPrompt.SetActive(true);

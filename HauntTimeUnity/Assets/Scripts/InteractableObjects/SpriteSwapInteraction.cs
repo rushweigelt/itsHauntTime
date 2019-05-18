@@ -11,6 +11,7 @@ public class SpriteSwapInteraction : InteractableObject
     // Start is called before the first frame update
     protected override void Start()
     {
+        base.Start();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
