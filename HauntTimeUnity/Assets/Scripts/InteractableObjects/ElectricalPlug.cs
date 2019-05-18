@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ElectricalPlug : InteractableObject
+public class ElectricalPlug : SpriteSwapInteraction
 {
     public bool pluggedIn;
 
@@ -21,6 +21,7 @@ public class ElectricalPlug : InteractableObject
 
     protected override void Interact()
     {
+        base.Interact();
         // Unplug if plugged in
         if (pluggedIn) {
             electronic.onPoweredOff.Invoke();

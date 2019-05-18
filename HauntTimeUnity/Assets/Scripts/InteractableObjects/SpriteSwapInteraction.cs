@@ -17,7 +17,6 @@ public class SpriteSwapInteraction : InteractableObject
 
     protected override void Interact()
     {
-        Debug.Log("Called base interact");
         if(spriteRenderer.sprite == initialSprite) {
             spriteRenderer.sprite = finalSprite;
         }
