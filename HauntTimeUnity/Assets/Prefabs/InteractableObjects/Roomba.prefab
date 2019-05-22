@@ -47,9 +47,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a596a5d30d4a52346b2e6e7f3425b76a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canInteract: 1
   interactRange: {fileID: 8299512989903281340}
   interactPrompt: {fileID: 0}
-  canInteract: 1
+  playSound: 1
+  interactSound: 7
   onInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -84,7 +86,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  fullBeep: {fileID: 8300000, guid: 0fef49653dc1ab34386c27dddc6e2276, type: 3}
   roombaAnimator: {fileID: 8299512989903281339}
 --- !u!212 &8299512989903281343
 SpriteRenderer:
