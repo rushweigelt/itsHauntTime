@@ -47,17 +47,6 @@ public class Fan : Electronic
 
     protected override void Interact()
     {
-        Rattle();
-    }
-
-    /// <summary>
-    /// Plays rattle sounds and shakes the fan a bit
-    /// </summary>
-    public void Rattle()
-    {
-        // Play sound effect
-        SoundController.Instance.PlaySoundEffect(SoundController.SoundType.FAN_RATTLE);
-
         // TODO: shake the fan a bit to show we rattled it
     }
 }

@@ -7,6 +7,7 @@ public class SoundController : Singleton<SoundController>
 {
     public enum SoundType
     {
+        NONE,
         MAIN_MENU,
         GAME,
 

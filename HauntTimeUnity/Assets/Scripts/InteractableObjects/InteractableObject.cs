@@ -1,10 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEditor;
 
 public abstract class InteractableObject : MonoBehaviour
 {
+    [Header("Interactable Object Settings")]
+    /// <summary>
+    /// True if the player can interact with this object
+    /// </summary>
+    public bool canInteract = true;
+
     /// <summary>
     /// Zone within which the player can interact with this object
     /// </summary>
@@ -20,10 +28,10 @@ public abstract class InteractableObject : MonoBehaviour
     /// </summary>
     bool inRange;
 
-    /// <summary>
-    /// True if the player can interact with this object
-    /// </summary>
-    public bool canInteract = true;
+    [Header("Sound Effect Settings")]
+
+    public bool playSound = false;
+    public SoundController.SoundType interactSound;
 
     UnityEvent onPlayerEnterTrigger = new UnityEvent();
 
@@ -32,12 +40,18 @@ public abstract class InteractableObject : MonoBehaviour
     // Start is called before the first frame update. Leave empty, to not interfere with initializing subclasses
     protected virtual void Start()
     {
+        // Code to be executed on player interaction
         interactListener = (() => {
             Debug.Log(name + ".Interact()");
 
             // Call onInteract listeners
             onInteract.Invoke();
 
+            // Play sound if needed
+            if(playSound) {
+                SoundController.Instance.PlaySoundEffect(interactSound);
+            }
+            
             // Call derived Interact() method
             Interact();
         });
@@ -139,3 +153,4 @@ public abstract class InteractableObject : MonoBehaviour
         }
     }
 }
+
