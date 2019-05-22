@@ -27,6 +27,7 @@ public class SoundController : Singleton<SoundController>
 
     public List<SoundTrack> backgroundMusic;
 
+    [Space(10)]
     public List<SoundTrack> soundEffects;
     
 
@@ -51,7 +52,7 @@ public class SoundController : Singleton<SoundController>
     /// <summary>
     /// Plays sound effect associated with SoundType
     /// </summary>
-    /// <param name="type"></param>
+    /// <param name="type">SoundType corresponding to desired sound effect (if multiple sound effects found, will choose one at random)</param>
     public void PlaySoundEffect(SoundType type)
     {
         SoundTrack track = soundEffects.Find(s => s.type == type);
