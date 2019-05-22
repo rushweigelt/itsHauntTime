@@ -1283,7 +1283,7 @@ MonoBehaviour:
   onGameOver:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6866967280219852572}
+      - m_Target: {fileID: 692730085916064534}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -3573,6 +3573,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCam: {fileID: 0}
   constantBase: 4.75
+--- !u!1 &692730085916064534 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 692730085916064534, guid: c382b2fb5cdc954489fd32d4fab5b9cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 6866967280219852570}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3637598694120802650
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4094,11 +4100,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6279781037761844631, guid: c382b2fb5cdc954489fd32d4fab5b9cc,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1434135566, guid: c382b2fb5cdc954489fd32d4fab5b9cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4113,14 +4114,9 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 609866837}
-    - target: {fileID: 4357893567217827981, guid: c382b2fb5cdc954489fd32d4fab5b9cc,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1275910742, guid: c382b2fb5cdc954489fd32d4fab5b9cc, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_Name
+      value: Text
       objectReference: {fileID: 0}
     - target: {fileID: 1275910744, guid: c382b2fb5cdc954489fd32d4fab5b9cc, type: 3}
       propertyPath: m_havePropertiesChanged
@@ -4129,10 +4125,6 @@ PrefabInstance:
     - target: {fileID: 1275910744, guid: c382b2fb5cdc954489fd32d4fab5b9cc, type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1275910744, guid: c382b2fb5cdc954489fd32d4fab5b9cc, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c382b2fb5cdc954489fd32d4fab5b9cc, type: 3}
@@ -4148,12 +4140,6 @@ MonoBehaviour:
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &6866967280219852572 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1275910742, guid: c382b2fb5cdc954489fd32d4fab5b9cc,
-    type: 3}
-  m_PrefabInstance: {fileID: 6866967280219852570}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7777256154337953481
 PrefabInstance:
   m_ObjectHideFlags: 0
