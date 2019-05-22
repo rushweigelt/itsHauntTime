@@ -139,7 +139,7 @@ SpriteRenderer:
   m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &3637598693976061649
@@ -156,8 +156,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRange: {fileID: 3637598693976061655}
   interactPrompt: {fileID: 0}
-  inRange: 0
   canInteract: 1
+  onInteract:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   isOn: 1
   outlet: {fileID: 0}
   onPoweredOn:
@@ -172,8 +176,7 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   fanRange: {fileID: 3637598693426951998}
   pSystem: {fileID: 3637598694738970004}
-  rattle: {fileID: 8300000, guid: 95a41e99ba434fa45acf24b290a1c2e9, type: 3}
-  cat: {fileID: 0}
+  rattle: {fileID: 0}
 --- !u!61 &3637598693976061655
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -187,7 +190,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.5686664, y: -0.95554495}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -198,7 +201,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.34, y: 4.77}
+  m_Size: {x: 1.494166, y: 5.2827306}
   m_EdgeRadius: 0
 --- !u!50 &3637598693976061652
 Rigidbody2D:
