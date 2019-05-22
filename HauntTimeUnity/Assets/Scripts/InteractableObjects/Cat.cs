@@ -123,6 +123,9 @@ public class Cat : InteractableObject
         {
             Debug.Log("Hiss");
             SetHiss(true);
+
+            // Play hiss sound effect
+            SoundController.Instance.PlaySoundEffect(SoundController.SoundType.CAT_HISS);
         }
     }
 
