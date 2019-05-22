@@ -3,44 +3,76 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class OurGameManager : MonoBehaviour
+public class OurGameManager : Singleton<OurGameManager>
 {
     public bool paused;
 
-    public UnityEvent onPaused;
-
-    public UnityEvent onUnpaused;
-
-    public HUDManager hud;
-    // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 1f;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
     }
 
+    /// <summary>
+    /// Freezes/unfreezes game
+    /// </summary>
+    /// <param name="active">Unfreezes game if true, freezes if false</param>
+    private void SetGameActive(bool active)
+    {
+        // Pause game
+        paused = !active;
+        Time.timeScale = active ? 1f : 0f;
+    }
+
+    /// <summary>
+    /// Pause game and update UI accordingly
+    /// </summary>
     public void Pause()
     {
         if(!paused)
         {
-            paused = true;
-            Time.timeScale = 0f;
-            onPaused.Invoke();
+            // Call HUD events
+            HUDManager.Instance.onPaused.Invoke();
+
+            SetGameActive(false);
         }
     }
 
+    /// <summary>
+    /// Unpause game and update UI accordingly
+    /// </summary>
     public void unPause()
     {
         if(paused)
         {
-            paused = false;
-            Time.timeScale = 1f;
-            onUnpaused.Invoke();
+            // Call HUD events
+            HUDManager.Instance.onUnpaused.Invoke();
+
+            // Unpause game
+            SetGameActive(true);
+        }
+    }
+
+    public void GameOver(bool playerWon)
+    {
+        // Call HUD events
+        HUDManager.Instance.onGameOver.Invoke();
+        SetGameActive(false);
+        
+        // TODO: handle game over condition
+        if (playerWon)
+        {
+            // set "you win!" text
+
+        }
+        else
+        {
+            // set "you lose..." text
+
         }
     }
 }

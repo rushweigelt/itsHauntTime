@@ -7,9 +7,6 @@ public class Human : InteractableObject
 {
     Animator anim;
 
-    //TEMPORARY game ob for endgame text, just until we get a real endgame manager
-    public GameObject text;
-
     public enum AnimationState { SITTING, STANDING_UP, WALKING }
 
     /// <summary>
@@ -32,7 +29,6 @@ public class Human : InteractableObject
     {
         base.Start();
         anim = GetComponent<Animator>();
-        text.SetActive(false);
     }
 
     public void SetAnimationState(AnimationState state) 
@@ -116,8 +112,7 @@ public class Human : InteractableObject
         //scare animation
 
         //game over
-        text.SetActive(true);
-        Time.timeScale = 0;
+        OurGameManager.Instance.GameOver(true);
 
     }
 
