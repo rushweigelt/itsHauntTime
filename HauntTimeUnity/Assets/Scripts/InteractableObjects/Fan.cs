@@ -12,11 +12,7 @@ public class Fan : Electronic
 
     ParticleSystem.MainModule pSystemMain;
 
-    AudioSource source;
-
     Animator animator;
-
-    public AudioClip rattle;
 
     protected override void Start()
     {
@@ -24,7 +20,6 @@ public class Fan : Electronic
 
         fanRange.enabled = true;
         pSystemMain = pSystem.main;
-        source = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
     }
 
@@ -61,7 +56,7 @@ public class Fan : Electronic
     public void Rattle()
     {
         // Play sound effect
-        source.PlayOneShot(rattle);
+        SoundController.Instance.PlaySoundEffect(SoundController.SoundType.FAN_RATTLE);
 
         // TODO: shake the fan a bit to show we rattled it
     }

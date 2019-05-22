@@ -13,16 +13,11 @@ public class SaltShaker : SpriteSwapInteraction
     //an event to signal an audio cue worth investigating has occured
     public UnityEvent audioInvestigate;
 
-    //audio of salt spilling
-    AudioSource aSource;
-    public AudioClip clang;
-
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
         saltWall.SetActive(false);
-        aSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -34,10 +29,15 @@ public class SaltShaker : SpriteSwapInteraction
     public void Spill()
     {
         base.Interact();
-        saltWall.SetActive(true);
-        aSource.PlayOneShot(clang);
-        audioInvestigate.Invoke();
 
+        // Activate spilled salt trail (blocks hatto from progressing)
+        saltWall.SetActive(true);
+
+        // Play sound effect of salt shaker hitting floor
+        SoundController.Instance.PlaySoundEffect(SoundController.SoundType.CLANG);
+
+        // Call event associated with salt falling over
+        audioInvestigate.Invoke();
     }
 
     public void BlowAway()
