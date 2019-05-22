@@ -13,7 +13,9 @@ public class SoundController : Singleton<SoundController>
 
         ROOMBA_BEEP,
         CLANG,
-        FAN_RATTLE
+        FAN_RATTLE,
+        CAT_HISS,
+        UNPLUG
     }
 
     [System.Serializable]

@@ -105,7 +105,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7777256154730851287}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.51, y: -5.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -199,9 +199,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38e322b4c8ea84de3b3c9a6daacaa959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canInteract: 1
   interactRange: {fileID: 7777256154730851305}
   interactPrompt: {fileID: 0}
-  canInteract: 1
+  playSound: 1
+  interactSound: 7
   onInteract:
     m_PersistentCalls:
       m_Calls: []
