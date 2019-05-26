@@ -29,7 +29,7 @@ public class CameraMoveTrigger : MonoBehaviour
     /// <param name="other">The other Collider2D involved in this collision.</param>
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Player") {
+        if(other.gameObject.CompareTag("Player")) {
             Vector2 collisionPoint = other.gameObject.transform.position;
 
             // Collision from right
@@ -37,7 +37,7 @@ public class CameraMoveTrigger : MonoBehaviour
                 // Switch to left room
                 Debug.Log("Moving to left room");
                 cameraController.MoveCamera(rooms[currentRoom-1]);
-                currentRoom -= 1;
+                currentRoom--;
 
                 // TODO: move player fully past trigger
             }
@@ -47,7 +47,7 @@ public class CameraMoveTrigger : MonoBehaviour
                 // Switch to right room
                 Debug.Log("Moving to right room");
                 cameraController.MoveCamera(rooms[currentRoom+1]);
-                currentRoom += 1;
+                currentRoom++;
 
                 // TODO: move player fully past trigger
             }
