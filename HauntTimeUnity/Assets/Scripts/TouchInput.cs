@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TouchInput : Singleton<TouchInput> {
+public class TouchInput : MonoBehaviour {
 
 	/// <summary>
 	/// Threshold after which player input will be registered as movement

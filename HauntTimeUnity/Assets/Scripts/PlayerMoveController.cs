@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(TouchInput), typeof(SpriteRenderer), typeof(Rigidbody2D))]
 public class PlayerMoveController : Singleton<PlayerMoveController>
 {
     Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
+    TouchInput touchInput;
 
     public float horizontalSpeed;
     public float verticalSpeed;
@@ -16,7 +18,6 @@ public class PlayerMoveController : Singleton<PlayerMoveController>
     /// </summary>
     public bool canMove = true;
 
-    public TouchInput touchInput;
 
     enum Direction {
         LEFT,
@@ -29,6 +30,7 @@ public class PlayerMoveController : Singleton<PlayerMoveController>
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        touchInput = GetComponent<TouchInput>();
     }
 
     void Update()
@@ -38,7 +40,6 @@ public class PlayerMoveController : Singleton<PlayerMoveController>
 
         // Handle movement input if movement unlocked
         MoveTowards(input);
-        
 
         // Handle animation based on touch input scheme
         if(touchInput.controlScheme.Equals(TouchInput.ControlScheme.FOLLOW_TAP)) {
