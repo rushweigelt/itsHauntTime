@@ -23,6 +23,8 @@ public class Human : InteractableObject
     //post-arrival at cat scold event
     public UnityEvent scold;
 
+    //Use for Tutorial
+    public bool isTutorial;
 
     // Start is called before the first frame update
     protected override void Start()
@@ -104,7 +106,15 @@ public class Human : InteractableObject
 
     protected override void Interact()
     {
-        Scare();
+        if (isTutorial)
+        {
+
+        }
+        else
+        {
+            Scare();
+        }
+        
     }
 
     public void Scare()

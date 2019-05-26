@@ -22,17 +22,21 @@ public class SwitchWallWriting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textTimer += Time.deltaTime;
-        if(textTimer >= textLimit)
+        if (!GlobalManager.Instance.controlLockOn)
         {
-            textTimer = 0;
-            textDisplays[currentlyShown].SetActive(false);
-            currentlyShown++;
-            if (currentlyShown == textDisplays.Length)
+            textTimer += Time.deltaTime;
+            if (textTimer >= textLimit)
             {
-                currentlyShown = 0;
+                textTimer = 0;
+                textDisplays[currentlyShown].SetActive(false);
+                currentlyShown++;
+                if (currentlyShown == textDisplays.Length)
+                {
+                    currentlyShown = 0;
+                }
+                textDisplays[currentlyShown].SetActive(true);
             }
-            textDisplays[currentlyShown].SetActive(true);
         }
+        
     }
 }

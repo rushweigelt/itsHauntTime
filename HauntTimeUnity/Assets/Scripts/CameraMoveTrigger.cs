@@ -13,12 +13,21 @@ public class CameraMoveTrigger : MonoBehaviour
     //public Transform MiddleCameraViewpoint;
 
     public List<Transform> rooms = new List<Transform>();
-
+    public bool startOnLeft;
     int currentRoom;
+
 
     public void Start()
     {
-        currentRoom = 0;
+        if (startOnLeft)
+        {
+            currentRoom = 0;
+        }
+        else
+        {
+            currentRoom = 1;
+        }
+        
     }
 
 

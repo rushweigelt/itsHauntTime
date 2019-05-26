@@ -29,8 +29,11 @@ public class PlayerMoveController : Singleton<PlayerMoveController>
     {
         // Get input (position of last touch)
         Vector2 input = touchInput.GetInput();
-        
-        MoveTowards(input);
+
+        if (!GlobalManager.Instance.controlLockOn)
+        {
+            MoveTowards(input);
+        }
 
         if(touchInput.controlScheme.Equals(TouchInput.ControlScheme.FOLLOW_TAP))
         {
