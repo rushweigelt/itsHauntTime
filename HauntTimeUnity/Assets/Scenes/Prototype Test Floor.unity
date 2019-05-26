@@ -1189,6 +1189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seconds: 120
   time: 
+  txt: {fileID: 0}
 --- !u!114 &609866839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1641,7 +1642,7 @@ MonoBehaviour:
   rooms:
   - {fileID: 72677250}
   - {fileID: 251679627}
-  startOnLeft: 0
+  startOnLeft: 1
 --- !u!1 &856453745
 GameObject:
   m_ObjectHideFlags: 0
@@ -1751,6 +1752,32 @@ Transform:
   m_Father: {fileID: 337463942}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &873335093 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637598693426951992, guid: f41c14a60e5727d418844516f134b812,
+    type: 3}
+  m_PrefabInstance: {fileID: 3637598694120802650}
+  m_PrefabAsset: {fileID: 0}
+--- !u!249 &873335096
+AreaEffector2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873335093}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGlobalAngle: 1
+  m_ForceAngle: 180
+  m_ForceMagnitude: 400
+  m_ForceVariation: 0
+  m_ForceTarget: 0
+  m_Drag: 0
+  m_AngularDrag: 0
 --- !u!114 &899295598 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 268284163932920933, guid: e9010e43ac45748db806a81278ffe203,
@@ -1987,7 +2014,7 @@ MonoBehaviour:
   rooms:
   - {fileID: 251679627}
   - {fileID: 860100735}
-  startOnLeft: 0
+  startOnLeft: 1
 --- !u!61 &1141147119
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3565,6 +3592,16 @@ PrefabInstance:
       propertyPath: outlet
       value: 
       objectReference: {fileID: 461057314}
+    - target: {fileID: 3637598693426951998, guid: f41c14a60e5727d418844516f134b812,
+        type: 3}
+      propertyPath: m_UsedByEffector
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637598693426951998, guid: f41c14a60e5727d418844516f134b812,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f41c14a60e5727d418844516f134b812, type: 3}
 --- !u!1001 &4369290397267347496
@@ -3806,16 +3843,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 4357893567217827981, guid: c382b2fb5cdc954489fd32d4fab5b9cc,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 692730085916064534, guid: c382b2fb5cdc954489fd32d4fab5b9cc,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6866967279239890537, guid: c382b2fb5cdc954489fd32d4fab5b9cc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3919,6 +3946,16 @@ PrefabInstance:
     - target: {fileID: 6866967279239890537, guid: c382b2fb5cdc954489fd32d4fab5b9cc,
         type: 3}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357893567217827981, guid: c382b2fb5cdc954489fd32d4fab5b9cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 692730085916064534, guid: c382b2fb5cdc954489fd32d4fab5b9cc,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1434135566, guid: c382b2fb5cdc954489fd32d4fab5b9cc, type: 3}
