@@ -2098,7 +2098,7 @@ MonoBehaviour:
   - {fileID: 72677250}
   - {fileID: 251679627}
   - {fileID: 860100735}
-  startOnLeft: 0
+  startOnLeft: 1
 --- !u!1 &856453745
 GameObject:
   m_ObjectHideFlags: 0
