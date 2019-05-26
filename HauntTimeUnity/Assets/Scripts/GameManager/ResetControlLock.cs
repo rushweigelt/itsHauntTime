@@ -7,9 +7,10 @@ public class ResetControlLock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (!GlobalManager.Instance.controlLockOn)
+        // Lock player movement if unlocked
+        if (PlayerMoveController.Instance.canMove)
         {
-            GlobalManager.Instance.controlLockOn = true;
+            PlayerMoveController.Instance.canMove = false;
             Destroy(gameObject);
         }
         else

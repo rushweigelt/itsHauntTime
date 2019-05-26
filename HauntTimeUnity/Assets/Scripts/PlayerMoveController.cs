@@ -7,8 +7,14 @@ public class PlayerMoveController : Singleton<PlayerMoveController>
 {
     Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
+
     public float horizontalSpeed;
     public float verticalSpeed;
+
+    /// <summary>
+    /// Set true to enable player movement or false to lock it
+    /// </summary>
+    public bool canMove = true;
 
     public TouchInput touchInput;
 
@@ -30,17 +36,15 @@ public class PlayerMoveController : Singleton<PlayerMoveController>
         // Get input (position of last touch)
         Vector2 input = touchInput.GetInput();
 
-        if (!GlobalManager.Instance.controlLockOn)
-        {
-            MoveTowards(input);
-        }
+        // Handle movement input if movement unlocked
+        MoveTowards(input);
+        
 
-        if(touchInput.controlScheme.Equals(TouchInput.ControlScheme.FOLLOW_TAP))
-        {
+        // Handle animation based on touch input scheme
+        if(touchInput.controlScheme.Equals(TouchInput.ControlScheme.FOLLOW_TAP)) {
             Animate(input - (Vector2)transform.position);
         }
-        else
-        {
+        else {
             Animate(input);
         }
     }
@@ -65,12 +69,14 @@ public class PlayerMoveController : Singleton<PlayerMoveController>
     /// <param name="target"></param>
     public void MoveTowards(Vector2 target)
     {
-        // Get vector towards target
-        Vector2 delta = target - (Vector2)transform.position;
+        if(canMove) {
+            // Get vector towards target
+            Vector2 delta = target - (Vector2)transform.position;
 
-        // Ignore if not long enough (to avoid jittering around target)
-        if(delta.magnitude > touchInput.touchThreshold) {
-            Move(delta);
+            // Ignore if not long enough (to avoid jittering around target)
+            if (delta.magnitude > touchInput.touchThreshold) {
+                Move(delta);
+            }
         }
     }
 
@@ -86,30 +92,5 @@ public class PlayerMoveController : Singleton<PlayerMoveController>
         movement.y *= verticalSpeed;
         
         rb.MovePosition((Vector2)transform.position + movement);
-    }
-
-    Vector2 GetKeyboardInput()
-    {
-        Vector2 movement = Vector2.zero;
-
-        // Up
-        if(Input.GetKey(KeyCode.W)){
-            movement += Vector2.up * verticalSpeed;
-        }
-        // Down
-        else if(Input.GetKey(KeyCode.S)){
-            movement += Vector2.down * verticalSpeed;
-        }
-
-        // Left
-        if(Input.GetKey(KeyCode.A)){
-            movement += Vector2.left * horizontalSpeed;
-        }
-        // Right
-        else if(Input.GetKey(KeyCode.D)){
-            movement += Vector2.right * horizontalSpeed;
-        }
-
-        return movement;
     }
 }

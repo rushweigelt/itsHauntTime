@@ -16,6 +16,9 @@ public class StartLevelTimer : MonoBehaviour
     {
         currentlyShown = 0;
         flashes[currentlyShown].SetActive(true);
+
+        // Lock player movement
+        PlayerMoveController.Instance.canMove = false;
     }
 
     // Update is called once per frame
@@ -24,7 +27,7 @@ public class StartLevelTimer : MonoBehaviour
 
         if(currentlyShown == flashes.Length)
         {
-            GlobalManager.Instance.controlLockOn = false;
+            PlayerMoveController.Instance.canMove = true;
             Destroy(gameObject);
         }
         numberTimer += Time.deltaTime;

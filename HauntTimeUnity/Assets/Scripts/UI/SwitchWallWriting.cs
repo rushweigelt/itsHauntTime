@@ -22,7 +22,7 @@ public class SwitchWallWriting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!GlobalManager.Instance.controlLockOn)
+        if (PlayerMoveController.Instance.canMove)
         {
             textTimer += Time.deltaTime;
             if (textTimer >= textLimit)
