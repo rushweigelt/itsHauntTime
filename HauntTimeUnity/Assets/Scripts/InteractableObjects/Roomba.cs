@@ -92,6 +92,6 @@ public class Roomba : RemoteElectronic
         //aSource.PlayOneShot(fullBeep);
         SoundController.Instance.PlaySoundEffect(SoundController.SoundType.ROOMBA_BEEP);
 
-        isOn = false;
+        TurnOff();
     }
 }
