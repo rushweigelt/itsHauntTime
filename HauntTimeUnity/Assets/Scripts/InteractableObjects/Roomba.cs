@@ -19,6 +19,9 @@ public class Roomba : RemoteElectronic
     //Animator
     public Animator roombaAnimator;
 
+    //Battery, since every roomba would have one.
+    public Battery battery;
+
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -45,9 +48,14 @@ public class Roomba : RemoteElectronic
         {
             TurnOff();
         }
+        else if(isOn == false && battery.held)
+        {
+            //insert battery, which invokes TurnOn.
+            battery.InsertBattery();
+        }
         else
         {
-            TurnOn();
+            OutOfBattery();
         }
     }
 
@@ -63,6 +71,12 @@ public class Roomba : RemoteElectronic
     {
         isOn = false;
         roombaAnimator.SetBool("TurnedOn", false);
+    }
+
+    public void OutOfBattery()
+    {
+        //add function to display out of battery icon
+        isOn = false;
     }
 
     //Drew's move code, for consistency's sake I reuse it here.
