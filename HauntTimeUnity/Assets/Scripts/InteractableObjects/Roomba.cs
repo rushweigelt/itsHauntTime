@@ -77,6 +77,7 @@ public class Roomba : RemoteElectronic
     {
         //add function to display out of battery icon
         isOn = false;
+        SoundController.Instance.PlaySoundEffect(SoundController.SoundType.ROOMBA_DEAD);
     }
 
     //Drew's move code, for consistency's sake I reuse it here.
