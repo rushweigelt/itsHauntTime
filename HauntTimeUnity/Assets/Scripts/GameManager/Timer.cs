@@ -34,7 +34,7 @@ public class Timer : MonoBehaviour
     }
     public string SecondsToMmSs(float seconds)
     {
-        return string.Format("{0}:{1}", Mathf.Floor(seconds/59), Mathf.RoundToInt(seconds%59));
+        return string.Format("{0}:{1}", Mathf.Floor(seconds/59), Mathf.RoundToInt(seconds%59).ToString("D2"));
     }
     void RunTimer()
     {
