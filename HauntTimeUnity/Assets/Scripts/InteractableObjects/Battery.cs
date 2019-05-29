@@ -9,7 +9,6 @@ public class Battery : InteractableObject
     public bool held; //a boolean that lets us know we're holding the battery
     public Transform dest; //the destination of where the battery could go
     public float slowRate; //the rate we slow down the insert function
-    public GameObject go; //the game object, so we can shut it off
     public UnityEvent inserted; //an event that will trigger "Turn On" in boomba
     // Start is called before the first frame update
     protected override void Start()
@@ -45,7 +44,7 @@ public class Battery : InteractableObject
         //pin, change boolean, then shrink item's scale
         this.transform.position = holdTrans.position;
         held = true;
-        go.transform.localScale = new Vector3(.6f, .6f, .6f);
+        transform.localScale = new Vector3(.6f, .6f, .6f);
     }
 
     //Drew's move code, for consistency's sake I reuse it here.
@@ -70,7 +69,7 @@ public class Battery : InteractableObject
 
         //disable gameob
         held = false;
-        go.SetActive(false);
+        gameObject.SetActive(false);
 
         // Invoke post-move listener
         inserted.Invoke();
