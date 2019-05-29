@@ -18,9 +18,13 @@ public class Fan : Electronic
     {
         base.Start();
 
+        // Enable windbox collider
         fanRange.enabled = true;
         pSystemMain = pSystem.main;
         animator = GetComponent<Animator>();
+
+        // Play fan blowing sound
+        PlaySound(true);
     }
 
     /// <summary>
@@ -32,9 +36,7 @@ public class Fan : Electronic
         // Call base method first
         base.SetActive(active);
 
-        // Debug.Log("Fan.SetActive(" + active + ")");
-
-        // Set fan collider off
+        // Set windbox collider
         fanRange.enabled = active;
 
         // Stop particle system
@@ -43,6 +45,21 @@ public class Fan : Electronic
 
         // Start/stop fan animation
         animator.SetBool("isOn", active);
+
+        PlaySound(active);
+    }
+
+    /// <summary>
+    /// Enables/disables fan's looping sound
+    /// </summary>
+    /// <param name="active">Plays sound when true, stops playing when false</param>
+    public void PlaySound(bool active) {
+        if(active) {
+            SoundController.Instance.PlaySoundEffectLooping(SoundController.SoundType.FAN_BLOWING);
+        }
+        else {
+            SoundController.Instance.StopSoundEffectLooping(SoundController.SoundType.FAN_BLOWING);
+        }
     }
 
     protected override void Interact()
