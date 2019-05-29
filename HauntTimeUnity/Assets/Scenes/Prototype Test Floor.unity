@@ -4643,6 +4643,81 @@ PrefabInstance:
       propertyPath: medal
       value: 
       objectReference: {fileID: 1852660292}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: bronzeMedal.r
+      value: 0.8039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: bronzeMedal.g
+      value: 0.49803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: bronzeMedal.b
+      value: 0.19607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: bronzeMedal.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: silverMedal.r
+      value: 0.7529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: silverMedal.g
+      value: 0.7529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: silverMedal.b
+      value: 0.7529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: silverMedal.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: goldMedal.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: goldMedal.g
+      value: 0.84313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: goldMedal.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: noMedal.r
+      value: 0.8773585
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: noMedal.g
+      value: 0.8773585
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: noMedal.b
+      value: 0.8773585
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: noMedal.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202, type: 3}
 --- !u!1001 &6593173092333258042
