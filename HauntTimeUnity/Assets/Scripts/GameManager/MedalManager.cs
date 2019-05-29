@@ -7,21 +7,23 @@ public class MedalManager : MonoBehaviour
 {
 
     //threshold values for medals
+    [Header("Medal Times")]
     public int bronzeThresh;
     public int silverThresh;
     public int goldThresh;
 
+    [Header("Medal Colors")]
+    public Color bronzeMedal;
+    public Color silverMedal;
+    public Color goldMedal;
+    public Color noMedal;
+
     //colored clock obj
+    [Space(10)]
     public Image clock;
     public Image medal;
-
     public Timer timer;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -33,33 +35,28 @@ public class MedalManager : MonoBehaviour
         if (time > bronzeThresh)
         {
             //no medal
-            Debug.Log("No Medal");
-            clock.color = Color.gray;
-            medal.color = Color.gray;
+            setMedal(Color.grey);
 
         }
         else if (time <= bronzeThresh && time > silverThresh)
         {
             //bronze
-            Debug.Log("Bronze Medal");
-            clock.color = new Color(150, 116, 68);
-            medal.color = new Color(150, 116, 68);
+            setMedal(bronzeMedal);
         }
         else if (time <= silverThresh && time > goldThresh)
         {
             //silver
-            Debug.Log("Silver Medal");
-            clock.color = new Color(192, 192, 192);
-            medal.color = new Color(192, 192, 192);
+            setMedal(silverMedal);
         }
         else if (time <= goldThresh)
         {
             //gold
-            Debug.Log("Gold Medal");
-            clock.color = new Color(255, 215, 0);
-            medal.color = new Color(255, 215, 0);
-
+            setMedal(goldMedal);
         }
+    }
 
+    void setMedal(Color color) {
+        clock.color = color;
+        medal.color = color;
     }
 }
