@@ -4633,6 +4633,11 @@ PrefabInstance:
       propertyPath: txt
       value: 
       objectReference: {fileID: 633230451}
+    - target: {fileID: 5694422164632351294, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: seconds
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
         type: 3}
       propertyPath: clock
@@ -4718,6 +4723,89 @@ PrefabInstance:
       propertyPath: noMedal.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: bronze.r
+      value: 0.9811321
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: bronze.g
+      value: 0.49520892
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: bronze.b
+      value: 0.31933072
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: bronze.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: gold.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: gold.g
+      value: 0.84313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: gold.b
+      value: 0.19607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: gold.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: silver.r
+      value: 0.7529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: silver.g
+      value: 0.7529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: silver.b
+      value: 0.7529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: silver.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: currentMedal
+      value: 
+      objectReference: {fileID: 1852660292}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: bronzeMedal
+      value: 
+      objectReference: {fileID: 21300000, guid: 635f9434de125de4e8ff6ddb23833066,
+        type: 3}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: silverMedal
+      value: 
+      objectReference: {fileID: 21300000, guid: c097490f94e40d34197b38cf3f894bb4,
+        type: 3}
+    - target: {fileID: 5694422164632351292, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202,
+        type: 3}
+      propertyPath: goldMedal
+      value: 
+      objectReference: {fileID: 21300000, guid: ea39c48032c1fd843960853f94f06ad8,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ce9b6bcafb3b49dc909cd7a58cf2202, type: 3}
 --- !u!1001 &6593173092333258042
@@ -4824,6 +4912,11 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1336629197, guid: c382b2fb5cdc954489fd32d4fab5b9cc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0776c96b1d0f13a43a0f32666d6d9c75,
+        type: 3}
     - target: {fileID: 692730085916064534, guid: c382b2fb5cdc954489fd32d4fab5b9cc,
         type: 3}
       propertyPath: m_IsActive
@@ -4955,6 +5048,14 @@ PrefabInstance:
     - target: {fileID: 1852660291, guid: c382b2fb5cdc954489fd32d4fab5b9cc, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -392
+      objectReference: {fileID: 0}
+    - target: {fileID: 1336629199, guid: c382b2fb5cdc954489fd32d4fab5b9cc, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1336629199, guid: c382b2fb5cdc954489fd32d4fab5b9cc, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c382b2fb5cdc954489fd32d4fab5b9cc, type: 3}

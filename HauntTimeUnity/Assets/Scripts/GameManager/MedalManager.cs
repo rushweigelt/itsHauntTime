@@ -13,15 +13,18 @@ public class MedalManager : MonoBehaviour
     public int goldThresh;
 
     [Header("Medal Colors")]
-    public Color bronzeMedal;
-    public Color silverMedal;
-    public Color goldMedal;
+    public Color bronze;
+    public Color silver;
+    public Color gold;
     public Color noMedal;
 
     //colored clock obj
-    [Space(10)]
+    //[Space(10)]
     public Image clock;
-    public Image medal;
+    public Sprite goldMedal;
+    public Sprite silverMedal;
+    public Sprite bronzeMedal;
+    public Image currentMedal;
     public Timer timer;
     
     // Update is called once per frame
@@ -35,28 +38,31 @@ public class MedalManager : MonoBehaviour
         if (time > bronzeThresh)
         {
             //no medal
-            setMedal(Color.grey);
+            setTimerColor(Color.grey);
 
         }
         else if (time <= bronzeThresh && time > silverThresh)
         {
             //bronze
-            setMedal(bronzeMedal);
+            setTimerColor(bronze);
+            currentMedal.sprite = bronzeMedal;
         }
         else if (time <= silverThresh && time > goldThresh)
         {
             //silver
-            setMedal(silverMedal);
+            setTimerColor(silver);
+            currentMedal.sprite = silverMedal;
         }
         else if (time <= goldThresh)
         {
             //gold
-            setMedal(goldMedal);
+            setTimerColor(gold);
+            currentMedal.sprite = goldMedal;
         }
     }
 
-    void setMedal(Color color) {
+    void setTimerColor(Color color) {
         clock.color = color;
-        medal.color = color;
+        //medal.color = color;
     }
 }
