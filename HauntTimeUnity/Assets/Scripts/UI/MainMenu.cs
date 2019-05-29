@@ -26,10 +26,4 @@ public class MainMenu : MonoBehaviour
         currentMenu.SetActive(false);
         currentMenu = nextMenu;
     }
-
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
-
 }
