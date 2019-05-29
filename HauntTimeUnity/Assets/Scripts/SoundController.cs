@@ -19,7 +19,8 @@ public class SoundController : Singleton<SoundController>
         ROOMBA_DEAD,
 
         // LOOPING
-        FAN_BLOWING
+        FAN_BLOWING,
+        ROOMBA_MOVE
     }
 
     [System.Serializable]
@@ -111,7 +112,7 @@ public class SoundController : Singleton<SoundController>
             // Instantiate AudioSource as child
             audioSource = Instantiate(new GameObject().AddComponent<AudioSource>(), transform);
             audioSource.name = type.ToString() + "_AudioSource";
-            
+
             // Configure with track's properties
             audioSource.clip = track.clip;
             audioSource.loop = track.loop;

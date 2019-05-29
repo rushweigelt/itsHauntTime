@@ -14,7 +14,7 @@ public class Roomba : RemoteElectronic
     public float slowRate;
 
     //Event listener for after thbe vacuum reaches it's destination.
-    public UnityEvent Vacuum;
+    public UnityEvent ReachedDestination;
 
     //Animator
     public Animator roombaAnimator;
@@ -62,13 +62,20 @@ public class Roomba : RemoteElectronic
     public void TurnOn()
     {
         Debug.Log("Roomba was turned on");
+        // Play vaccuum sound effect
+        SoundController.Instance.PlaySoundEffectLooping(SoundController.SoundType.ROOMBA_MOVE);
+
+        // Move towards salt
         StartCoroutine(MoveToPosition(dest.transform.position, slowRate));
+
+        // TODO: this is happening again in SetActive() - condense this to one location
         isOn = true;
         roombaAnimator.SetBool("TurnedOn", true);
     }
 
     public void TurnOff()
     {
+        // TODO: this is happening again in SetActive() - condense this to one location
         isOn = false;
         roombaAnimator.SetBool("TurnedOn", false);
     }
@@ -101,10 +108,12 @@ public class Roomba : RemoteElectronic
         transform.position = target;
 
         // Invoke post-move listener
-        Vacuum.Invoke();
+        ReachedDestination.Invoke();
+
+        // Stop the vaccuum sound effect
+        SoundController.Instance.StopSoundEffectLooping(SoundController.SoundType.ROOMBA_MOVE);
 
         // Play sound when reached target
-        //aSource.PlayOneShot(fullBeep);
         SoundController.Instance.PlaySoundEffect(SoundController.SoundType.ROOMBA_BEEP);
 
         TurnOff();
