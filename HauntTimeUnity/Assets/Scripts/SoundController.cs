@@ -59,7 +59,6 @@ public class SoundController : Singleton<SoundController>
     /// NOTE: SoundTracks should only use their own audio source if they must be looped.
     /// </summary>
     public Dictionary<SoundTrack, AudioSource> soundEffectToAudioSourceMap = new Dictionary<SoundTrack, AudioSource>();
-    
 
     private AudioSource audioSource;
     // Start is called before the first frame update
@@ -96,7 +95,7 @@ public class SoundController : Singleton<SoundController>
         if(type.Equals(SoundType.NONE)) {
             return;
         }
-        SoundTrack track = soundEffects.Find(s => s.type == type);
+        SoundTrack track = GetSoundTrack(type);
         audioSource.PlayOneShot(track.clip, track.volume);
     }
 
@@ -104,7 +103,7 @@ public class SoundController : Singleton<SoundController>
     {
         Debug.Log("Playing looping sound effect: " + type);
         AudioSource audioSource;
-        SoundTrack track = soundEffects.Find(i => i.type == type);
+        SoundTrack track = GetSoundTrack(type);
 
         if(!soundEffectToAudioSourceMap.TryGetValue(track, out audioSource)) {
             Debug.LogFormat("AudioSource not found for {0} effect; creating one now", type);
@@ -115,7 +114,7 @@ public class SoundController : Singleton<SoundController>
 
             // Configure with track's properties
             audioSource.clip = track.clip;
-            audioSource.loop = track.loop;
+            audioSource.loop = track.loop; // This should always be true, but just in case...
             audioSource.volume = track.volume;
 
             // Add to mapping
@@ -126,10 +125,19 @@ public class SoundController : Singleton<SoundController>
         audioSource.Play();
     }
 
+    private SoundTrack GetSoundTrack(SoundType type) 
+    {
+        SoundTrack track = soundEffects.Find(i => i.type.Equals(type));
+        if(track == null) {
+            Debug.LogWarningFormat("Warning: SoundTrack not found for {0}", type);
+        }
+        return track;
+    }
+
     public void StopSoundEffectLooping(SoundType type) {
         Debug.Log("Playing looping sound effect: " + type);
         AudioSource audioSource;
-        SoundTrack track = soundEffects.Find(i => i.type.Equals(type));
+        SoundTrack track = GetSoundTrack(type);
 
         if(!soundEffectToAudioSourceMap.TryGetValue(track, out audioSource)) {
             Debug.LogWarningFormat("AudioSource not found for {0} effect", type);
