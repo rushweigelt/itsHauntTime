@@ -135,14 +135,16 @@ public class Cat : InteractableObject
         }
     }
 
-    public void ToTable()
+    public void JumpToTable()
     {
+        Debug.Log("JumpToTable()");
         Jump(jumpTargets[0]);
         //afterTable.Invoke();
     }
 
-    public void BeScolded()
+    public void JumpToFloor()
     {
+        Debug.Log("JumpToFloor()");
         Jump(jumpTargets[1]);
         //afterScold.Invoke();
     }

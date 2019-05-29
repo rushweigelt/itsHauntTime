@@ -681,6 +681,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1398707450}
+        m_MethodName: JumpToFloor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &77925973
@@ -1067,6 +1078,11 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 268284163932920933, guid: e9010e43ac45748db806a81278ffe203,
+        type: 3}
+      propertyPath: scoldPosition
+      value: 
+      objectReference: {fileID: 725525426}
     - target: {fileID: 268284163932920932, guid: e9010e43ac45748db806a81278ffe203,
         type: 3}
       propertyPath: m_SortingLayerID
@@ -1576,6 +1592,10 @@ MonoBehaviour:
   bronzeThresh: 300
   silverThresh: 120
   goldThresh: 45
+  bronzeMedal: {r: 0, g: 0, b: 0, a: 0}
+  silverMedal: {r: 0, g: 0, b: 0, a: 0}
+  goldMedal: {r: 0, g: 0, b: 0, a: 0}
+  noMedal: {r: 0, g: 0, b: 0, a: 0}
   clock: {fileID: 1336629197}
   medal: {fileID: 1852660292}
   timer: {fileID: 609866838}
@@ -2071,6 +2091,36 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &725525425
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 725525426}
+  m_Layer: 0
+  m_Name: humanScoldPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &725525426
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725525425}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.23, y: -0.91, z: 0.074379176}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1400300452}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &743602735
 GameObject:
   m_ObjectHideFlags: 0
@@ -3726,6 +3776,7 @@ Transform:
   - {fileID: 74530898}
   - {fileID: 1975162717}
   - {fileID: 1625884162}
+  - {fileID: 725525426}
   m_Father: {fileID: 404431136}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4016,7 +4067,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1625884162}
   m_Layer: 0
-  m_Name: scoldArea
+  m_Name: catScoldPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4723,6 +4774,11 @@ PrefabInstance:
       propertyPath: outlet
       value: 
       objectReference: {fileID: 461057314}
+    - target: {fileID: 3637598693976061649, guid: f41c14a60e5727d418844516f134b812,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JumpToTable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f41c14a60e5727d418844516f134b812, type: 3}
 --- !u!1001 &4369290397267347496
@@ -5409,6 +5465,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Interactable
       objectReference: {fileID: 0}
+    - target: {fileID: 8858565934681171895, guid: 8c4430efdf861af4fa3f0b3481fd86aa,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -363982993
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858565934681171895, guid: 8c4430efdf861af4fa3f0b3481fd86aa,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858565934681171895, guid: 8c4430efdf861af4fa3f0b3481fd86aa,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8858565934681171896, guid: 8c4430efdf861af4fa3f0b3481fd86aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5657,21 +5728,6 @@ PrefabInstance:
     - target: {fileID: 8858565934681171897, guid: 8c4430efdf861af4fa3f0b3481fd86aa,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8858565934681171895, guid: 8c4430efdf861af4fa3f0b3481fd86aa,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: -363982993
-      objectReference: {fileID: 0}
-    - target: {fileID: 8858565934681171895, guid: 8c4430efdf861af4fa3f0b3481fd86aa,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8858565934681171895, guid: 8c4430efdf861af4fa3f0b3481fd86aa,
-        type: 3}
-      propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

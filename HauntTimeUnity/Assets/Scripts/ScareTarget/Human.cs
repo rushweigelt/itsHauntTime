@@ -13,15 +13,17 @@ public class Human : InteractableObject
     /// Tells Animator which animation to play
     /// </summary>
     public AnimationState animationState;
+    public Transform scoldPosition;
 
     //target we'd be moving to
-    public GameObject target;
+    // public GameObject target;
 
     //rate we slow target
     public float slowRate;
 
     //post-arrival at cat scold event
     public UnityEvent scold;
+
 
     //Use for Tutorial
     public bool isTutorial;
@@ -42,14 +44,24 @@ public class Human : InteractableObject
         animationState = state;
     }
 
+    /// <summary>
+    /// Move to see the spilled salt
+    /// </summary>
     public void Investigate()
     {
-        StartCoroutine(MoveToInvestigate(target.transform.position, slowRate));
+        Debug.Log("Investigate()");
+        StartCoroutine(MoveToPosition(scoldPosition.transform.position, slowRate));
+        Scold();
     }
 
     public void Scold()
     {
-        StartCoroutine(MoveToPositionScold(target.transform.position, slowRate));
+        Debug.Log("Scold()");
+
+        // TODO: trigger scolding animation
+
+        // Human can now be scared
+        SetInteract(true);
     }
 
     //Drew's move code, for consistency's sake I reuse it here.
@@ -73,10 +85,10 @@ public class Human : InteractableObject
         transform.position = target;
 
         // Invoke post-move listener
-        scold.Invoke();
+        // scold.Invoke();
     }
 
-    IEnumerator MoveToPositionScold(Vector3 target, float duration)
+    IEnumerator MoveToPosition(Vector3 target, float duration)
     {
         // Save original position
         Vector3 originalPos = transform.position;
@@ -94,9 +106,6 @@ public class Human : InteractableObject
         }
         // Ensure we don't miss target
         transform.position = target;
-
-        SetInteract(true);
-        
     }
 
     public void SetInteract(bool b)
@@ -108,25 +117,19 @@ public class Human : InteractableObject
     {
         if (isTutorial)
         {
-
+            // TODO: handle tutorial situation? what should happen here
         }
         else
         {
             Scare();
         }
-        
     }
 
     public void Scare()
     {
-        //scare animation
+        // TODO: play scare animation
 
         //game over
         OurGameManager.Instance.GameOver(true);
-
     }
-
-
-
-
 }
