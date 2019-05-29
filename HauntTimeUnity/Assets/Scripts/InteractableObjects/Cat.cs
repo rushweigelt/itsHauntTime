@@ -26,9 +26,7 @@ public class Cat : InteractableObject
     int i = 0;
 
     //additional box collider for hiss-range
-    public BoxCollider2D hissBox;
-
-    public BoxCollider2D detectRange;
+    // public BoxCollider2D hissBox;
 
 
     // Start is called before the first frame update
@@ -37,7 +35,7 @@ public class Cat : InteractableObject
         base.Start();
         anim = GetComponent<Animator>();
 
-        hissBox.enabled = true;
+        // hissBox.enabled = true;
         jumpEvents.Add(afterTable);
         jumpEvents.Add(afterScold);
     }
@@ -48,26 +46,13 @@ public class Cat : InteractableObject
         base.Update();
     }
 
-    public void SetHiss(bool hissing)
-    {
-        Debug.Log("Cat hissing: " + hissing);
-
-        // Set hiss collider active
-        hissBox.enabled = hissing;
-
-        // Set anim hissing field
-        anim.SetBool("Hissing", hissing);
-
-        //animationState = AnimationState.HISSING;
-    }
-
     public void Jump(Transform t)
     {
         // Trigger jump on anim controller
         anim.SetTrigger("Jump");
         anim.SetBool("Sitting", false);
 
-        hissBox.enabled = false;
+        // hissBox.enabled = false;
 
         // Height of jump
         // TODO: actually use this height
@@ -114,7 +99,19 @@ public class Cat : InteractableObject
         {
             i++;
         }
+    }
 
+    public void SetHiss(bool hissing)
+    {
+        Debug.Log("Cat hissing: " + hissing);
+
+        // Set hiss collider active
+        // hissBox.enabled = hissing;
+
+        // Set anim hissing field
+        anim.SetBool("Hissing", hissing);
+
+        //animationState = AnimationState.HISSING;
     }
 
     void OnTriggerEnter2D(Collider2D col)
