@@ -1,14 +1,13 @@
 fileFormatVersion: 2
-guid: e948db27948b543b892400129d4d3b9a
+guid: c85eec9646fd46447a26be85701d5ab2
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Hatto2_idle_V3_sheet_0
-    21300002: Hatto2_idle_V3_sheet_1
-    21300004: Hatto2_idle_V3_sheet_2
-    21300006: Hatto2_idle_V3_sheet_3
-    21300008: Hatto2_idle_V3_sheet_4
-    21300010: Hatto2_idle_V3_sheet_5
-    21300012: Hatto2_idle_V3_sheet_6
+    21300000: fan_spritesheet_0
+    21300002: fan_spritesheet_1
+    21300004: fan_spritesheet_2
+    21300006: fan_spritesheet_3
+    21300008: fan_spritesheet_4
+    21300010: fan_spritesheet_5
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -87,17 +86,50 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hatto2_idle_V3_sheet_0
+      name: fan_spritesheet_0
       rect:
         serializedVersion: 2
-        x: 75
-        y: 26
-        width: 227
-        height: 359
+        x: 0
+        y: 0
+        width: 238
+        height: 582
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -105,19 +137,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39718207dbccf5745b20d94d7ce20e0a
+      spriteID: f67ba90853138324f9ad022932f6a524
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hatto2_idle_V3_sheet_1
+      name: fan_spritesheet_1
       rect:
         serializedVersion: 2
-        x: 486
-        y: 30
-        width: 225
-        height: 359
+        x: 238
+        y: 0
+        width: 238
+        height: 582
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,19 +157,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 635ebbc28c8fd9c4c92a046d626101cf
+      spriteID: 3c9a117727c324c42af975ec29891fdb
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hatto2_idle_V3_sheet_2
+      name: fan_spritesheet_2
       rect:
         serializedVersion: 2
-        x: 896
-        y: 33
-        width: 226
-        height: 360
+        x: 476
+        y: 0
+        width: 238
+        height: 582
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,19 +177,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79a3786cd30389247ac028f88992a080
+      spriteID: 1037974869d1e0848a0b17c85f060a3f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hatto2_idle_V3_sheet_3
+      name: fan_spritesheet_3
       rect:
         serializedVersion: 2
-        x: 1305
-        y: 37
-        width: 227
-        height: 360
+        x: 714
+        y: 0
+        width: 238
+        height: 582
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,19 +197,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 496ad5389e09f1647a3d17cc8035fde4
+      spriteID: 4e4f33a14248949428cb7972158c876a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hatto2_idle_V3_sheet_4
+      name: fan_spritesheet_4
       rect:
         serializedVersion: 2
-        x: 1716
-        y: 33
-        width: 226
-        height: 360
+        x: 952
+        y: 0
+        width: 238
+        height: 582
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,19 +217,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2514d02560181fa409600d78b04e5f6c
+      spriteID: aa8e934fb1dd18a4ba5d135139e2ae8e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hatto2_idle_V3_sheet_5
+      name: fan_spritesheet_5
       rect:
         serializedVersion: 2
-        x: 2125
-        y: 30
-        width: 227
-        height: 359
+        x: 1190
+        y: 0
+        width: 238
+        height: 582
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,27 +237,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12f36f8fb03489a4fa0e6d37ce29d5f6
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hatto2_idle_V3_sheet_6
-      rect:
-        serializedVersion: 2
-        x: 2536
-        y: 26
-        width: 225
-        height: 359
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba2824123ac706f498ca763f16884466
+      spriteID: 33f4fb1e289b5ea46970e98018375f1e
       vertices: []
       indices: 
       edges: []
@@ -233,7 +245,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0706ad44cb8434bc6bc089cd8efa1fda
+    spriteID: 320292325c87f4a448ccd419b8856472
     vertices: []
     indices: 
     edges: []
