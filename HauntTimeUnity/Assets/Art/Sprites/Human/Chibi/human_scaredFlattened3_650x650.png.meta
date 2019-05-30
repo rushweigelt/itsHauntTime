@@ -1,7 +1,30 @@
 fileFormatVersion: 2
 guid: ce64e82d262e86445a6395c26fb4daf9
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: human_scaredFlattened3_650x650_0
+    21300002: human_scaredFlattened3_650x650_1
+    21300004: human_scaredFlattened3_650x650_2
+    21300006: human_scaredFlattened3_650x650_3
+    21300008: human_scaredFlattened3_650x650_4
+    21300010: human_scaredFlattened3_650x650_5
+    21300012: human_scaredFlattened3_650x650_6
+    21300014: human_scaredFlattened3_650x650_7
+    21300016: human_scaredFlattened3_650x650_8
+    21300018: human_scaredFlattened3_650x650_9
+    21300020: human_scaredFlattened3_650x650_10
+    21300022: human_scaredFlattened3_650x650_11
+    21300024: human_scaredFlattened3_650x650_12
+    21300026: human_scaredFlattened3_650x650_13
+    21300028: human_scaredFlattened3_650x650_14
+    21300030: human_scaredFlattened3_650x650_15
+    21300032: human_scaredFlattened3_650x650_16
+    21300034: human_scaredFlattened3_650x650_17
+    21300036: human_scaredFlattened3_650x650_18
+    21300038: human_scaredFlattened3_650x650_19
+    21300040: human_scaredFlattened3_650x650_20
+    21300042: human_scaredFlattened3_650x650_21
+    21300044: human_scaredFlattened3_650x650_22
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -40,7 +63,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,9 +92,480 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: human_scaredFlattened3_650x650_0
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 0
+        width: 320
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf318bc0e35b0564c960b9010daf153c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_scaredFlattened3_650x650_1
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 0
+        width: 311
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae9ad7fef4d812d448eff2bd973cdcb6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_scaredFlattened3_650x650_2
+      rect:
+        serializedVersion: 2
+        x: 1469
+        y: 0
+        width: 311
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47064c0e8820ced40b239e9bfdcef8d4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_scaredFlattened3_650x650_3
+      rect:
+        serializedVersion: 2
+        x: 2085
+        y: 0
+        width: 321
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71412b17ab09a3a4fae228170db4d8f8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_scaredFlattened3_650x650_4
+      rect:
+        serializedVersion: 2
+        x: 2739
+        y: 0
+        width: 316
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaee1fa36ba01bd48897f556ba27e56a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_scaredFlattened3_650x650_5
+      rect:
+        serializedVersion: 2
+        x: 3374
+        y: 0
+        width: 349
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 990f40c898cf21f41a05f63c1fe93246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_scaredFlattened3_650x650_6
+      rect:
+        serializedVersion: 2
+        x: 4015
+        y: 0
+        width: 349
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eccbf1a92b0bf64b9876cec67cd16bc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_scaredFlattened3_650x650_7
+      rect:
+        serializedVersion: 2
+        x: 4669
+        y: 0
+        width: 349
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 582ff13cd3b86b940900d2a100a30e52
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_scaredFlattened3_650x650_8
+      rect:
+        serializedVersion: 2
+        x: 5335
+        y: 0
+        width: 318
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b2fb16c32ee0494d8120f8019856373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_scaredFlattened3_650x650_9
+      rect:
+        serializedVersion: 2
+        x: 5983
+        y: 0
+        width: 320
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 664503be5a9da764eb4c0bbc455cdf8a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_scaredFlattened3_650x650_10
+      rect:
+        serializedVersion: 2
+        x: 6573
+        y: 11
+        width: 392
+        height: 578
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ad8b38bf0cfa63488ef91c2578a2f22
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_scaredFlattened3_650x650_11
+      rect:
+        serializedVersion: 2
+        x: 7182
+        y: 89
+        width: 514
+        height: 475
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c4897e9e5ce03b41a9432706995d2cf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_scaredFlattened3_650x650_12
+      rect:
+        serializedVersion: 2
+        x: 8982
+        y: 516
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ac9886608054994b983dab86e484e54
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_scaredFlattened3_650x650_13
+      rect:
+        serializedVersion: 2
+        x: 9636
+        y: 516
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f35a4f7a082a6ef458c019b043ba0ef9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_scaredFlattened3_650x650_14
+      rect:
+        serializedVersion: 2
+        x: 10283
+        y: 516
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0749e30b119eaf49bc17c7110a47a67
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_scaredFlattened3_650x650_15
+      rect:
+        serializedVersion: 2
+        x: 10413
+        y: 93
+        width: 863
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea1246bb3c7cc714e8456739520ed65a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_scaredFlattened3_650x650_16
+      rect:
+        serializedVersion: 2
+        x: 12343
+        y: 0
+        width: 606
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f735c50232d2ca847ac845a71d708678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_scaredFlattened3_650x650_17
+      rect:
+        serializedVersion: 2
+        x: 7811
+        y: 163
+        width: 603
+        height: 318
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbd13084b11d22046b061b52144e4638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_scaredFlattened3_650x650_18
+      rect:
+        serializedVersion: 2
+        x: 8465
+        y: 175
+        width: 606
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 504a6e0409a3c5a45822db3571745dc2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_scaredFlattened3_650x650_19
+      rect:
+        serializedVersion: 2
+        x: 9118
+        y: 175
+        width: 602
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffc56577d156b6f4ab6fc0e67d5bb2a1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_scaredFlattened3_650x650_20
+      rect:
+        serializedVersion: 2
+        x: 9766
+        y: 175
+        width: 606
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d2293b04fd6c8f409cd52d5c412a359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_scaredFlattened3_650x650_21
+      rect:
+        serializedVersion: 2
+        x: 11042
+        y: 0
+        width: 609
+        height: 309
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4750d81fcda902f4bbbd74d54701b32d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_scaredFlattened3_650x650_22
+      rect:
+        serializedVersion: 2
+        x: 11696
+        y: 10
+        width: 603
+        height: 317
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f9ef7d9640f5df45b805069dabb23ef
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

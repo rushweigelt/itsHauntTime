@@ -10,11 +10,6 @@ public class TutorialInteractable : InteractableObject
         
     }
 
-    protected override void Interact()
-    {
-        // TODO: shake the fan a bit to show we rattled it
-    }
-
     public void RemoveRoomCollider(GameObject roomWall)
     {
         roomWall.SetActive(false);
