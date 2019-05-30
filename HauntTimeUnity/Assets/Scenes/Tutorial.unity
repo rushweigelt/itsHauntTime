@@ -3883,7 +3883,7 @@ GameObject:
   - component: {fileID: 1112445862}
   - component: {fileID: 1112445864}
   - component: {fileID: 1112445861}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Human
   m_TagString: Interactable
   m_Icon: {fileID: 0}
@@ -3935,6 +3935,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  roomWall: {fileID: 2027067925}
 --- !u!212 &1112445862
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6474,9 +6475,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2027067926}
   - component: {fileID: 2027067927}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
