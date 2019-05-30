@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    public Camera cam;
     public enum TransitionMode {
         SMOOTH,
         SNAP
@@ -24,10 +25,10 @@ public class CameraController : MonoBehaviour
     {
         switch(mode) {
             case TransitionMode.SMOOTH:
-                StartCoroutine(PanCamera(Camera.main.transform.position, room.position));
+                StartCoroutine(PanCamera(cam.transform.position, room.position));
                 break;
             case TransitionMode.SNAP:
-                Camera.main.transform.position = room.position;
+                cam.transform.position = room.position;
                 break;
         }
     }
@@ -43,13 +44,13 @@ public class CameraController : MonoBehaviour
         // Ease camera towards next room
         float t = 0;
         while(t <= 1) {
-            Camera.main.transform.position = Mathfx.Hermite(start, end, t);
+            cam.transform.position = Mathfx.Hermite(start, end, t);
             t += Time.deltaTime * panSpeed;
             yield return null;
         }
 
         // Make sure camera ends at right position
-        Camera.main.transform.position = end;
+        cam.transform.position = end;
         
     }
 }

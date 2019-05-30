@@ -24,6 +24,9 @@ public class Human : InteractableObject
     //post-arrival at cat scold event
     public UnityEvent scold;
 
+    //post-arrival event call
+    public UnityEvent arrived;
+
 
     //Use for Tutorial
     public bool isTutorial;
@@ -85,7 +88,7 @@ public class Human : InteractableObject
         transform.position = target;
 
         // Invoke post-move listener
-        // scold.Invoke();
+        arrived.Invoke();
     }
 
     IEnumerator MoveToPosition(Vector3 target, float duration)
@@ -106,6 +109,8 @@ public class Human : InteractableObject
         }
         // Ensure we don't miss target
         transform.position = target;
+        // Invoke post-move listener
+        arrived.Invoke();
     }
 
     public void SetInteract(bool b)
