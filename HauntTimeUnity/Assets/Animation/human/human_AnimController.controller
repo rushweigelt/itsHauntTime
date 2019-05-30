@@ -135,14 +135,14 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &1102189287351436622
+--- !u!1102 &1102313451278867684
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Cleaning
+  m_Name: Scolding
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -155,7 +155,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 0}
+  m_Motion: {fileID: 7400000, guid: 5528a501707f54e5fac9b532878935d3, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -250,20 +250,20 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: 1102189287351436622}
-    m_Position: {x: 492, y: 432, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: 1102855290990129750}
     m_Position: {x: 108, y: 108, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102384705975408340}
-    m_Position: {x: 492, y: 480, z: 0}
+    m_Position: {x: 480, y: 384, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102316136938608638}
     m_Position: {x: 120, y: 288, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102087563081494618}
     m_Position: {x: 252, y: -12, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 1102313451278867684}
+    m_Position: {x: 408, y: 324, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 1101304555224921972}
