@@ -1037,7 +1037,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8db276dac35e64751b37b7e4e835947d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 62d71338b2e302949a5cf5868a105575, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1797,10 +1797,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d7cec161b60fa40b0afe834339f06ba1, type: 3}
-    m_FontSize: 76
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 300
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -1808,7 +1808,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Insert Credits here!!!
+  m_Text: "Special Thanks to Julie Arcala for Audio / Music\n\nhttps://freesound.org/people/Reitanna/sounds/343928/\n\nhttps://freesound.org/people/cmusounddesign/sounds/71936/
+    \r\nBy: cmusounddesign\r\nChanges made- Cropped sound\n\nhttps://freesound.org/people/temawas/sounds/179244/\r\ntemawas\r\nChanges
+    made- Cropped sound\r\n\nhttps://freesound.org/people/PaulMorek/sounds/330053/\n\nhttps://freesound.org/people/JarredGibb/sounds/219477/\n\nhttps://www.1001fonts.com/jmh-saloon-font.html\n\n\n\n"
 --- !u!222 &2103748104
 CanvasRenderer:
   m_ObjectHideFlags: 0
