@@ -7,16 +7,19 @@ public class Human : InteractableObject
 {
     Animator anim;
 
-    public enum AnimationState { SITTING = 0, STANDING_UP, WALKING, SCOLDING, SCARED }
+    public enum AnimationState { 
+        SITTING = 0, 
+        STANDINGUP, 
+        WALKING, 
+        SCOLDING, 
+        SCARED 
+    }
 
     /// <summary>
     /// Tells Animator which animation to play
     /// </summary>
     public AnimationState animationState;
     public Transform scoldPosition;
-
-    //target we'd be moving to
-    // public GameObject target;
 
     //rate we slow target
     public float slowRate;
@@ -36,6 +39,8 @@ public class Human : InteractableObject
     {
         base.Start();
         anim = GetComponent<Animator>();
+
+        float duration = GetAnimDuration(AnimationState.SCARED);
     }
 
     public void SetAnimationState(AnimationState state) 
@@ -46,6 +51,21 @@ public class Human : InteractableObject
 
         // Update current state
         animationState = state;
+    }
+
+    public float GetAnimDuration(AnimationState state) {
+        AnimationClip[] clips = anim.runtimeAnimatorController.animationClips;
+        // Get clip
+        foreach(AnimationClip clip in clips) {
+            if(clip.name.ToLower().Contains(state.ToString().ToLower())) {
+                Debug.LogFormat("Found clip {0} with duration: {1} seconds", clip.name, clip.length);
+                return clip.length;
+            }
+        }
+        
+        // Return duration
+        Debug.LogWarningFormat("GetAnimDuration() - failed to find duration for {0} animation (search by filename failed)", state);
+        return 0;
     }
 
     /// <summary>
@@ -118,7 +138,7 @@ public class Human : InteractableObject
         }
         else
         {
-            Scare();
+            StartCoroutine(Scare());
         }
     }
 
@@ -133,13 +153,17 @@ public class Human : InteractableObject
         SetInteract(true);
     }
 
-    public void Scare()
+    public IEnumerator Scare()
     {
         Debug.Log("Scare()");
-        // TODO: play scare animation
-        // SetAnimationState(AnimationState.SCARED);
+        float duration = GetAnimDuration(AnimationState.SCARED);
 
-        //game over
+        // Play scared animation
+        SetAnimationState(AnimationState.SCARED);
+
+        // Wait for animation to complete before showing game over
+        // yield return new WaitForSeconds(duration);
+        yield return new WaitForSeconds(0); // currently not working, disabled the wait
         OurGameManager.Instance.GameOver(true);
     }
 }
