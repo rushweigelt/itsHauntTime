@@ -7,7 +7,7 @@ public class Human : InteractableObject
 {
     Animator anim;
 
-    public enum AnimationState { SITTING, STANDING_UP, WALKING }
+    public enum AnimationState { SITTING = 0, STANDING_UP, WALKING, SCOLDING, SCARED }
 
     /// <summary>
     /// Tells Animator which animation to play
@@ -42,6 +42,7 @@ public class Human : InteractableObject
     {
         // Set starting animation state
         anim.SetInteger("State", (int)state);
+        Debug.LogWarning("Setting animation state to " + state);
 
         // Update current state
         animationState = state;
@@ -52,19 +53,9 @@ public class Human : InteractableObject
     /// </summary>
     public void Investigate()
     {
+        SetAnimationState(AnimationState.WALKING);
         Debug.Log("Investigate()");
         StartCoroutine(MoveToPosition(scoldPosition.transform.position, slowRate));
-        Scold();
-    }
-
-    public void Scold()
-    {
-        Debug.Log("Scold()");
-
-        // TODO: trigger scolding animation
-
-        // Human can now be scared
-        SetInteract(true);
     }
 
     //Drew's move code, for consistency's sake I reuse it here.
@@ -109,6 +100,7 @@ public class Human : InteractableObject
         }
         // Ensure we don't miss target
         transform.position = target;
+        
         // Invoke post-move listener
         arrived.Invoke();
     }
@@ -130,9 +122,22 @@ public class Human : InteractableObject
         }
     }
 
+    public void Scold()
+    {
+        Debug.Log("Scold()");
+
+        // TODO: trigger scolding animation
+        SetAnimationState(AnimationState.SCOLDING);
+
+        // Human can now be scared
+        SetInteract(true);
+    }
+
     public void Scare()
     {
+        Debug.Log("Scare()");
         // TODO: play scare animation
+        SetAnimationState(AnimationState.SCARED);
 
         //game over
         OurGameManager.Instance.GameOver(true);
