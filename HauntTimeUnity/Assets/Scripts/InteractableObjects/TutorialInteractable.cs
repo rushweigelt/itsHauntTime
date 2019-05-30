@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class TutorialInteractable : InteractableObject
 {
-
+    public GameObject roomWall;
     protected override void Start()
     {
         
+    }
+
+    protected override void Interact()
+    {
+        RemoveRoomCollider(roomWall);
     }
 
     public void RemoveRoomCollider(GameObject roomWall)
