@@ -59,7 +59,7 @@ public class Cat : InteractableObject
         float jumpHeight = 3f;
 
         // Get jump duration
-        float duration = 0;
+        float duration = 2;
         AnimationClip[] clips = anim.runtimeAnimatorController.animationClips;
         foreach (AnimationClip clip in clips.Where(c => c.name.Contains("jump"))) {
             duration += clip.length;
