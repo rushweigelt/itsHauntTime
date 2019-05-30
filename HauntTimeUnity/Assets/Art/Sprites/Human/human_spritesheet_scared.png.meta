@@ -25,6 +25,26 @@ TextureImporter:
     21300040: human_scaredFlattened3_650x650_20
     21300042: human_scaredFlattened3_650x650_21
     21300044: human_scaredFlattened3_650x650_22
+    21300046: human_spritesheet_scared_0
+    21300048: human_spritesheet_scared_1
+    21300050: human_spritesheet_scared_2
+    21300052: human_spritesheet_scared_3
+    21300054: human_spritesheet_scared_4
+    21300056: human_spritesheet_scared_5
+    21300058: human_spritesheet_scared_6
+    21300060: human_spritesheet_scared_7
+    21300062: human_spritesheet_scared_8
+    21300064: human_spritesheet_scared_9
+    21300066: human_spritesheet_scared_10
+    21300068: human_spritesheet_scared_11
+    21300070: human_spritesheet_scared_12
+    21300072: human_spritesheet_scared_13
+    21300074: human_spritesheet_scared_14
+    21300076: human_spritesheet_scared_15
+    21300078: human_spritesheet_scared_16
+    21300080: human_spritesheet_scared_17
+    21300082: human_spritesheet_scared_18
+    21300084: human_spritesheet_scared_19
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -107,7 +127,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: human_scaredFlattened3_650x650_0
+      name: human_spritesheet_scared_0
       rect:
         serializedVersion: 2
         x: 0
@@ -121,13 +141,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 993f04c85a2617e4480569c419b17ba9
+      spriteID: 960b7c940a56646978f2b4484574a685
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: human_scaredFlattened3_650x650_1
+      name: human_spritesheet_scared_1
       rect:
         serializedVersion: 2
         x: 650
@@ -141,13 +161,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f60077c6a8945b14694e908c3c12423b
+      spriteID: 061c20f09fd1144549b6b76fee015033
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: human_scaredFlattened3_650x650_2
+      name: human_spritesheet_scared_2
       rect:
         serializedVersion: 2
         x: 1300
@@ -161,13 +181,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb1eabbc43252da4c9a039724892d7e1
+      spriteID: 30bf02e0d65b543638905cb69d5eede7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: human_scaredFlattened3_650x650_3
+      name: human_spritesheet_scared_3
       rect:
         serializedVersion: 2
         x: 1950
@@ -181,13 +201,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b788599b19cbf84ea724f703de56001
+      spriteID: fddf1f54dc3ff42e3bbd1de27e3d0728
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: human_scaredFlattened3_650x650_4
+      name: human_spritesheet_scared_4
       rect:
         serializedVersion: 2
         x: 2600
@@ -201,13 +221,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d533019ee6405c47940ddb73555be3d
+      spriteID: c5c2f49360d2849ccb8a6c75f2f6a323
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: human_scaredFlattened3_650x650_5
+      name: human_spritesheet_scared_5
       rect:
         serializedVersion: 2
         x: 3250
@@ -221,13 +241,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e829d6eb937c09468dd106becbeb0cf
+      spriteID: 297c4b45184864e0896ded29ce9f7441
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: human_scaredFlattened3_650x650_6
+      name: human_spritesheet_scared_6
       rect:
         serializedVersion: 2
         x: 3900
@@ -241,13 +261,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47b02cbacd823b947862dc4faf75e3d1
+      spriteID: 239f320b09df64840bccab5939c0535d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: human_scaredFlattened3_650x650_7
+      name: human_spritesheet_scared_7
       rect:
         serializedVersion: 2
         x: 4550
@@ -261,13 +281,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 784033ed973092740a8a8c56f9fd37f5
+      spriteID: a20d008e2a54242c1aa23f2b5e139d5e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: human_scaredFlattened3_650x650_8
+      name: human_spritesheet_scared_8
       rect:
         serializedVersion: 2
         x: 5200
@@ -281,13 +301,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28e765b14a3752343bd4ca03454ff738
+      spriteID: cc4adfcbbf2224e398a62bfd56a40d4b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: human_scaredFlattened3_650x650_9
+      name: human_spritesheet_scared_9
       rect:
         serializedVersion: 2
         x: 5850
@@ -301,13 +321,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 107264c83f54c3742a89f9f4ebeb03d3
+      spriteID: 9c5f790b96fd042af91568e66f3dd025
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: human_scaredFlattened3_650x650_10
+      name: human_spritesheet_scared_10
       rect:
         serializedVersion: 2
         x: 6500
@@ -321,13 +341,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16b6f3c23ec9056428fffc6475e0fed9
+      spriteID: 3df55c925141144fe86a04d02640fa58
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: human_scaredFlattened3_650x650_11
+      name: human_spritesheet_scared_11
       rect:
         serializedVersion: 2
         x: 7150
@@ -341,13 +361,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1159c496459575a4095938a52e655010
+      spriteID: 323615c12fa5348deab51ee2a0128bfe
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: human_scaredFlattened3_650x650_12
+      name: human_spritesheet_scared_12
       rect:
         serializedVersion: 2
         x: 7800
@@ -361,13 +381,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6cb3fda6131fbc45afb8e79b31d697d
+      spriteID: 9a8fb69c245ea4dd7a19dcd62e700aec
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: human_scaredFlattened3_650x650_13
+      name: human_spritesheet_scared_13
       rect:
         serializedVersion: 2
         x: 8450
@@ -381,13 +401,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5255125e9d8ee54086c2625a29f7599
+      spriteID: 6e5557d2b2b144202ae90545d4582681
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: human_scaredFlattened3_650x650_14
+      name: human_spritesheet_scared_14
       rect:
         serializedVersion: 2
         x: 9100
@@ -401,13 +421,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0faf65db4af3fa846989a54520efea61
+      spriteID: 3c7bbe35e63864c199ec4825279be27f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: human_scaredFlattened3_650x650_15
+      name: human_spritesheet_scared_15
       rect:
         serializedVersion: 2
         x: 9750
@@ -421,13 +441,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1afa66d3d501fe4088bd24dd9283f52
+      spriteID: dafe55743fdd24a57853cde9a617401c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: human_scaredFlattened3_650x650_16
+      name: human_spritesheet_scared_16
       rect:
         serializedVersion: 2
         x: 10400
@@ -441,13 +461,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa915ed90d5b517428e8ef53d2241bcd
+      spriteID: 376967e6f88ea4746a5db99eb65a301f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: human_scaredFlattened3_650x650_17
+      name: human_spritesheet_scared_17
       rect:
         serializedVersion: 2
         x: 11050
@@ -461,13 +481,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b164e13cc2161b43a172ef73689c47e
+      spriteID: 0dd16095543a443e1be4f0353617f624
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: human_scaredFlattened3_650x650_18
+      name: human_spritesheet_scared_18
       rect:
         serializedVersion: 2
         x: 11700
@@ -481,13 +501,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 351c14ab9399c0d4eb0642c9f1fc5c3d
+      spriteID: a260c48b456b64a95840735071f03fed
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: human_scaredFlattened3_650x650_19
+      name: human_spritesheet_scared_19
       rect:
         serializedVersion: 2
         x: 12350
@@ -501,7 +521,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ebf81b4543c3034c9ae25428d16ee58
+      spriteID: ad60ffd86bdf444b0b5bbc12c4eb247d
       vertices: []
       indices: 
       edges: []
