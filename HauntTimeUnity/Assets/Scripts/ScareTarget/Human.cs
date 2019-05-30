@@ -137,7 +137,7 @@ public class Human : InteractableObject
     {
         Debug.Log("Scare()");
         // TODO: play scare animation
-        SetAnimationState(AnimationState.SCARED);
+        // SetAnimationState(AnimationState.SCARED);
 
         //game over
         OurGameManager.Instance.GameOver(true);
