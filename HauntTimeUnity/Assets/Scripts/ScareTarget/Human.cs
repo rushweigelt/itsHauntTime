@@ -146,11 +146,8 @@ public class Human : InteractableObject
     {
         Debug.Log("Scold()");
 
-        // TODO: trigger scolding animation
+        // Trigger scolding animation
         SetAnimationState(AnimationState.SCOLDING);
-
-        // Human can now be scared
-        SetInteract(true);
     }
 
     public IEnumerator Scare()
