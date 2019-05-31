@@ -159,8 +159,7 @@ public class Human : InteractableObject
         SetAnimationState(AnimationState.SCARED);
 
         // Wait for animation to complete before showing game over
-        // yield return new WaitForSeconds(duration);
-        yield return new WaitForSeconds(0); // currently not working, disabled the wait
+        yield return new WaitForSeconds(duration);
         OurGameManager.Instance.GameOver(true);
     }
 }
