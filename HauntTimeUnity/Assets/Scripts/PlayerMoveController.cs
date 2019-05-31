@@ -94,4 +94,14 @@ public class PlayerMoveController : Singleton<PlayerMoveController>
         
         rb.MovePosition((Vector2)transform.position + movement);
     }
+
+    public void MoveOn()
+    {
+        canMove = true;
+    }
+
+    public void MoveOff()
+    {
+        canMove = false;
+    }
 }

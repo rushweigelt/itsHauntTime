@@ -10,6 +10,7 @@ TagManager:
   - Interactable
   - Npc
   - saltWall
+  - hiss
   layers:
   - Default
   - TransparentFX
