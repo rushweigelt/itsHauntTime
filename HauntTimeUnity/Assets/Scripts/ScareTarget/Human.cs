@@ -3,22 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(HumanAnimController))]
 public class Human : InteractableObject
 {
-    Animator anim;
-
-    public enum AnimationState { 
-        SITTING = 0, 
-        STANDINGUP, 
-        WALKING, 
-        SCOLDING, 
-        SCARED 
-    }
-
-    /// <summary>
-    /// Tells Animator which animation to play
-    /// </summary>
-    public AnimationState animationState;
+    HumanAnimController humanAnim;
     public Transform scoldPosition;
 
     //rate we slow target
@@ -38,34 +26,10 @@ public class Human : InteractableObject
     protected override void Start()
     {
         base.Start();
-        anim = GetComponent<Animator>();
-
-        float duration = GetAnimDuration(AnimationState.SCARED);
-    }
-
-    public void SetAnimationState(AnimationState state) 
-    {
-        // Set starting animation state
-        anim.SetInteger("State", (int)state);
-        Debug.LogWarning("Setting animation state to " + state);
-
-        // Update current state
-        animationState = state;
-    }
-
-    public float GetAnimDuration(AnimationState state) {
-        AnimationClip[] clips = anim.runtimeAnimatorController.animationClips;
-        // Get clip
-        foreach(AnimationClip clip in clips) {
-            if(clip.name.ToLower().Contains(state.ToString().ToLower())) {
-                Debug.LogFormat("Found clip {0} with duration: {1} seconds", clip.name, clip.length);
-                return clip.length;
-            }
+        humanAnim = GetComponent<HumanAnimController>();
+        if(humanAnim == null) {
+            Debug.LogWarningFormat("{0} - HumanAnimController component not found; please attach to Human GameObject", name);
         }
-        
-        // Return duration
-        Debug.LogWarningFormat("GetAnimDuration() - failed to find duration for {0} animation (search by filename failed)", state);
-        return 0;
     }
 
     /// <summary>
@@ -73,7 +37,7 @@ public class Human : InteractableObject
     /// </summary>
     public void Investigate()
     {
-        SetAnimationState(AnimationState.WALKING);
+        humanAnim.SetAnimationState(HumanAnimController.AnimationState.WALKING);
         Debug.Log("Investigate()");
         StartCoroutine(MoveToPosition(scoldPosition.transform.position, slowRate));
     }
@@ -147,16 +111,16 @@ public class Human : InteractableObject
         Debug.Log("Scold()");
 
         // Trigger scolding animation
-        SetAnimationState(AnimationState.SCOLDING);
+        humanAnim.SetAnimationState(HumanAnimController.AnimationState.SCOLDING);
     }
 
     public IEnumerator Scare()
     {
         Debug.Log("Scare()");
-        float duration = GetAnimDuration(AnimationState.SCARED);
+        float duration = humanAnim.GetAnimDuration(HumanAnimController.AnimationState.SCARED);
 
         // Play scared animation
-        SetAnimationState(AnimationState.SCARED);
+        humanAnim.SetAnimationState(HumanAnimController.AnimationState.SCARED);
 
         // Wait for animation to complete before showing game over
         yield return new WaitForSeconds(duration);
