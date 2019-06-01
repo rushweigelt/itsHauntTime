@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerAnimController), typeof(PlayerMoveController), typeof(BoxCollider2D))]
+[RequireComponent(typeof(PlayerAnimController), typeof(PlayerMoveController))]
 public class Player : Singleton<Player>
 {
     public GameObject interactPrompt;

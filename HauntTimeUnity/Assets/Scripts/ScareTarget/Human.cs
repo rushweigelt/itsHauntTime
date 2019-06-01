@@ -102,6 +102,7 @@ public class Human : InteractableObject
         }
         else
         {
+            // Player scares human, then game over screen appears
             StartCoroutine(Scare());
         }
     }
@@ -117,6 +118,11 @@ public class Human : InteractableObject
     public IEnumerator Scare()
     {
         Debug.Log("Scare()");
+
+        // Play ghost spook animation
+        PlayerAnimController playerAnim = Player.Instance.GetComponent<PlayerAnimController>();
+        playerAnim.SetTrigger(PlayerAnimController.AnimState.SPOOK_HUMAN);
+        
         float duration = humanAnim.GetAnimDuration(HumanAnimController.AnimationState.SCARED);
 
         // Play scared animation
