@@ -5,22 +5,15 @@ using UnityEngine;
 /// <summary>
 /// Calls proper player animation when player enters fan blown zone
 /// </summary>
-public class FanBlown : MonoBehaviour
+public class PlayerAnimationTrigger : MonoBehaviour
 {
-    public PlayerAnimController player;
+    PlayerAnimController player;
+
+    public PlayerAnimController.AnimState playerAnimation;
+
     // Start is called before the first frame update
     void Start()
     {
         player = Player.Instance.GetComponent<PlayerAnimController>();
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        player.SetBool(PlayerAnimController.AnimState.BLOWN_AWAY, true);
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        
     }
 }

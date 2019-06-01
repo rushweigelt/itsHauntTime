@@ -15,6 +15,9 @@ public class PlayerAnimController : MonoBehaviour
 
     Animator animator;
 
+    AnimState prevState;
+    AnimState currentState;
+
     public Dictionary<AnimState, string> stateToParameterMapping = new Dictionary<AnimState, string>() {
         // {AnimState.IDLE, "Idle"},
         {AnimState.BLOWN_AWAY, "Blown Away"},
@@ -30,16 +33,58 @@ public class PlayerAnimController : MonoBehaviour
         if(animator == null) {
             Debug.LogWarning(name + " - Player doesn't have Animator component; please attach one to game object.");
         }
+
+        // Default to idle state
+        currentState = AnimState.IDLE;
     }
 
-    public void SetBool(AnimState state, bool value) 
+    public AnimState SetBool(AnimState state, bool value) 
     {
+        // Set parameter value on animator
         string paramName = stateToParameterMapping[state];
         animator.SetBool(paramName, value);
+
+        // Update current/previous states
+        prevState = currentState;
+        currentState = state;
+
+        return prevState;
     }
 
-    public void SetTrigger(AnimState state) {
+    public AnimState SetTrigger(AnimState state) 
+    {
+        // Set parameter value on animator
         string paramName = stateToParameterMapping[state];
         animator.SetTrigger(paramName);
+
+        // Update current/previous states
+        prevState = currentState;
+        currentState = state;
+
+        return prevState;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        // If tagged as fan and has PlayerAnimation component, set animation
+        if(other.tag.Equals("AnimationTrigger")) {
+            PlayerAnimationTrigger animTrigger = other.GetComponent<PlayerAnimationTrigger>();
+            if(animTrigger != null) {
+                Debug.LogWarning("Entered AnimationTrigger " + other.name);
+                SetBool(animTrigger.playerAnimation, true);
+            }
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        // If tagged as fan and has FanBlown component, set animation
+        if(other.tag.Equals("AnimationTrigger")) {
+            PlayerAnimationTrigger animTrigger = other.GetComponent<PlayerAnimationTrigger>();
+            if(animTrigger != null) {
+                Debug.LogWarning("Exited AnimationTrigger " + other.name);
+                SetBool(animTrigger.playerAnimation, false);
+            }
+        }
     }
 }

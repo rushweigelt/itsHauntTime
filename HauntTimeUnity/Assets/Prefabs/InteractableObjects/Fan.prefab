@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1435761606444700221}
   m_Layer: 0
   m_Name: blownZone
-  m_TagString: Fan
+  m_TagString: AnimationTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87e76c293770848eda934417562c07bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  playerAnimation: 1
 --- !u!1 &3637598693426951992
 GameObject:
   m_ObjectHideFlags: 0
