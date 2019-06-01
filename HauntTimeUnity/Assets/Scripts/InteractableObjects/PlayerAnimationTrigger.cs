@@ -16,4 +16,6 @@ public class PlayerAnimationTrigger : MonoBehaviour
     {
         player = Player.Instance.GetComponent<PlayerAnimController>();
     }
+
+    // TODO: create derived classes that handle their own specific animation trigger rules
 }
