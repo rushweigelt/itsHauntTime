@@ -26,9 +26,27 @@ public class TouchInput : MonoBehaviour {
 	/// </summary>
 	public ControlScheme controlScheme;
 
+    /// <summary>
+    /// Used to show position of player tap
+    /// </summary>
+    public GameObject tapIndicator;
+
+    /// <summary>
+    /// Speed at which tap indicator animates
+    /// </summary>
+    [Range(0,2)]
+    public float tapIndicatorSpeed;
+
+    IEnumerator showTapIndicatorCoroutine;
+
     private void Start()
     {
         lastTouchPos = Player.Instance.transform.position;
+
+        // Instantiate and hide tap indicator
+        tapIndicator = Instantiate(tapIndicator);
+        tapIndicator.name = "Tap Indicator";
+        tapIndicator.SetActive(false);
     }
 
     /// <summary>
@@ -73,17 +91,62 @@ public class TouchInput : MonoBehaviour {
         if (Input.GetMouseButtonDown(0)) {
             lastTouchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Debug.Log("Received tap at " + lastTouchPos);
+
+            // Show tap indicator here
+            //if(showTapIndicatorCoroutine == null) {
+            //    showTapIndicatorCoroutine = ShowTapIndicator(lastTouchPos);
+            //    StartCoroutine(showTapIndicatorCoroutine);
+            //}
+            StartCoroutine(ShowTapIndicator(lastTouchPos));
         }
 
         return lastTouchPos;
     }
 
-    private Vector2 GetFollowTapInput()
+
+    // TODO: make coroutine interruptable
+    /// <summary>
+    /// Coroutine animation that indicates position tapped by user
+    /// </summary>
+    /// <param name="tapPosition"></param>
+    /// <returns></returns>
+    private IEnumerator ShowTapIndicator(Vector2 tapPosition)
     {
+        // Set tap indicator to initial state (active = true, at tap position, scale = 0)
+        tapIndicator.SetActive(true);
+        tapIndicator.transform.position = tapPosition;
+        tapIndicator.transform.localScale = Vector3.zero;
+        
+        // Set color to full alpha
+        SpriteRenderer spriteRenderer = tapIndicator.GetComponent<SpriteRenderer>();
+        Color color = spriteRenderer.color;
+        color.a = 1;
+        spriteRenderer.color = color;
 
+        float t = 0;
+        while(t < 1) {
+            // Move scale value up the curve (grow from 0 to 1)
+            Vector3 scale = Mathfx.Hermite(Vector3.zero, Vector3.one, t);
 
-        return Vector2.zero;
+            // Move color alpha value down the curve (shrink from 1 to 0)
+            color.a = Mathfx.Hermite(1, 0, t);
+
+            // Update scale/color values
+            tapIndicator.transform.localScale = scale;
+            spriteRenderer.color = color;
+
+            // Increment time
+            t += Time.deltaTime * (tapIndicatorSpeed);
+           yield return null;
+        }
+
+        // Ensure we didn't overshoot
+        color.a = 0;
+        spriteRenderer.color = color;
+
+        tapIndicator.SetActive(false);
     }
+
 
     // ------------------------------------------------------------------------------------
     // --------------------------------- FOLLOW DRAG INPUT --------------------------------

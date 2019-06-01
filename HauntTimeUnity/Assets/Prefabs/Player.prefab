@@ -346,6 +346,7 @@ MonoBehaviour:
   transparencyChangeSpeed: 2
   minTransparency: 0.467
   maxTransparency: 1
+  animController: {fileID: 0}
 --- !u!114 &148272286122236543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,6 +362,9 @@ MonoBehaviour:
   touchThreshold: 0.2
   lastTouchPos: {x: 0, y: 0}
   controlScheme: 1
+  tapIndicator: {fileID: 7347885887923568187, guid: 87ce3eb22f651f24b8a1477b13aed57f,
+    type: 3}
+  tapIndicatorSpeed: 2
 --- !u!114 &8038750178275956149
 MonoBehaviour:
   m_ObjectHideFlags: 0
