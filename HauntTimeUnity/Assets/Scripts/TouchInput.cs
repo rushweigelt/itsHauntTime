@@ -44,9 +44,9 @@ public class TouchInput : MonoBehaviour {
         lastTouchPos = Player.Instance.transform.position;
 
         // Instantiate and hide tap indicator
-        tapIndicator = Instantiate(tapIndicator);
-        tapIndicator.name = "Tap Indicator";
-        tapIndicator.SetActive(false);
+        //tapIndicator = Instantiate(tapIndicator);
+        //tapIndicator.name = "Tap Indicator";
+        //tapIndicator.SetActive(false);
     }
 
     /// <summary>
@@ -104,7 +104,7 @@ public class TouchInput : MonoBehaviour {
     }
 
 
-    // TODO: make coroutine interruptable
+    // TODO: consider optimizing this to use an object pool
     /// <summary>
     /// Coroutine animation that indicates position tapped by user
     /// </summary>
@@ -113,11 +113,12 @@ public class TouchInput : MonoBehaviour {
     private IEnumerator ShowTapIndicator(Vector2 tapPosition)
     {
         // Set tap indicator to initial state (active = true, at tap position, scale = 0)
+        GameObject tapIndicator = Instantiate(this.tapIndicator);
         tapIndicator.SetActive(true);
         tapIndicator.transform.position = tapPosition;
         tapIndicator.transform.localScale = Vector3.zero;
         
-        // Set color to full alpha
+        // Set start color to full alpha
         SpriteRenderer spriteRenderer = tapIndicator.GetComponent<SpriteRenderer>();
         Color color = spriteRenderer.color;
         color.a = 1;
@@ -140,11 +141,8 @@ public class TouchInput : MonoBehaviour {
            yield return null;
         }
 
-        // Ensure we didn't overshoot
-        color.a = 0;
-        spriteRenderer.color = color;
-
-        tapIndicator.SetActive(false);
+        // Destroy when animation finished
+        Destroy(tapIndicator);
     }
 
 
