@@ -1,27 +1,50 @@
 fileFormatVersion: 2
-guid: 66ad60abc879d4d77a3d04f8516cf724
+guid: ce64e82d262e86445a6395c26fb4daf9
 TextureImporter:
   fileIDToRecycleName:
-    21300000: human_scared_reslice_0
-    21300002: human_scared_reslice_1
-    21300004: human_scared_reslice_2
-    21300006: human_scared_reslice_3
-    21300008: human_scared_reslice_4
-    21300010: human_scared_reslice_5
-    21300012: human_scared_reslice_6
-    21300014: human_scared_reslice_7
-    21300016: human_scared_reslice_8
-    21300018: human_scared_reslice_9
-    21300020: human_scared_reslice_10
-    21300022: human_scared_reslice_11
-    21300024: human_scared_reslice_12
-    21300026: human_scared_reslice_13
-    21300028: human_scared_reslice_14
-    21300030: human_scared_reslice_15
-    21300032: human_scared_reslice_16
-    21300034: human_scared_reslice_17
-    21300036: human_scared_reslice_18
-    21300038: human_scared_reslice_19
+    21300000: human_scaredFlattened3_650x650_0
+    21300002: human_scaredFlattened3_650x650_1
+    21300004: human_scaredFlattened3_650x650_2
+    21300006: human_scaredFlattened3_650x650_3
+    21300008: human_scaredFlattened3_650x650_4
+    21300010: human_scaredFlattened3_650x650_5
+    21300012: human_scaredFlattened3_650x650_6
+    21300014: human_scaredFlattened3_650x650_7
+    21300016: human_scaredFlattened3_650x650_8
+    21300018: human_scaredFlattened3_650x650_9
+    21300020: human_scaredFlattened3_650x650_10
+    21300022: human_scaredFlattened3_650x650_11
+    21300024: human_scaredFlattened3_650x650_12
+    21300026: human_scaredFlattened3_650x650_13
+    21300028: human_scaredFlattened3_650x650_14
+    21300030: human_scaredFlattened3_650x650_15
+    21300032: human_scaredFlattened3_650x650_16
+    21300034: human_scaredFlattened3_650x650_17
+    21300036: human_scaredFlattened3_650x650_18
+    21300038: human_scaredFlattened3_650x650_19
+    21300040: human_scaredFlattened3_650x650_20
+    21300042: human_scaredFlattened3_650x650_21
+    21300044: human_scaredFlattened3_650x650_22
+    21300046: human_spritesheet_scared_0
+    21300048: human_spritesheet_scared_1
+    21300050: human_spritesheet_scared_2
+    21300052: human_spritesheet_scared_3
+    21300054: human_spritesheet_scared_4
+    21300056: human_spritesheet_scared_5
+    21300058: human_spritesheet_scared_6
+    21300060: human_spritesheet_scared_7
+    21300062: human_spritesheet_scared_8
+    21300064: human_spritesheet_scared_9
+    21300066: human_spritesheet_scared_10
+    21300068: human_spritesheet_scared_11
+    21300070: human_spritesheet_scared_12
+    21300072: human_spritesheet_scared_13
+    21300074: human_spritesheet_scared_14
+    21300076: human_spritesheet_scared_15
+    21300078: human_spritesheet_scared_16
+    21300080: human_spritesheet_scared_17
+    21300082: human_spritesheet_scared_18
+    21300084: human_spritesheet_scared_19
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -51,7 +74,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -126,307 +149,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: human_scared_reslice_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1950
-        width: 650
-        height: 650
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba2c9a590a47d4dcfbe013c16b5e9056
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: human_scared_reslice_1
-      rect:
-        serializedVersion: 2
-        x: 650
-        y: 1950
-        width: 650
-        height: 650
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 15e98ad6c67f64771830db0fe8a80149
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: human_scared_reslice_2
-      rect:
-        serializedVersion: 2
-        x: 1300
-        y: 1950
-        width: 650
-        height: 650
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e6d2b2697706d4bd69e4b57e6c7b8d2f
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: human_scared_reslice_3
-      rect:
-        serializedVersion: 2
-        x: 1946
-        y: 1950
-        width: 650
-        height: 650
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f85e00723ab594bad98a801eb3486473
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: human_scared_reslice_4
-      rect:
-        serializedVersion: 2
-        x: 2600
-        y: 1950
-        width: 650
-        height: 650
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7efd764faa1e24e958c88dd3f67012e5
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: human_scared_reslice_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1300
-        width: 650
-        height: 650
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c40fbf26d3fc94346b506fa5e126b02c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: human_scared_reslice_6
-      rect:
-        serializedVersion: 2
-        x: 650
-        y: 1300
-        width: 650
-        height: 650
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 90ab2985a1a9745059f786d21901d0f7
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: human_scared_reslice_7
-      rect:
-        serializedVersion: 2
-        x: 1300
-        y: 1300
-        width: 650
-        height: 650
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dacf5dcdb4a6e4d5f81f24e1796d16cd
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: human_scared_reslice_8
-      rect:
-        serializedVersion: 2
-        x: 1950
-        y: 1300
-        width: 650
-        height: 650
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 84eb94571847b4023a81098b11a96c16
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: human_scared_reslice_9
-      rect:
-        serializedVersion: 2
-        x: 2600
-        y: 1300
-        width: 650
-        height: 650
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d162d8c5166a246b9b63aaf02a636f65
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: human_scared_reslice_10
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 650
-        width: 650
-        height: 650
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 798ad2e92cc0b413a9d9e59ff9e5e388
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: human_scared_reslice_11
-      rect:
-        serializedVersion: 2
-        x: 650
-        y: 650
-        width: 650
-        height: 650
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a3dbd9408377c48688f5e0f29aafb297
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: human_scared_reslice_12
-      rect:
-        serializedVersion: 2
-        x: 1300
-        y: 650
-        width: 650
-        height: 650
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1ef62719145a042859a504cc7a0f6730
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: human_scared_reslice_13
-      rect:
-        serializedVersion: 2
-        x: 1950
-        y: 650
-        width: 650
-        height: 650
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dcf957be7c7f14a0ca3c82698b52f885
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: human_scared_reslice_14
-      rect:
-        serializedVersion: 2
-        x: 2600
-        y: 650
-        width: 650
-        height: 650
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 208096b20a182400eb61cfc15e86d1c7
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: human_scared_reslice_15
+      name: human_spritesheet_scared_0
       rect:
         serializedVersion: 2
         x: 0
@@ -440,13 +163,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fadf38f246a5f40d6b7acc3482ad6f53
+      spriteID: 960b7c940a56646978f2b4484574a685
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: human_scared_reslice_16
+      name: human_spritesheet_scared_1
       rect:
         serializedVersion: 2
         x: 650
@@ -460,13 +183,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9b2c7d96e7de486f8d908d52703f05d
+      spriteID: 061c20f09fd1144549b6b76fee015033
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: human_scared_reslice_17
+      name: human_spritesheet_scared_2
       rect:
         serializedVersion: 2
         x: 1300
@@ -480,13 +203,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6c30436e7f5949f489fd78c06cf019d
+      spriteID: 30bf02e0d65b543638905cb69d5eede7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: human_scared_reslice_18
+      name: human_spritesheet_scared_3
       rect:
         serializedVersion: 2
         x: 1950
@@ -500,13 +223,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9aeef906c480c45c28bf960579dc3733
+      spriteID: fddf1f54dc3ff42e3bbd1de27e3d0728
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: human_scared_reslice_19
+      name: human_spritesheet_scared_4
       rect:
         serializedVersion: 2
         x: 2600
@@ -520,7 +243,307 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d5458f549c7343fea6f0f5329e07443
+      spriteID: c5c2f49360d2849ccb8a6c75f2f6a323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_spritesheet_scared_5
+      rect:
+        serializedVersion: 2
+        x: 3250
+        y: 0
+        width: 650
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 297c4b45184864e0896ded29ce9f7441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_spritesheet_scared_6
+      rect:
+        serializedVersion: 2
+        x: 3900
+        y: 0
+        width: 650
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 239f320b09df64840bccab5939c0535d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_spritesheet_scared_7
+      rect:
+        serializedVersion: 2
+        x: 4550
+        y: 0
+        width: 650
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a20d008e2a54242c1aa23f2b5e139d5e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_spritesheet_scared_8
+      rect:
+        serializedVersion: 2
+        x: 5200
+        y: 0
+        width: 650
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc4adfcbbf2224e398a62bfd56a40d4b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_spritesheet_scared_9
+      rect:
+        serializedVersion: 2
+        x: 5850
+        y: 0
+        width: 650
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c5f790b96fd042af91568e66f3dd025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_spritesheet_scared_10
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 0
+        width: 650
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3df55c925141144fe86a04d02640fa58
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_spritesheet_scared_11
+      rect:
+        serializedVersion: 2
+        x: 7150
+        y: 0
+        width: 650
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 323615c12fa5348deab51ee2a0128bfe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_spritesheet_scared_12
+      rect:
+        serializedVersion: 2
+        x: 7800
+        y: 0
+        width: 650
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a8fb69c245ea4dd7a19dcd62e700aec
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_spritesheet_scared_13
+      rect:
+        serializedVersion: 2
+        x: 8450
+        y: 0
+        width: 650
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e5557d2b2b144202ae90545d4582681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_spritesheet_scared_14
+      rect:
+        serializedVersion: 2
+        x: 9100
+        y: 0
+        width: 650
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c7bbe35e63864c199ec4825279be27f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_spritesheet_scared_15
+      rect:
+        serializedVersion: 2
+        x: 9750
+        y: 0
+        width: 650
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dafe55743fdd24a57853cde9a617401c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_spritesheet_scared_16
+      rect:
+        serializedVersion: 2
+        x: 10400
+        y: 0
+        width: 650
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 376967e6f88ea4746a5db99eb65a301f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_spritesheet_scared_17
+      rect:
+        serializedVersion: 2
+        x: 11050
+        y: 0
+        width: 650
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dd16095543a443e1be4f0353617f624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_spritesheet_scared_18
+      rect:
+        serializedVersion: 2
+        x: 11700
+        y: 0
+        width: 650
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a260c48b456b64a95840735071f03fed
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: human_spritesheet_scared_19
+      rect:
+        serializedVersion: 2
+        x: 12350
+        y: 0
+        width: 650
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad60ffd86bdf444b0b5bbc12c4eb247d
       vertices: []
       indices: 
       edges: []
@@ -528,7 +551,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8d8e1aaf95ca3462b9cfd33106595c9b
+    spriteID: 827e788b534814045a18edaec60bb802
     vertices: []
     indices: 
     edges: []

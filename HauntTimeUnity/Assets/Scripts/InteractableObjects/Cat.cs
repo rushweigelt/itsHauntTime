@@ -13,6 +13,8 @@ public class Cat : InteractableObject
 
     public AnimationState animationState;
 
+    PlayerAnimController playerAnim;
+
     public Transform[] jumpTargets;
 
     public float jumpSpeed;
@@ -34,6 +36,7 @@ public class Cat : InteractableObject
     {
         base.Start();
         anim = GetComponent<Animator>();
+        playerAnim = Player.Instance.GetComponent<PlayerAnimController>();
 
         // hissBox.enabled = true;
         jumpEvents.Add(afterTable);
@@ -59,7 +62,7 @@ public class Cat : InteractableObject
         float jumpHeight = 3f;
 
         // Get jump duration
-        float duration = 0;
+        float duration = 2;
         AnimationClip[] clips = anim.runtimeAnimatorController.animationClips;
         foreach (AnimationClip clip in clips.Where(c => c.name.Contains("jump"))) {
             duration += clip.length;
@@ -107,6 +110,9 @@ public class Cat : InteractableObject
 
         // Set hiss collider active
         // hissBox.enabled = hissing;
+
+        // Set player scared animation
+        playerAnim.SetBool(PlayerAnimController.AnimState.SCARED, hissing);
 
         // Set anim hissing field
         anim.SetBool("Hissing", hissing);

@@ -1,13 +1,17 @@
 fileFormatVersion: 2
-guid: 3e276c97344374547ac93b55d77f47f9
+guid: 7285c30cef94a4707ac8e9e2ed82f6e6
 TextureImporter:
   fileIDToRecycleName:
-    21300000: hatto_spritesheet_blownaway_0
-    21300002: hatto_spritesheet_blownaway_1
-    21300004: hatto_spritesheet_blownaway_2
-    21300006: hatto_spritesheet_blownaway_3
-    21300008: hatto_spritesheet_blownaway_4
-    21300010: hatto_spritesheet_blownaway_5
+    21300000: hatto_spritesheet_spook_0
+    21300002: hatto_spritesheet_spook_1
+    21300004: hatto_spritesheet_spook_2
+    21300006: hatto_spritesheet_spook_3
+    21300008: hatto_spritesheet_spook_4
+    21300010: hatto_spritesheet_spook_5
+    21300012: hatto_spritesheet_spook_6
+    21300014: hatto_spritesheet_spook_7
+    21300016: hatto_spritesheet_spook_8
+    21300018: hatto_spritesheet_spook_9
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -112,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hatto_spritesheet_blownaway_0
+      name: hatto_spritesheet_spook_0
       rect:
         serializedVersion: 2
         x: 0
@@ -126,13 +130,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93b66b20514ce4ef98534c835db69e4c
+      spriteID: b7ab9411ac6b846c49b98d917ee72083
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hatto_spritesheet_blownaway_1
+      name: hatto_spritesheet_spook_1
       rect:
         serializedVersion: 2
         x: 410
@@ -146,13 +150,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 788d9d4506f8c4d76b1a27f438a84a2b
+      spriteID: c61fc373d2acd4758a0322c358b2d219
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hatto_spritesheet_blownaway_2
+      name: hatto_spritesheet_spook_2
       rect:
         serializedVersion: 2
         x: 820
@@ -166,13 +170,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4279094c71e5040739a8f4d5fa8440b2
+      spriteID: 5d9fddb13b4b34f429c0d82b9da8e956
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hatto_spritesheet_blownaway_3
+      name: hatto_spritesheet_spook_3
       rect:
         serializedVersion: 2
         x: 1230
@@ -186,13 +190,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03b6b0406c16b4126aeb56cc75bc6559
+      spriteID: efaaf3fc5cdab4f168a7c9858f6443e5
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hatto_spritesheet_blownaway_4
+      name: hatto_spritesheet_spook_4
       rect:
         serializedVersion: 2
         x: 1640
@@ -206,13 +210,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4c2adc05978b434b96d5b10c01eede9
+      spriteID: 95da7de398aa64915b0f0b4b0bcb2841
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hatto_spritesheet_blownaway_5
+      name: hatto_spritesheet_spook_5
       rect:
         serializedVersion: 2
         x: 2050
@@ -226,7 +230,87 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87de6d556d9b149e5802eb948e60b5c1
+      spriteID: 0ff5055254ea04d1caec83b9412894d2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hatto_spritesheet_spook_6
+      rect:
+        serializedVersion: 2
+        x: 2460
+        y: 0
+        width: 410
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f593224f79a0b46f985afd4726da9c61
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hatto_spritesheet_spook_7
+      rect:
+        serializedVersion: 2
+        x: 2870
+        y: 0
+        width: 410
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86c8e984815a04db380225ace730b690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hatto_spritesheet_spook_8
+      rect:
+        serializedVersion: 2
+        x: 3280
+        y: 0
+        width: 410
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c7175206084f489ea021845c1bc6eeb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hatto_spritesheet_spook_9
+      rect:
+        serializedVersion: 2
+        x: 3690
+        y: 0
+        width: 410
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15dc641711fcc499598785aee1deeecf
       vertices: []
       indices: 
       edges: []
@@ -234,7 +318,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 707e4dee241cc4c1591fdccc4fbc722f
+    spriteID: 090677efb29ff4c7982b9342a46b3d05
     vertices: []
     indices: 
     edges: []
