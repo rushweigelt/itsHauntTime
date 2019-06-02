@@ -174,7 +174,6 @@ GameObject:
   - component: {fileID: 5520879945769075894}
   - component: {fileID: 5520879945769075901}
   - component: {fileID: 148272286122236543}
-  - component: {fileID: 8038750178275956149}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -346,7 +345,6 @@ MonoBehaviour:
   transparencyChangeSpeed: 2
   minTransparency: 0.467
   maxTransparency: 1
-  animController: {fileID: 0}
 --- !u!114 &148272286122236543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,21 +360,6 @@ MonoBehaviour:
   touchThreshold: 0.2
   lastTouchPos: {x: 0, y: 0}
   controlScheme: 1
-  tapIndicator: {fileID: 7347885887923568187, guid: 87ce3eb22f651f24b8a1477b13aed57f,
-    type: 3}
-  tapIndicatorSpeed: 2
---- !u!114 &8038750178275956149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5520879945769075895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7df91ad21f60d4520aa3577694dedecd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5520879945904975430
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,7 +10,6 @@ TagManager:
   - Interactable
   - Npc
   - saltWall
-  - AnimationTrigger
   layers:
   - Default
   - TransparentFX

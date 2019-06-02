@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerAnimController), typeof(PlayerMoveController))]
 public class Player : Singleton<Player>
 {
     public GameObject interactPrompt;
@@ -29,8 +28,6 @@ public class Player : Singleton<Player>
     [Range(0,1)]
     public float maxTransparency;
 
-    public PlayerAnimController animController;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +35,6 @@ public class Player : Singleton<Player>
         interactPrompt.SetActive(false);
 
         spriteRenderer = GetComponent<SpriteRenderer>();
-        animController = GetComponent<PlayerAnimController>();
     }
 
     // Update is called once per frame

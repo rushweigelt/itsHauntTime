@@ -46,10 +46,6 @@ public class Fan : Electronic
         // Start/stop fan animation
         animator.SetBool("isOn", active);
 
-        // Set player's blown animation
-        // TODO: this is a specific hard-coded case that will only work for our beta: remove this later
-        Player.Instance.GetComponent<PlayerAnimController>().SetBool(PlayerAnimController.AnimState.BLOWN_AWAY, active);
-
         PlaySound(active);
     }
 

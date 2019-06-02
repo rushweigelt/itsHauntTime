@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 268284163932920931}
   - component: {fileID: 268284163932920934}
   - component: {fileID: 268284163932920933}
-  - component: {fileID: 5861734937695876486}
   m_Layer: 0
   m_Name: Human
   m_TagString: Interactable
@@ -80,7 +79,7 @@ SpriteRenderer:
   m_Size: {x: 4.32, y: 6.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &268284163932920931
@@ -140,61 +139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e324b7eb1d02fa4aa7da246fde25d11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canInteract: 0
   interactRange: {fileID: 268284163932920931}
   interactPrompt: {fileID: 0}
-  playSound: 0
-  interactSound: 0
-  onInteract:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  scoldPosition: {fileID: 0}
-  slowRate: 2.2
-  scold:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: BeScolded
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  arrived:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 268284163932920933}
-        m_MethodName: SetInteract
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  isTutorial: 0
---- !u!114 &5861734937695876486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 268284163932920929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 828be91ed1d2641a98d704e58047060a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  inRange: 0
+  canInteract: 0
   animationState: 0

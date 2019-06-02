@@ -51,9 +51,6 @@ public abstract class InteractableObject : MonoBehaviour
             if(playSound) {
                 SoundController.Instance.PlaySoundEffect(interactSound);
             }
-
-            // Play interact animation
-            Player.Instance.animController.SetTrigger(PlayerAnimController.AnimState.INTERACT);
             
             // Call derived Interact() method
             Interact();

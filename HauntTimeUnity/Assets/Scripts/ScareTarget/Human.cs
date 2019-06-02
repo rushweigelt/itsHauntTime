@@ -3,11 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(HumanAnimController))]
 public class Human : InteractableObject
 {
-    HumanAnimController humanAnim;
+    Animator anim;
+
+    public enum AnimationState { SITTING, STANDING_UP, WALKING }
+
+    /// <summary>
+    /// Tells Animator which animation to play
+    /// </summary>
+    public AnimationState animationState;
     public Transform scoldPosition;
+
+    //target we'd be moving to
+    // public GameObject target;
 
     //rate we slow target
     public float slowRate;
@@ -26,10 +35,16 @@ public class Human : InteractableObject
     protected override void Start()
     {
         base.Start();
-        humanAnim = GetComponent<HumanAnimController>();
-        if(humanAnim == null) {
-            Debug.LogWarningFormat("{0} - HumanAnimController component not found; please attach to Human GameObject", name);
-        }
+        anim = GetComponent<Animator>();
+    }
+
+    public void SetAnimationState(AnimationState state) 
+    {
+        // Set starting animation state
+        anim.SetInteger("State", (int)state);
+
+        // Update current state
+        animationState = state;
     }
 
     /// <summary>
@@ -37,9 +52,19 @@ public class Human : InteractableObject
     /// </summary>
     public void Investigate()
     {
-        humanAnim.SetAnimationState(HumanAnimController.AnimationState.WALKING);
         Debug.Log("Investigate()");
         StartCoroutine(MoveToPosition(scoldPosition.transform.position, slowRate));
+        Scold();
+    }
+
+    public void Scold()
+    {
+        Debug.Log("Scold()");
+
+        // TODO: trigger scolding animation
+
+        // Human can now be scared
+        SetInteract(true);
     }
 
     //Drew's move code, for consistency's sake I reuse it here.
@@ -84,7 +109,6 @@ public class Human : InteractableObject
         }
         // Ensure we don't miss target
         transform.position = target;
-        
         // Invoke post-move listener
         arrived.Invoke();
     }
@@ -102,34 +126,15 @@ public class Human : InteractableObject
         }
         else
         {
-            // Player scares human, then game over screen appears
-            StartCoroutine(Scare());
+            Scare();
         }
     }
 
-    public void Scold()
+    public void Scare()
     {
-        Debug.Log("Scold()");
+        // TODO: play scare animation
 
-        // Trigger scolding animation
-        humanAnim.SetAnimationState(HumanAnimController.AnimationState.SCOLDING);
-    }
-
-    public IEnumerator Scare()
-    {
-        Debug.Log("Scare()");
-
-        // Play ghost spook animation
-        PlayerAnimController playerAnim = Player.Instance.GetComponent<PlayerAnimController>();
-        playerAnim.SetTrigger(PlayerAnimController.AnimState.SPOOK_HUMAN);
-        
-        float duration = humanAnim.GetAnimDuration(HumanAnimController.AnimationState.SCARED);
-
-        // Play scared animation
-        humanAnim.SetAnimationState(HumanAnimController.AnimationState.SCARED);
-
-        // Wait for animation to complete before showing game over
-        yield return new WaitForSeconds(duration);
+        //game over
         OurGameManager.Instance.GameOver(true);
     }
 }

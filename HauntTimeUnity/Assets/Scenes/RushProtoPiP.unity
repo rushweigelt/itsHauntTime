@@ -5819,11 +5819,6 @@ PrefabInstance:
       propertyPath: afterScold.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8858565934681171898, guid: 8c4430efdf861af4fa3f0b3481fd86aa,
-        type: 3}
-      propertyPath: jumpSpeed
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 8858565934681171899, guid: 8c4430efdf861af4fa3f0b3481fd86aa,
         type: 3}
       propertyPath: m_Enabled
@@ -5854,11 +5849,6 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 1.4307537
       objectReference: {fileID: 0}
-    - target: {fileID: 8858565934681171897, guid: 8c4430efdf861af4fa3f0b3481fd86aa,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8858565934681171894, guid: 8c4430efdf861af4fa3f0b3481fd86aa,
         type: 3}
       propertyPath: m_Offset.x
@@ -5872,12 +5862,7 @@ PrefabInstance:
     - target: {fileID: 8858565934681171894, guid: 8c4430efdf861af4fa3f0b3481fd86aa,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8858565934681171894, guid: 8c4430efdf861af4fa3f0b3481fd86aa,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c4430efdf861af4fa3f0b3481fd86aa, type: 3}
