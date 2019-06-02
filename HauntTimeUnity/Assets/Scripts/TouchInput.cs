@@ -42,11 +42,6 @@ public class TouchInput : MonoBehaviour {
     private void Start()
     {
         lastTouchPos = Player.Instance.transform.position;
-
-        // Instantiate and hide tap indicator
-        //tapIndicator = Instantiate(tapIndicator);
-        //tapIndicator.name = "Tap Indicator";
-        //tapIndicator.SetActive(false);
     }
 
     /// <summary>
@@ -93,10 +88,6 @@ public class TouchInput : MonoBehaviour {
             Debug.Log("Received tap at " + lastTouchPos);
 
             // Show tap indicator here
-            //if(showTapIndicatorCoroutine == null) {
-            //    showTapIndicatorCoroutine = ShowTapIndicator(lastTouchPos);
-            //    StartCoroutine(showTapIndicatorCoroutine);
-            //}
             StartCoroutine(ShowTapIndicator(lastTouchPos));
         }
 
@@ -114,7 +105,6 @@ public class TouchInput : MonoBehaviour {
     {
         // Set tap indicator to initial state (active = true, at tap position, scale = 0)
         GameObject tapIndicator = Instantiate(this.tapIndicator);
-        tapIndicator.SetActive(true);
         tapIndicator.transform.position = tapPosition;
         tapIndicator.transform.localScale = Vector3.zero;
         
