@@ -1461,7 +1461,7 @@ Transform:
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children: []
   m_Father: {fileID: 1763720473}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &614343994
 SpriteRenderer:
@@ -1959,7 +1959,7 @@ GameObject:
   - component: {fileID: 856453746}
   - component: {fileID: 856453747}
   m_Layer: 0
-  m_Name: Carpet (1)
+  m_Name: Lower Foundation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1973,11 +1973,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 856453745}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.1, y: -8.4, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 36.47826, y: -17.391302, z: 1.3149264}
+  m_LocalScale: {x: 60.39, y: 7.4728255, z: 4.347826}
   m_Children: []
-  m_Father: {fileID: 1097008186}
-  m_RootOrder: 1
+  m_Father: {fileID: 1763720473}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &856453747
 SpriteRenderer:
@@ -2016,11 +2016,11 @@ SpriteRenderer:
   m_SortingLayerID: -1382564031
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 1509af56dc0e8be46b9abe8aeb335e67, type: 3}
-  m_Color: {r: 0.6981132, g: 0.51699895, b: 0.54221743, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 39c578fd4471f80469e76482715d4d22, type: 3}
+  m_Color: {r: 0.2924528, g: 0.19450872, b: 0.21953164, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 2
+  m_DrawMode: 0
   m_Size: {x: 71, y: 9.9}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
@@ -2404,7 +2404,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1763720473}
-  - {fileID: 856453746}
   - {fileID: 1160314809}
   - {fileID: 1666487639}
   m_Father: {fileID: 404431136}
@@ -2601,7 +2600,7 @@ Transform:
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.2333}
   m_Children: []
   m_Father: {fileID: 1097008186}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1160314810
 SpriteRenderer:
@@ -3759,7 +3758,7 @@ Transform:
   m_LocalScale: {x: 0.8500001, y: 0.8500001, z: 1}
   m_Children: []
   m_Father: {fileID: 1097008186}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1666487640
 SpriteRenderer:
@@ -3844,6 +3843,7 @@ Transform:
   m_Children:
   - {fileID: 997005168}
   - {fileID: 1158058295}
+  - {fileID: 856453746}
   - {fileID: 614343993}
   m_Father: {fileID: 1097008186}
   m_RootOrder: 0
