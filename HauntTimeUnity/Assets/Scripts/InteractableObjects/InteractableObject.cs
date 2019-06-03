@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEditor.Events;
 using UnityEditor;
 
 public abstract class InteractableObject : MonoBehaviour
@@ -117,6 +118,23 @@ public abstract class InteractableObject : MonoBehaviour
     /// Event called on interaction
     /// </summary>
     public UnityEvent onInteract;
+
+    /// <summary>
+    /// Removes all persistent (inpsector-set) listeners from the onInteract event.
+    /// </summary>
+    public void RemovePersistentInteractListeners()
+    {
+        int listenerCount = onInteract.GetPersistentEventCount();
+
+        // Iterate over listeners
+        for (int i = 0; i < listenerCount; i++) {
+            string listenerName = onInteract.GetPersistentMethodName(0);
+            Debug.LogFormat("Removing persistent listener at index {0} ({1})", i, listenerName);
+
+            // Remove listener at index 0 (repeat until all have been removed; this is only way to avoid out-of-bounds error)
+            UnityEventTools.RemovePersistentListener(onInteract, 0);
+        }
+    }
 
 
     /// <summary>

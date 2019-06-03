@@ -24,12 +24,9 @@ public class Cat : InteractableObject
     /// </summary>
     public UnityEvent afterTable;
     public UnityEvent afterScold;
-    public List<UnityEvent> jumpEvents;
+    List<UnityEvent> jumpEvents = new List<UnityEvent>();
+
     int i = 0;
-
-    //additional box collider for hiss-range
-    // public BoxCollider2D hissBox;
-
 
     // Start is called before the first frame update
     protected override void Start()
@@ -55,21 +52,15 @@ public class Cat : InteractableObject
         anim.SetTrigger("Jump");
         anim.SetBool("Sitting", false);
 
-        // hissBox.enabled = false;
-
-        // Height of jump
-        // TODO: actually use this height
-        float jumpHeight = 3f;
-
-        // Get jump duration
-        float duration = 2;
+        // Get jump duration (based on animation length)
+        float duration = 2; // Why are we using this starting duration value?
         AnimationClip[] clips = anim.runtimeAnimatorController.animationClips;
         foreach (AnimationClip clip in clips.Where(c => c.name.Contains("jump"))) {
             duration += clip.length;
         }
 
         // Jump towards target
-        StartCoroutine(MoveToPosition(t.position, duration, jumpHeight));
+        StartCoroutine(MoveToPosition(t.position, duration, 0));
     }
 
     IEnumerator MoveToPosition(Vector3 target, float duration, float height) {
@@ -84,7 +75,6 @@ public class Cat : InteractableObject
         // Lerp x towards target
         float t = 0;
         while(t < 1) {
-            //Debug.Log("T: " + t);
             transform.position = Vector3.Lerp(originalPos, target, t);
             t += speed * Time.deltaTime;
             yield return null;
@@ -92,14 +82,11 @@ public class Cat : InteractableObject
         // Ensure we don't miss target
         transform.position = target;
 
-        Debug.Log(jumpEvents.ToList());
-
         Debug.Log("Cat has landed");
 
-        //listener
+        // Invoke listener
         jumpEvents[i].Invoke();
-        if(i<jumpEvents.Count-1)
-        {
+        if(i<jumpEvents.Count-1) {
             i++;
         }
     }
@@ -116,8 +103,6 @@ public class Cat : InteractableObject
 
         // Set anim hissing field
         anim.SetBool("Hissing", hissing);
-
-        //animationState = AnimationState.HISSING;
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -141,17 +126,9 @@ public class Cat : InteractableObject
         }
     }
 
-    public void JumpToTable()
+    public void Jump(int target)
     {
-        Debug.Log("JumpToTable()");
-        Jump(jumpTargets[0]);
-        //afterTable.Invoke();
-    }
-
-    public void JumpToFloor()
-    {
-        Debug.Log("JumpToFloor()");
-        Jump(jumpTargets[1]);
-        //afterScold.Invoke();
+        Debug.Log("Jumping to target " + target);
+        Jump(jumpTargets[target]);
     }
 }
