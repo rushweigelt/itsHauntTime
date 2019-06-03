@@ -6,6 +6,10 @@ using UnityEngine.Events;
 public class Battery : InteractableObject
 {
     public Transform holdTrans; //the transform where we hold items at--on the Player game obj
+
+    [Range(0,1)]
+    public float heldScale;
+
     public bool held; //a boolean that lets us know we're holding the battery
     public Transform dest; //the destination of where the battery could go
     public float slowRate; //the rate we slow down the insert function
@@ -44,7 +48,7 @@ public class Battery : InteractableObject
         //pin, change boolean, then shrink item's scale
         this.transform.position = holdTrans.position;
         held = true;
-        transform.localScale = new Vector3(.6f, .6f, .6f);
+        transform.localScale = Vector3.one * heldScale;
     }
 
     //Drew's move code, for consistency's sake I reuse it here.
