@@ -8,6 +8,11 @@ public class Fan : Electronic
     //game object that is a collider, used to prevent the player from advancing, simulating push back
     public BoxCollider2D fanRange;
 
+    /// <summary>
+    /// Trigger in which player shows Blown animation
+    /// </summary>
+    public PlayerAnimationTrigger blownAnimationTrigger;
+
     public ParticleSystem pSystem;
 
     ParticleSystem.MainModule pSystemMain;
@@ -38,6 +43,7 @@ public class Fan : Electronic
 
         // Set windbox collider
         fanRange.enabled = active;
+        blownAnimationTrigger.gameObject.SetActive(active);
 
         // Stop particle system
         ParticleSystem.EmissionModule emission = pSystem.emission;

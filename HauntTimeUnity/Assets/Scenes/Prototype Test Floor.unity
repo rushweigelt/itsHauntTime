@@ -4494,6 +4494,11 @@ PrefabInstance:
       propertyPath: outlet
       value: 
       objectReference: {fileID: 461057314}
+    - target: {fileID: 3637598693976061649, guid: f41c14a60e5727d418844516f134b812,
+        type: 3}
+      propertyPath: blownAnimationTrigger
+      value: 
+      objectReference: {fileID: 1558467400}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f41c14a60e5727d418844516f134b812, type: 3}
 --- !u!1001 &4369290397267347496
