@@ -22,6 +22,10 @@ public class Roomba : RemoteElectronic
     //Battery, since every roomba would have one.
     public Battery battery;
 
+    public GameObject questionMarkPrompt;
+
+
+
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -61,6 +65,9 @@ public class Roomba : RemoteElectronic
 
     public void TurnOn()
     {
+
+        //set question mark to prompt
+        SetPrompt();
         Debug.Log("Roomba was turned on");
         // Play vaccuum sound effect
         SoundController.Instance.PlaySoundEffectLooping(SoundController.SoundType.ROOMBA_MOVE);
@@ -117,5 +124,10 @@ public class Roomba : RemoteElectronic
         SoundController.Instance.PlaySoundEffect(SoundController.SoundType.ROOMBA_BEEP);
 
         TurnOff();
+    }
+
+    public void SetPrompt()
+    {
+        base.interactRange.enabled = false;
     }
 }

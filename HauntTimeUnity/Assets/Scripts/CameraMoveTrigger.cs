@@ -6,9 +6,9 @@ public class CameraMoveTrigger : MonoBehaviour
 {
     public CameraController cameraController;
 
-    public GameObject pipOb;
+    //public GameObject pipOb;
 
-    public CameraController ccPip;
+    //public CameraController ccPip;
 
     //public Transform leftCameraViewpoint;
 
@@ -24,7 +24,7 @@ public class CameraMoveTrigger : MonoBehaviour
 
     public void Start()
     {
-        pipOb.SetActive(false);
+        //pipOb.SetActive(false);
         if (startOnLeft)
         {
             currentRoom = 0;
@@ -72,6 +72,7 @@ public class CameraMoveTrigger : MonoBehaviour
                 // TODO: move player fully past trigger
             }
         }
+        /*
         else if(other.gameObject.CompareTag("Interactable"))
         {
             pipOb.SetActive(true);
@@ -99,8 +100,9 @@ public class CameraMoveTrigger : MonoBehaviour
                 // TODO: move player fully past trigger
             }
         }
+        */
     }
-
+    /*
     public void ShutPipOff()
     {
         StartCoroutine(StopPip());
@@ -111,4 +113,5 @@ public class CameraMoveTrigger : MonoBehaviour
         yield return new WaitForSeconds(2);
         pipOb.SetActive(false);
     }
+    */
 }
