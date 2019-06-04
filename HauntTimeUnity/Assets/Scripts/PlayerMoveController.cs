@@ -98,10 +98,12 @@ public class PlayerMoveController : Singleton<PlayerMoveController>
     public void MoveOn()
     {
         canMove = true;
+        touchInput.enabled = true;
     }
 
     public void MoveOff()
     {
         canMove = false;
+        touchInput.enabled = false;
     }
 }

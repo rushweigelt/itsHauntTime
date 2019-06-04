@@ -55,6 +55,7 @@ public class miniCamTrigger : MonoBehaviour
             // Collision from right
             if (collisionPoint.x > transform.position.x)
             {
+                Debug.Log("Interact Col Point: " + collisionPoint.x + " camera position: " + transform.position.x);
                 // Switch to left room
                 interactableLeft.Invoke();
 
@@ -64,6 +65,7 @@ public class miniCamTrigger : MonoBehaviour
             // Collision from left
             else if (collisionPoint.x < transform.position.x)
             {
+                Debug.Log("Interact Col Point: " + collisionPoint.x + " camera position: " + transform.position.x);
                 // Switch to right room
                 interactableRight.Invoke();
 
