@@ -75,5 +75,6 @@ public class Fan : Electronic
     protected override void Interact()
     {
         // TODO: shake the fan a bit to show we rattled it
+        canInteract = false;
     }
 }
