@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,4 +19,6 @@ public class PlayerAnimationTrigger : MonoBehaviour
     }
 
     // TODO: create derived classes that handle their own specific animation trigger rules
+
+
 }

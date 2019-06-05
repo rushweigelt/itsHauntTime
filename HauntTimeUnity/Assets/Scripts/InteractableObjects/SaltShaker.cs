@@ -11,6 +11,9 @@ public class SaltShaker : SpriteSwapInteraction
     /// </summary>
     public GameObject saltWall;
 
+
+    public PlayerAnimationTrigger animationTrigger;
+
     public ParticleSystem fallingSaltParticleEffect;
 
     //an event to signal an audio cue worth investigating has occured
@@ -39,6 +42,9 @@ public class SaltShaker : SpriteSwapInteraction
         // Enable spilling salt particle system
         fallingSaltParticleEffect.gameObject.SetActive(true);
 
+        // Enable scared animation trigger
+        animationTrigger.gameObject.SetActive(true);
+
         // Play sound effect of salt shaker hitting floor
         SoundController.Instance.PlaySoundEffect(SoundController.SoundType.CLANG);
 
@@ -49,5 +55,7 @@ public class SaltShaker : SpriteSwapInteraction
     public void BlowAway()
     {
         saltWall.SetActive(false);
+        animationTrigger.gameObject.SetActive(false);
+        fallingSaltParticleEffect.gameObject.SetActive(false);
     }
 }
