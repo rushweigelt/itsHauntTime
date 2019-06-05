@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1164306369933752474
 Transform:
   m_ObjectHideFlags: 0
@@ -239,8 +239,9 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   initialSprite: {fileID: 21300000, guid: 5e289fd87d5a5e247b2b5aed5b01b7c4, type: 3}
-  finalSprite: {fileID: 21300000, guid: 1cf83f1b68af64479ababad5c0877431, type: 3}
+  finalSprite: {fileID: 21300000, guid: 6471f1ffa2490d246b60610d7b707b54, type: 3}
   saltWall: {fileID: 1164306369933752477}
+  fallingSaltParticleEffect: {fileID: 7973732036876696442}
   audioInvestigate:
     m_PersistentCalls:
       m_Calls:
@@ -365,6 +366,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Salt Particles
       objectReference: {fileID: 0}
+    - target: {fileID: 624440999918236651, guid: 8a524dc7440572742894bbb2a9928159,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1673993347831647298, guid: 8a524dc7440572742894bbb2a9928159,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -422,6 +428,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9115304833935960803, guid: 8a524dc7440572742894bbb2a9928159,
         type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115304833935960803, guid: 8a524dc7440572742894bbb2a9928159,
+        type: 3}
       propertyPath: CollisionModule.m_Bounce.scalar
       value: 0.2
       objectReference: {fileID: 0}
@@ -440,6 +451,12 @@ PrefabInstance:
 --- !u!4 &509833016107326939 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1673993347831647298, guid: 8a524dc7440572742894bbb2a9928159,
+    type: 3}
+  m_PrefabInstance: {fileID: 1164306371685421465}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7973732036876696442 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 9115304833935960803, guid: 8a524dc7440572742894bbb2a9928159,
     type: 3}
   m_PrefabInstance: {fileID: 1164306371685421465}
   m_PrefabAsset: {fileID: 0}

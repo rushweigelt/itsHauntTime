@@ -5,10 +5,13 @@ using UnityEngine.Events;
 
 public class SaltShaker : SpriteSwapInteraction
 {
+    [Header("Salt Settings")]
     /// <summary>
     /// Collider preventing player from passing
     /// </summary>
     public GameObject saltWall;
+
+    public ParticleSystem fallingSaltParticleEffect;
 
     //an event to signal an audio cue worth investigating has occured
     public UnityEvent audioInvestigate;
@@ -32,6 +35,9 @@ public class SaltShaker : SpriteSwapInteraction
 
         // Activate spilled salt trail (blocks hatto from progressing)
         saltWall.SetActive(true);
+
+        // Enable spilling salt particle system
+        fallingSaltParticleEffect.gameObject.SetActive(true);
 
         // Play sound effect of salt shaker hitting floor
         SoundController.Instance.PlaySoundEffect(SoundController.SoundType.CLANG);

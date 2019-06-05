@@ -4444,6 +4444,11 @@ PrefabInstance:
       propertyPath: audioInvestigate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 899295598}
+    - target: {fileID: 1164306371016886008, guid: 96ceddb9cb59b40669bdacfa486214db,
+        type: 3}
+      propertyPath: canInteract
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96ceddb9cb59b40669bdacfa486214db, type: 3}
 --- !u!1001 &3637598694120802650
