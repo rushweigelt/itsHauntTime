@@ -215,10 +215,13 @@ MonoBehaviour:
   bronzeThresh: 300
   silverThresh: 120
   goldThresh: 45
-  bronzeMedal: {r: 0, g: 0, b: 0, a: 0}
-  silverMedal: {r: 0, g: 0, b: 0, a: 0}
-  goldMedal: {r: 0, g: 0, b: 0, a: 0}
-  noMedal: {r: 0, g: 0, b: 0, a: 0}
+  bronze: {r: 0.9811321, g: 0.49520892, b: 0.31933072, a: 1}
+  silver: {r: 0.7529412, g: 0.7529412, b: 0.7529412, a: 1}
+  gold: {r: 1, g: 0.84313726, b: 0.19607843, a: 1}
+  noMedal: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 1}
   clock: {fileID: 0}
-  medal: {fileID: 0}
+  goldMedal: {fileID: 21300000, guid: 711612435359873449242196538c0b09, type: 3}
+  silverMedal: {fileID: 21300000, guid: da4bae77c850fad4bb078066dd90bcf7, type: 3}
+  bronzeMedal: {fileID: 21300000, guid: 98087eed94d57164f8451d304ff8d799, type: 3}
+  currentMedal: {fileID: 0}
   timer: {fileID: 5694422164632351294}
