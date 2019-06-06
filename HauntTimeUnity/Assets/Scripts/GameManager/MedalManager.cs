@@ -18,15 +18,27 @@ public class MedalManager : MonoBehaviour
     public Color gold;
     public Color noMedal;
 
+    [Range(0,1)]
+    public float inactiveMedalAlpha;
+
     //colored clock obj
     //[Space(10)]
     public Image clock;
-    public Sprite goldMedal;
-    public Sprite silverMedal;
-    public Sprite bronzeMedal;
-    public Image currentMedal;
+    public Sprite goldMedalSprite;
+    public Sprite silverMedalSprite;
+    public Sprite bronzeMedalSprite;
+
+    public Image goldMedal;
+    public Image silverMedal;
+    public Image bronzeMedal;
+
     public Timer timer;
-    
+
+    private void Start()
+    {
+        
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -45,20 +57,41 @@ public class MedalManager : MonoBehaviour
         {
             //bronze
             setTimerColor(bronze);
-            currentMedal.sprite = bronzeMedal;
+
+            setMedalAlpha(bronzeMedal, 1);
+            setMedalAlpha(silverMedal, inactiveMedalAlpha);
+            setMedalAlpha(goldMedal, inactiveMedalAlpha);
+
+            //goldMedal.sprite = bronzeMedalSprite;
         }
         else if (time <= silverThresh && time > goldThresh)
         {
             //silver
             setTimerColor(silver);
-            currentMedal.sprite = silverMedal;
+
+            setMedalAlpha(silverMedal, 1);
+            setMedalAlpha(bronzeMedal, inactiveMedalAlpha);
+            setMedalAlpha(goldMedal, inactiveMedalAlpha);
+            //goldMedal.sprite = silverMedalSprite;
         }
         else if (time <= goldThresh)
         {
             //gold
+
             setTimerColor(gold);
-            currentMedal.sprite = goldMedal;
+
+            setMedalAlpha(goldMedal, 1);
+            setMedalAlpha(bronzeMedal, inactiveMedalAlpha);
+            setMedalAlpha(silverMedal, inactiveMedalAlpha);
+            //goldMedal.sprite = goldMedalSprite;
         }
+    }
+
+    void setMedalAlpha(Image medal, float alpha)
+    {
+        Color color = medal.color;
+        color.a = alpha;
+        medal.color = color;
     }
 
     void setTimerColor(Color color) {
