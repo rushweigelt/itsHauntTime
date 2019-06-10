@@ -171,7 +171,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d7cec161b60fa40b0afe834339f06ba1, type: 3}
-    m_FontSize: 18
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -184,7 +184,7 @@ MonoBehaviour:
     m_LineSpacing: 1.25
   m_Text: "Sounds Chops Used:\n\nhttps://freesound.org/people/Reitanna/sounds/343928/\nhttps://freesound.org/people/cmusounddesign/sounds/71936/
     \r\nBy: cmusounddesign\r\n\nhttps://freesound.org/people/temawas/sounds/179244/\r\ntemawas\r\n\nhttps://freesound.org/people/PaulMorek/sounds/330053/\n\nhttps://freesound.org/people/JarredGibb/sounds/219477/\n\nJMH-SALOON
-    Font:\nhttps://www.1001fonts.com/jmh-saloon-font.html"
+    Font:\nhttps://www.1001fonts.com/jmh-saloon-font.html\n\nhttps://www.freeiconspng.com/downloadimg/514"
 --- !u!222 &106607518
 CanvasRenderer:
   m_ObjectHideFlags: 0
