@@ -183,7 +183,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1.25
   m_Text: "Sounds Chops Used:\n\nhttps://freesound.org/people/Reitanna/sounds/343928/\nhttps://freesound.org/people/cmusounddesign/sounds/71936/
-    \r\nBy: cmusounddesign\r\n\nhttps://freesound.org/people/temawas/sounds/179244/\r\ntemawas\r\n\nhttps://freesound.org/people/PaulMorek/sounds/330053/\n\nhttps://freesound.org/people/JarredGibb/sounds/219477/\n\nJMH-SALOON
+    \r\nBy: cmusounddesign\r\n\nhttps://freesound.org/people/temawas/sounds/179244/\r\ntemawas\r\n\nhttps://freesound.org/people/PaulMorek/sounds/330053/\nhttps://freesound.org/people/JarredGibb/sounds/219477/\nhttps://freesound.org/people/OwlStorm/sounds/212178/\n\nJMH-SALOON
     Font:\nhttps://www.1001fonts.com/jmh-saloon-font.html\n\nhttps://www.freeiconspng.com/downloadimg/514"
 --- !u!222 &106607518
 CanvasRenderer:
