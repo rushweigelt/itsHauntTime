@@ -9,6 +9,16 @@ public class Player : Singleton<Player>
 
     public SpriteRenderer reflection;
 
+    /// <summary>
+    /// Object currently held by player
+    /// </summary>
+    public InteractableObject heldObject;
+
+    /// <summary>
+    /// Transform parented to heldObject (used to properly position it relative to player)
+    /// </summary>
+    public Transform heldObjectTransform;
+
     private SpriteRenderer spriteRenderer;
 
     /// <summary>
@@ -83,5 +93,24 @@ public class Player : Singleton<Player>
         // Manually set alpha at end (in case we overshot our target)
         color.a = alpha;
         spriteRenderer.color = color;
+    }
+
+    public bool IsHoldingObject() {
+        return heldObject != null;
+    }
+
+    /// <summary>
+    /// Causes player to hold interactable object
+    /// </summary>
+    /// <param name="interactable">Object to be held</param>
+    /// <returns>True if player not currently holding object, false otherwise</returns>
+    public bool PickUp(InteractableObject interactable) {
+        if(!IsHoldingObject()) {
+            heldObject = interactable;
+            heldObject.transform.SetParent(heldObjectTransform);
+            return true;
+        }
+        Debug.Log("Can't hold " + interactable.name + ": already holding " + heldObject.name);
+        return false;
     }
 }
