@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEditor;
 
+[RequireComponent(typeof(BoxCollider2D))]
 public abstract class InteractableObject : MonoBehaviour
 {
     [Header("Interactable Object Settings")]
@@ -100,7 +101,7 @@ public abstract class InteractableObject : MonoBehaviour
         // Get touch position in world space
         Vector2 touchPosWorld = Camera.main.ScreenToWorldPoint(touchPos);
 
-        // Check for raycast collisions in Interacatable layer only
+        // Check for raycast collisions (NOTE: only detects objects in Interacatable layer)
         int layermask = 1 << LayerMask.NameToLayer("Interactable");
         RaycastHit2D raycast = Physics2D.Raycast(touchPosWorld, Camera.main.transform.forward, Mathf.Infinity, layermask);
 

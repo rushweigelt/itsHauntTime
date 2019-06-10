@@ -12,7 +12,7 @@ public class Player : Singleton<Player>
     /// <summary>
     /// Object currently held by player
     /// </summary>
-    public InteractableObject heldObject;
+    public HeldInteractable heldObject;
 
     /// <summary>
     /// Transform parented to heldObject (used to properly position it relative to player)
@@ -104,10 +104,15 @@ public class Player : Singleton<Player>
     /// </summary>
     /// <param name="interactable">Object to be held</param>
     /// <returns>True if player not currently holding object, false otherwise</returns>
-    public bool PickUp(InteractableObject interactable) {
+    public bool PickUp(HeldInteractable interactable) {
         if(!IsHoldingObject()) {
             heldObject = interactable;
+
+            // Parent held object to the transform
             heldObject.transform.SetParent(heldObjectTransform);
+
+            // Set local position to 0,0,0 so it matches up with parent transform
+            interactable.transform.localPosition = Vector3.zero;
             return true;
         }
         Debug.Log("Can't hold " + interactable.name + ": already holding " + heldObject.name);
