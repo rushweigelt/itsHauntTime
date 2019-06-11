@@ -1833,12 +1833,12 @@ PrefabInstance:
     - target: {fileID: 140364094755341417, guid: cd1536b5897cfbb4894e9dbd4f6591da,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.4
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 140364094755341417, guid: cd1536b5897cfbb4894e9dbd4f6591da,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.4
+      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd1536b5897cfbb4894e9dbd4f6591da, type: 3}
@@ -2935,22 +2935,22 @@ PrefabInstance:
       objectReference: {fileID: 1544929975}
     - target: {fileID: 8639672504637984728, guid: ade5c146d9c1102499520b4806d93c7b,
         type: 3}
-      propertyPath: freezeHatto.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: TimerOff
-      objectReference: {fileID: 0}
-    - target: {fileID: 8639672504637984728, guid: ade5c146d9c1102499520b4806d93c7b,
-        type: 3}
-      propertyPath: freezeHatto.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 8639672504637984728, guid: ade5c146d9c1102499520b4806d93c7b,
-        type: 3}
       propertyPath: offPlayerDone.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: TimerOn
       objectReference: {fileID: 0}
     - target: {fileID: 8639672504637984728, guid: ade5c146d9c1102499520b4806d93c7b,
         type: 3}
       propertyPath: offPlayerDone.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8639672504637984728, guid: ade5c146d9c1102499520b4806d93c7b,
+        type: 3}
+      propertyPath: freezeHatto.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: TimerOff
+      objectReference: {fileID: 0}
+    - target: {fileID: 8639672504637984728, guid: ade5c146d9c1102499520b4806d93c7b,
+        type: 3}
+      propertyPath: freezeHatto.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8639672505181135994, guid: ade5c146d9c1102499520b4806d93c7b,
@@ -4266,6 +4266,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 34048631609311215, guid: f8b61719259b249cbb332803ea18b81b,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -363982993
+      objectReference: {fileID: 0}
+    - target: {fileID: 34048631609311215, guid: f8b61719259b249cbb332803ea18b81b,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 34048631609311215, guid: f8b61719259b249cbb332803ea18b81b,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8b61719259b249cbb332803ea18b81b, type: 3}
 --- !u!1 &692730085916064534 stripped
@@ -5359,6 +5374,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.x
       value: 2.3221078
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858565934681171895, guid: 8c4430efdf861af4fa3f0b3481fd86aa,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -363982993
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858565934681171895, guid: 8c4430efdf861af4fa3f0b3481fd86aa,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c4430efdf861af4fa3f0b3481fd86aa, type: 3}
