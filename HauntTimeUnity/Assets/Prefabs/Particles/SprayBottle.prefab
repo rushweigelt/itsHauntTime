@@ -4787,7 +4787,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4538930831286925507}
   - component: {fileID: 4071613620901121030}
-  - component: {fileID: 2046387282136033420}
+  - component: {fileID: 6257939318004739995}
   - component: {fileID: 3504902202628541271}
   m_Layer: 9
   m_Name: SprayBottle
@@ -4860,7 +4860,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2046387282136033420
+--- !u!114 &6257939318004739995
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4869,7 +4869,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4004832847163537810}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 341319f43b79d4c77a437983b228bcfa, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b26703cd27ae44cb96a11b28ab9d009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   canInteract: 1
@@ -4882,6 +4882,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  canBeUsedOn: []
 --- !u!61 &3504902202628541271
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 8858565934681171893}
   - component: {fileID: 8858565934681171894}
   - component: {fileID: 8858565934681171897}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cat
   m_TagString: Interactable
   m_Icon: {fileID: 0}

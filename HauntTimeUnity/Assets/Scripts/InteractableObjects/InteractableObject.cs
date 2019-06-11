@@ -52,12 +52,19 @@ public abstract class InteractableObject : MonoBehaviour
             if(playSound) {
                 SoundController.Instance.PlaySoundEffect(interactSound);
             }
+            Player player = Player.Instance;
 
             // Play interact animation
-            Player.Instance.animController.SetTrigger(PlayerAnimController.AnimState.INTERACT);
+            player.animController.SetTrigger(PlayerAnimController.AnimState.INTERACT);
             
-            // Call derived Interact() method
-            Interact();
+            if(player.IsHoldingObject() && player.heldObject.CanBeUsedOn(this)) {
+                Debug.Log("Using " + player.heldObject.name + " on " + name);
+                player.heldObject.UseOn(this);
+            }
+            else {
+                // Call derived Interact() method
+                Interact();
+            }
         });
     }
     // Update is called once per frame. Again, leave empty to avoid interfering with subclass update functions
