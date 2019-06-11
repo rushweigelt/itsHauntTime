@@ -11,18 +11,31 @@ public class Timer : MonoBehaviour
     public string time;
 
     public TextMeshProUGUI txt;
+
+    //bool to control timer
+    public bool t;
     // Start is called before the first frame update
     void Start()
     {
+        t = true;
         // maxSecs = seconds;
     }
     // Update is called once per frame
     void Update()
     {
-        seconds += Time.deltaTime;
-        SecondsToMmSs(seconds);
-        time = SecondsToMmSs(seconds);
-        txt.text = time;
+        if (t)
+        {
+            RunTimer();
+            SecondsToMmSs(seconds);
+            time = SecondsToMmSs(seconds);
+            txt.text = time;
+        }
+        else
+        {
+            SecondsToMmSs(seconds);
+            time = SecondsToMmSs(seconds);
+            txt.text = time;
+        }
     }
     void SetTime(float seconds)
     {
@@ -36,14 +49,32 @@ public class Timer : MonoBehaviour
     {
         return string.Format("{0}:{1}", Mathf.Floor(seconds/59), Mathf.RoundToInt(seconds%59).ToString("D2"));
     }
-    void RunTimer()
+    public void RunTimer()
     {
-        StartCoroutine(StartTimer());
+        seconds += Time.deltaTime;
     }
+    /* does not work, seconds go insane for some reason. This would be preferable to update tho, I agree
     IEnumerator StartTimer()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1f);
         seconds += 1;
+    }
+    */
+
+    public void TimerOff()
+    {
+        if (t)
+        {
+            t = false;
+        }
+    }
+
+    public void TimerOn()
+    {
+        if(!t)
+        {
+            t = true;
+        }
     }
 
 }

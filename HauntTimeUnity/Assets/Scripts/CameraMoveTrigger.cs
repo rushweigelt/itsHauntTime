@@ -18,6 +18,10 @@ public class CameraMoveTrigger : MonoBehaviour
     public int hattoRoom;
     //room index of where camera is currently
     public int currentCamRoom;
+    //event to stop timer
+    public UnityEvent freezeTimer;
+    //event to start timer
+    public UnityEvent restartTimer;
 
 
     public void Start()
@@ -76,7 +80,7 @@ public class CameraMoveTrigger : MonoBehaviour
     //delay hatto control for a second to let camera pan without user sending hatto to a new room inadvertantly.
     IEnumerator DelayedHattoMove()
     {
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(cameraController.panSpeed-.5f);
         offPlayerDone.Invoke();
     }
 }
