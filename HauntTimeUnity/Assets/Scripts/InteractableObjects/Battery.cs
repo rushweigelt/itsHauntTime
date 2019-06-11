@@ -49,6 +49,7 @@ public class Battery : InteractableObject
         this.transform.position = holdTrans.position;
         held = true;
         transform.localScale = Vector3.one * heldScale;
+        base.interactRange.enabled = false;
     }
 
     //Drew's move code, for consistency's sake I reuse it here.
