@@ -48,6 +48,8 @@ public class SprayBottle : HeldInteractable
 
         // Jump to first jump target
         cat.Jump(0);
+
+        Drop();
     }
 
     IEnumerator PlaySoundEffect(float interval, int cycles) {

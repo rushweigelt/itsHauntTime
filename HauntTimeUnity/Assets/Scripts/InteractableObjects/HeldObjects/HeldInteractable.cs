@@ -43,6 +43,7 @@ public class HeldInteractable : InteractableObject
 
     public virtual void Drop()
     {
-        Destroy(this);
+        Debug.Log("Dropping " + name);
+        Destroy(gameObject);
     }
 }
