@@ -6,7 +6,8 @@ public class SprayBottle : HeldInteractable
 {
     private ParticleSystem pSystem;
 
-    void Start()
+    override
+    protected void Start()
     {
         pSystem = GetComponentInChildren<ParticleSystem>();
     }
@@ -28,5 +29,10 @@ public class SprayBottle : HeldInteractable
         Debug.Log("Spray finished");
 
         // Trigger event on InteractableObject
+        // TODO: make this apply to whatever Interactable you use it on, this is just a hardcoded solution for the cat
+        Cat cat = (Cat)obj;
+
+        // Jump to first jump target
+        cat.Jump(0);
     }
 }

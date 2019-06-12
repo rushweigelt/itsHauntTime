@@ -454,63 +454,6 @@ Transform:
   m_Father: {fileID: 1329907141}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &184154748
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 184154749}
-  - component: {fileID: 184154750}
-  m_Layer: 0
-  m_Name: Cat Collider Zone
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &184154749
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 184154748}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7700001, y: -0.06999993, z: -0.21806045}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1398707448}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &184154750
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 184154748}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.19168931, y: 0.23373461}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.68, y: 4.68}
-    newSize: {x: 4.68, y: 4.68}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.3221078, y: 11.53}
-  m_EdgeRadius: 0
 --- !u!4 &195100554 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637598693976061648, guid: f41c14a60e5727d418844516f134b812,
@@ -4838,6 +4781,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3637598693976061649, guid: f41c14a60e5727d418844516f134b812,
         type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637598693976061649, guid: f41c14a60e5727d418844516f134b812,
+        type: 3}
       propertyPath: interactPrompt
       value: 
       objectReference: {fileID: 1711504272}
@@ -4845,12 +4793,12 @@ PrefabInstance:
         type: 3}
       propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1398707450}
+      objectReference: {fileID: 195100555}
     - target: {fileID: 3637598693976061649, guid: f41c14a60e5727d418844516f134b812,
         type: 3}
       propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 74530898}
+      objectReference: {fileID: 0}
     - target: {fileID: 3637598693976061649, guid: f41c14a60e5727d418844516f134b812,
         type: 3}
       propertyPath: outlet
@@ -4861,6 +4809,21 @@ PrefabInstance:
       propertyPath: blownAnimationTrigger
       value: 
       objectReference: {fileID: 1558467400}
+    - target: {fileID: 3637598693976061649, guid: f41c14a60e5727d418844516f134b812,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemovePersistentInteractListeners
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637598693976061649, guid: f41c14a60e5727d418844516f134b812,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637598693976061649, guid: f41c14a60e5727d418844516f134b812,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3637598693426951998, guid: f41c14a60e5727d418844516f134b812,
         type: 3}
       propertyPath: m_Offset.x
@@ -5576,18 +5539,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1329907141}
     m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Offset.x
-      value: -0.19168931
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Size.x
-      value: 2.3221078
-      objectReference: {fileID: 0}
     - target: {fileID: 8858565934681171892, guid: 8c4430efdf861af4fa3f0b3481fd86aa,
         type: 3}
       propertyPath: m_Name
@@ -5678,10 +5629,5 @@ PrefabInstance:
       propertyPath: afterScold.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 899295598}
-    - target: {fileID: 8858565934681171898, guid: 8c4430efdf861af4fa3f0b3481fd86aa,
-        type: 3}
-      propertyPath: afterTable.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 184154748}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c4430efdf861af4fa3f0b3481fd86aa, type: 3}
