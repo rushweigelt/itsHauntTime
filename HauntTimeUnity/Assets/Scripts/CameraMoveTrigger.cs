@@ -111,8 +111,8 @@ public class CameraMoveTrigger : MonoBehaviour
     {
         int size = rooms.Count;
         Debug.Log("size: " + size.ToString());
-
-        yield return new WaitForSeconds(waitTime-(waitTime*.25f));
+        //wait on first room for 75% of the total waittime
+        yield return new WaitForSeconds(waitTime*.65f);
         //minus 1 because we don't want to go past last room
         for (int i = 0; i < size-1; i++)
         {
