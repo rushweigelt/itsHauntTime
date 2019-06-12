@@ -6,6 +6,18 @@ public class SprayBottle : HeldInteractable
 {
     private ParticleSystem pSystem;
 
+    [Header("Spray Bottle Settings")]
+    
+    /// <summary>
+    /// Number of busts to spray
+    /// </summary>
+    public int numberOfSprays = 1;
+
+    /// <summary>
+    /// Interval between each spray (in seconds)
+    /// </summary>
+    public float sprayInterval = 1;
+
     override
     protected void Start()
     {
@@ -22,6 +34,8 @@ public class SprayBottle : HeldInteractable
         pSystem.Play();
         Debug.Log("Spray started");
 
+        StartCoroutine(PlaySoundEffect(sprayInterval, numberOfSprays));
+
         // Wait until particle system has finished playing
         float sprayDuration = pSystem.main.duration;
         yield return new WaitForSeconds(sprayDuration);
@@ -34,5 +48,15 @@ public class SprayBottle : HeldInteractable
 
         // Jump to first jump target
         cat.Jump(0);
+    }
+
+    IEnumerator PlaySoundEffect(float interval, int cycles) {
+        for(int i = 0; i < cycles; i++) {
+            // Play sound effect
+            SoundController.Instance.PlaySoundEffect(usedSound);
+
+            // Wait interval before playing again
+            yield return new WaitForSeconds(interval);
+        }
     }
 }

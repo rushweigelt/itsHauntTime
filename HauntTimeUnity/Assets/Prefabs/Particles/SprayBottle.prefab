@@ -4940,7 +4940,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  canBeUsedOn: []
+  usedSound: 11
+  canBeUsedOn:
+  - {fileID: 0}
+  numberOfSprays: 2
+  sprayInterval: 0.3
 --- !u!61 &3504902202628541271
 BoxCollider2D:
   m_ObjectHideFlags: 0

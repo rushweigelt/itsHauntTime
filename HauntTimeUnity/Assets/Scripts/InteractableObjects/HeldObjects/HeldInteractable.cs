@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class HeldInteractable : InteractableObject
 {
+    /// <summary>
+    /// Sound played when used
+    /// </summary>
+    public SoundController.SoundType usedSound;
+    
     [Header("Held Object Settings")]
     public List<InteractableObject> canBeUsedOn;
 
@@ -34,5 +39,10 @@ public class HeldInteractable : InteractableObject
     /// </summary>
     public virtual void UseOn(InteractableObject obj) {
         Debug.Log(name + " .Use()");
+    }
+
+    public virtual void Drop()
+    {
+        Destroy(this);
     }
 }

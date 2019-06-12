@@ -20,7 +20,8 @@ public class SoundController : Singleton<SoundController>
 
         // LOOPING
         FAN_BLOWING,
-        ROOMBA_MOVE
+        ROOMBA_MOVE,
+        SPRAY_BOTTLE
     }
 
     [System.Serializable]
