@@ -776,6 +776,11 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 268284163932920932, guid: e9010e43ac45748db806a81278ffe203,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 268284163932920931, guid: e9010e43ac45748db806a81278ffe203,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -913,7 +918,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -363982993
   m_SortingLayer: 4
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: af6777d592ddb3440bb6216a8f3f3fb4, type: 3}
   m_Color: {r: 0.9622642, g: 0.56737274, b: 0.7001997, a: 1}
   m_FlipX: 0
@@ -5621,6 +5626,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayer
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858565934681171895, guid: 8c4430efdf861af4fa3f0b3481fd86aa,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c4430efdf861af4fa3f0b3481fd86aa, type: 3}
