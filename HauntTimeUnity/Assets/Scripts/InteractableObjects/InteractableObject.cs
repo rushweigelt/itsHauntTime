@@ -36,36 +36,10 @@ public abstract class InteractableObject : MonoBehaviour
 
     UnityEvent onPlayerEnterTrigger = new UnityEvent();
 
-    UnityAction interactListener;
-
     // Start is called before the first frame update. Leave empty, to not interfere with initializing subclasses
     protected virtual void Start()
     {
-        // Code to be executed on player interaction
-        interactListener = (() => {
-            Debug.Log(name + ".Interact()");
-
-            // Call onInteract listeners
-            onInteract.Invoke();
-
-            // Play sound if needed
-            if(playSound) {
-                SoundController.Instance.PlaySoundEffect(interactSound);
-            }
-            Player player = Player.Instance;
-
-            // Play interact animation
-            player.animController.SetTrigger(PlayerAnimController.AnimState.INTERACT);
-            
-            if(player.IsHoldingObject() && player.heldObject.CanBeUsedOn(this)) {
-                Debug.Log("Using " + player.heldObject.name + " on " + name);
-                player.heldObject.UseOn(this);
-            }
-            else {
-                // Call derived Interact() method
-                Interact();
-            }
-        });
+        // TODO: remove this start() method - it's cumbersome/risky for devs to remember to call this base method
     }
     // Update is called once per frame. Again, leave empty to avoid interfering with subclass update functions
     protected virtual void Update()
@@ -80,15 +54,43 @@ public abstract class InteractableObject : MonoBehaviour
             if (CheckTouch(touchPos) && canInteract) {
                 // Interact immediately if already in range
                 if(inRange) {
-                    interactListener.Invoke();
+                    // interactListener.Invoke();
+                    InteractHandler();
                 }
                 // Otherwise wait until we are in range to interact
                 else
                 {
                     Debug.Log(name + " | Adding Interact() listener");
-                    onPlayerEnterTrigger.AddListener(interactListener);
+                    // onPlayerEnterTrigger.AddListener(interactListener);
+                    onPlayerEnterTrigger.AddListener(() => InteractHandler());
                 }
             }
+        }
+    }
+
+    private void InteractHandler()
+    {
+        Debug.Log(name + ".Interact()");
+
+        // Call onInteract listeners
+        onInteract.Invoke();
+
+        // Play sound if needed
+        if(playSound) {
+            SoundController.Instance.PlaySoundEffect(interactSound);
+        }
+        Player player = Player.Instance;
+
+        // Play interact animation
+        player.animController.SetTrigger(PlayerAnimController.AnimState.INTERACT);
+        
+        if(player.IsHoldingObject() && player.heldObject.CanBeUsedOn(this)) {
+            Debug.Log("Using " + player.heldObject.name + " on " + name);
+            player.heldObject.UseOn(this);
+        }
+        else {
+            // Call derived Interact() method
+            Interact();
         }
     }
 
