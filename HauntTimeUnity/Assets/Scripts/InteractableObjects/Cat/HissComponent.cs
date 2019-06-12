@@ -32,4 +32,9 @@ public class HissComponent : MonoBehaviour
             cat.SetHiss(false);
         }
     }
+
+    public void DisableHissBox()
+    {
+        hissRange.enabled = false;
+    }
 }
