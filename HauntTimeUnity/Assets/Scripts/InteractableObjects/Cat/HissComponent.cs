@@ -18,7 +18,6 @@ public class HissComponent : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Hiss");
             cat.SetHiss(true);
 
             // Play hiss sound effect
@@ -30,7 +29,6 @@ public class HissComponent : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Hiss");
             cat.SetHiss(false);
         }
     }

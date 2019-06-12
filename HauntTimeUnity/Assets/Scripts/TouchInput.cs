@@ -85,7 +85,7 @@ public class TouchInput : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(0)) {
             lastTouchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Debug.Log("Received tap at " + lastTouchPos);
+            // Debug.Log("Received tap at " + lastTouchPos);
 
             // Show tap indicator here
             StartCoroutine(ShowTapIndicator(lastTouchPos));

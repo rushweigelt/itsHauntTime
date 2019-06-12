@@ -93,11 +93,6 @@ public class Cat : InteractableObject
 
     public void SetHiss(bool hissing)
     {
-        Debug.Log("Cat hissing: " + hissing);
-
-        // Set hiss collider active
-        // hissBox.enabled = hissing;
-
         // Set player scared animation
         playerAnim.SetBool(PlayerAnimController.AnimState.SCARED, hissing);
 
@@ -109,10 +104,10 @@ public class Cat : InteractableObject
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Hiss");
             SetHiss(true);
 
             // Play hiss sound effect
+            // TODO: this is also happening in HissComponent - resolve this
             SoundController.Instance.PlaySoundEffect(SoundController.SoundType.CAT_HISS);
         }
     }
@@ -121,7 +116,6 @@ public class Cat : InteractableObject
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Hiss");
             SetHiss(false);
         }
     }
