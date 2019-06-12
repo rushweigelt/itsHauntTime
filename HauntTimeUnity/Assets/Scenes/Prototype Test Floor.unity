@@ -2953,6 +2953,16 @@ PrefabInstance:
       propertyPath: freezeHatto.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8639672504637984728, guid: ade5c146d9c1102499520b4806d93c7b,
+        type: 3}
+      propertyPath: waitTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8639672504637984728, guid: ade5c146d9c1102499520b4806d93c7b,
+        type: 3}
+      propertyPath: countdown
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8639672505181135994, guid: ade5c146d9c1102499520b4806d93c7b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4424,6 +4434,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 34048630615146669, guid: f8b61719259b249cbb332803ea18b81b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.77
+      objectReference: {fileID: 0}
     - target: {fileID: 34048631609311215, guid: f8b61719259b249cbb332803ea18b81b,
         type: 3}
       propertyPath: m_SortingLayerID
@@ -4437,7 +4452,7 @@ PrefabInstance:
     - target: {fileID: 34048631609311215, guid: f8b61719259b249cbb332803ea18b81b,
         type: 3}
       propertyPath: m_SortingOrder
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 34048630615146668, guid: f8b61719259b249cbb332803ea18b81b,
         type: 3}

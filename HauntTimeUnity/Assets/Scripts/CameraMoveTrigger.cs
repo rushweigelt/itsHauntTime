@@ -19,9 +19,15 @@ public class CameraMoveTrigger : MonoBehaviour
     //room index of where camera is currently
     public int currentCamRoom;
     //event to stop timer
-    public UnityEvent freezeTimer;
+    //public UnityEvent freezeTimer;
     //event to start timer
-    public UnityEvent restartTimer;
+    //public UnityEvent restartTimer;
+    //a float to control how long we pause on a room during intro sequence
+    public float waitTime;
+    //float for countdown timer to unfreeze hatto and start level
+    public float countdown;
+    //bool to turn on dev mode, bc we don't wanna sit through the intro every time.
+    public bool devMode;
 
 
     public void Start()
@@ -35,6 +41,14 @@ public class CameraMoveTrigger : MonoBehaviour
         {
             hattoRoom = 1;
             currentCamRoom = 1;
+        }
+        if (devMode)
+        {
+
+        }
+        else
+        {
+            IntroPan();
         }
 
     }
@@ -81,6 +95,30 @@ public class CameraMoveTrigger : MonoBehaviour
     IEnumerator DelayedHattoMove()
     {
         yield return new WaitForSeconds(cameraController.panSpeed-.5f);
+        offPlayerDone.Invoke();
+    }
+
+    public void IntroPan()
+    {
+        freezeHatto.Invoke();
+        StartCoroutine(IntroCamera());        
+    }
+    //get size of room list, use for loop and wait for seconds to pause, switch back to hatto when complete.
+    IEnumerator IntroCamera()
+    {
+        int size = rooms.Count;
+        Debug.Log("size: " + size.ToString());
+        //minus 1 because we don't want to go past last room
+        for (int i = 0; i < size-1; i++)
+        {
+            cameraController.MoveCamera(rooms[currentCamRoom + 1]);
+            currentCamRoom++;
+            yield return new WaitForSeconds(waitTime);
+        }
+        //switch to Hatto
+        cameraController.MoveCamera(rooms[hattoRoom]);
+        currentCamRoom = hattoRoom;
+        yield return new WaitForSeconds(countdown);
         offPlayerDone.Invoke();
     }
 }
