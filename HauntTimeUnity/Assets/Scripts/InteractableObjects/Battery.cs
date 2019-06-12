@@ -50,10 +50,12 @@ public class Battery : InteractableObject
         held = true;
         transform.localScale = Vector3.one * heldScale;
         //Debug.Log("set this to false");
-        //this should work...
+        //this should work...but doesn't. Needs to be reinforced with a delayed coroutine 
+        //to take effect 100% of the time. It is bizarre, feel free to test w/o the coroutine
         interactRange.enabled = false;
-        interactPrompt.SetActive(false);
+        interactPrompt.gameObject.SetActive(false);
         canInteract = false;
+        StartCoroutine(DelayPromptToggle());
     }
 
     //Drew's move code, for consistency's sake I reuse it here.
@@ -82,6 +84,15 @@ public class Battery : InteractableObject
 
         // Invoke post-move listener
         inserted.Invoke();
+
+    }
+    //toggling off immediately did not solve the prompt issue, so made a fractional delay and it works.
+    IEnumerator DelayPromptToggle()
+    {
+        yield return new WaitForSeconds(.0001f);
+        interactRange.enabled = false;
+        interactPrompt.gameObject.SetActive(false);
+        canInteract = false;
 
     }
 }

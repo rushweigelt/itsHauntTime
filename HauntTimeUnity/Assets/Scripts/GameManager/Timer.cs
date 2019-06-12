@@ -10,7 +10,9 @@ public class Timer : MonoBehaviour
     // public float maxSecs;
     public string time;
 
-    public TextMeshProUGUI txt;
+    public TextMeshProUGUI finalTimeTxt;
+
+    public TextMeshProUGUI timerTxt;
 
     //bool to control timer
     public bool t;
@@ -28,13 +30,13 @@ public class Timer : MonoBehaviour
             RunTimer();
             SecondsToMmSs(seconds);
             time = SecondsToMmSs(seconds);
-            txt.text = time;
+            timerTxt.text = time;
         }
         else
         {
             SecondsToMmSs(seconds);
             time = SecondsToMmSs(seconds);
-            txt.text = time;
+            timerTxt.text = time;
         }
     }
     void SetTime(float seconds)
@@ -75,6 +77,11 @@ public class Timer : MonoBehaviour
         {
             t = true;
         }
+    }
+
+    public void SetFinalTime()
+    {
+        finalTimeTxt.text = string.Format("Your Time: {0}:{1}", Mathf.Floor(seconds / 59), Mathf.RoundToInt(seconds % 59).ToString("D2"));
     }
 
 }

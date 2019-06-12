@@ -7,6 +7,8 @@ public class OurGameManager : Singleton<OurGameManager>
 {
     public bool paused;
 
+    public float finalHUDDelay;
+
     void Start()
     {
         Time.timeScale = 1f;
@@ -59,9 +61,12 @@ public class OurGameManager : Singleton<OurGameManager>
 
     public void GameOver(bool playerWon)
     {
+        /*
         // Call HUD events
         HUDManager.Instance.onGameOver.Invoke();
         SetGameActive(false);
+        */
+        StartCoroutine(DelayFinalHUD());
         
         // TODO: handle game over condition
         if (playerWon)
@@ -74,5 +79,11 @@ public class OurGameManager : Singleton<OurGameManager>
             // set "you lose..." text
 
         }
+    }
+    IEnumerator DelayFinalHUD()
+    {
+        yield return new WaitForSeconds(finalHUDDelay);
+        HUDManager.Instance.onGameOver.Invoke();
+        SetGameActive(false);
     }
 }

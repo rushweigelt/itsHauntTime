@@ -109,7 +109,6 @@ public class CameraMoveTrigger : MonoBehaviour
     //get size of room list, use for loop and wait for seconds to pause, switch back to hatto when complete.
     IEnumerator IntroCamera()
     {
-        
         int size = rooms.Count;
         Debug.Log("size: " + size.ToString());
         //wait on first room for 75% of the total waittime
