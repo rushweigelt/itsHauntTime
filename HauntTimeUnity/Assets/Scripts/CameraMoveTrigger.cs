@@ -28,10 +28,13 @@ public class CameraMoveTrigger : MonoBehaviour
     public float countdown;
     //bool to turn on dev mode, bc we don't wanna sit through the intro every time.
     public bool devMode;
+    //intro gameob to toggle
+    public GameObject introPrompt;
 
 
     public void Start()
     {
+        introPrompt.SetActive(false);
         if (startOnLeft)
         {
             hattoRoom = 0;
@@ -118,7 +121,13 @@ public class CameraMoveTrigger : MonoBehaviour
         //switch to Hatto
         cameraController.MoveCamera(rooms[hattoRoom]);
         currentCamRoom = hattoRoom;
+        //wait for camera to be on hatto before activating prompt
+        yield return new WaitForSeconds(cameraController.panSpeed - .7f);
+        introPrompt.SetActive(true);
+        //deactivate prompt after a few seconds
         yield return new WaitForSeconds(countdown);
+        introPrompt.SetActive(false);
+        //unlock hatto and start timer
         offPlayerDone.Invoke();
     }
 }
