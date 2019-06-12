@@ -49,7 +49,12 @@ public class Battery : InteractableObject
         this.transform.position = holdTrans.position;
         held = true;
         transform.localScale = Vector3.one * heldScale;
-        base.interactRange.enabled = false;
+        Debug.Log("set this to false");
+        interactRange.enabled = false;
+        interactRange.enabled = true;
+        interactRange.enabled = false;
+        interactPrompt.SetActive(false);
+        canInteract = false;
     }
 
     //Drew's move code, for consistency's sake I reuse it here.

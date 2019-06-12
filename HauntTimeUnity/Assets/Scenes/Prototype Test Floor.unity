@@ -3702,7 +3702,7 @@ GameObject:
   - component: {fileID: 1711504273}
   - component: {fileID: 1711504274}
   m_Layer: 0
-  m_Name: Question Mark
+  m_Name: Prompt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3717,7 +3717,7 @@ Transform:
   m_GameObject: {fileID: 1711504272}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 4.5, z: 0}
-  m_LocalScale: {x: 0.32, y: 0.39999998, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.39999998, z: 1}
   m_Children: []
   m_Father: {fileID: 195100554}
   m_RootOrder: 2
@@ -3796,7 +3796,7 @@ Transform:
   m_GameObject: {fileID: 1751385352}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 20.6, z: 0}
-  m_LocalScale: {x: 2.2709906, y: 2.2709906, z: 5.677477}
+  m_LocalScale: {x: 2.2, y: 2.2, z: 5.6}
   m_Children: []
   m_Father: {fileID: 461057311}
   m_RootOrder: 1
@@ -4443,6 +4443,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 34048630615146668, guid: f8b61719259b249cbb332803ea18b81b,
+        type: 3}
+      propertyPath: m_Name
+      value: Prompt
+      objectReference: {fileID: 0}
+    - target: {fileID: 34048631609311213, guid: f8b61719259b249cbb332803ea18b81b,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.14160484
+      objectReference: {fileID: 0}
+    - target: {fileID: 34048631609311213, guid: f8b61719259b249cbb332803ea18b81b,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3.6371565
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8b61719259b249cbb332803ea18b81b, type: 3}
