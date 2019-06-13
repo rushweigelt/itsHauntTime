@@ -17,6 +17,9 @@ public class SoundController : Singleton<SoundController>
         CAT_HISS,
         UNPLUG,
         ROOMBA_DEAD,
+        HATTO_CURIOUS,
+        HATTO_FRUSTRATED,
+        HATTO_SUCCESS,
 
         // LOOPING
         FAN_BLOWING,

@@ -175,15 +175,27 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 0ed7bcf30ab1545c887c91f4675ffe55, type: 3}
     volume: 1
     loop: 0
-  - type: 9
+  - type: 12
     clip: {fileID: 8300000, guid: b402c649b85459c4b907004176bcf30a, type: 3}
     volume: 1
     loop: 1
-  - type: 10
+  - type: 13
     clip: {fileID: 8300000, guid: d63e15b1b165546eb82a48d25310327a, type: 3}
     volume: 1
     loop: 1
-  - type: 11
+  - type: 14
     clip: {fileID: 8300000, guid: 86d570fc894339541be04291d1bfce7a, type: 3}
+    volume: 1
+    loop: 0
+  - type: 9
+    clip: {fileID: 8300000, guid: 34436a7a278754500a2be89eaebb9d5d, type: 3}
+    volume: 1
+    loop: 0
+  - type: 10
+    clip: {fileID: 8300000, guid: e84bac13ebb574dbdb2c432fc0a80a7b, type: 3}
+    volume: 1
+    loop: 0
+  - type: 11
+    clip: {fileID: 8300000, guid: 094f24666f02141a5a9085ee9e5590d7, type: 3}
     volume: 1
     loop: 0
