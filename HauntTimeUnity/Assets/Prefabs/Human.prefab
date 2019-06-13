@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 268284163932920934}
   - component: {fileID: 268284163932920933}
   - component: {fileID: 5861734937695876486}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Human
   m_TagString: Interactable
   m_Icon: {fileID: 0}
@@ -69,18 +69,18 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -279416439
-  m_SortingLayer: 3
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d5d127e0190084ff0912fb203cf8326d, type: 3}
+  m_SortingLayerID: -363982993
+  m_SortingLayer: 4
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 0772e02eb7fbec84dbf1cf6c1a0004b8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.32, y: 6.12}
+  m_Size: {x: 4.3199997, y: 6.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &268284163932920931
@@ -96,18 +96,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.11933231, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.32, y: 6.12}
-    newSize: {x: 4.32, y: 6.12}
+    oldSize: {x: 4.3199997, y: 6.12}
+    newSize: {x: 4.3199997, y: 6.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.55, y: 6.56}
+  m_Size: {x: 5.9223423, y: 6.56}
   m_EdgeRadius: 0
 --- !u!95 &268284163932920934
 Animator:
@@ -142,6 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canInteract: 0
   interactRange: {fileID: 268284163932920931}
+  interactOffset: {x: 2.5, y: 0}
   interactPrompt: {fileID: 0}
   playSound: 0
   interactSound: 0
@@ -174,6 +175,17 @@ MonoBehaviour:
       - m_Target: {fileID: 268284163932920933}
         m_MethodName: SetInteract
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: SwitchToHatto
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
