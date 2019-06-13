@@ -62,6 +62,7 @@ public class PlayerMoveController : Singleton<PlayerMoveController>
         if(interactable != null && interactable.canInteract) {
             Debug.Log("PlayerMoveController - moving towards interactable " + interactable.name);
 
+            // Move next to the interactable, rather than right on top of it
             position = FindPositionNear(interactable);
         }
 
@@ -76,14 +77,19 @@ public class PlayerMoveController : Singleton<PlayerMoveController>
     private Vector2 FindPositionNear(InteractableObject interactable)
     {
         // Find a convenient position next to interactable (left/right side)
-        float distanceFromInteractable = interactable.interactDistance;
+        float xOffset = interactable.interactOffset.x;
+        float yOffset = interactable.interactOffset.y;
         Vector2 pos = interactable.transform.position;
 
-        Vector3 toLeft = new Vector3(pos.x - distanceFromInteractable, pos.y);
-        Vector3 toRight = new Vector3(pos.x + distanceFromInteractable, pos.y);
-        Vector2 nearest = (toLeft - transform.position).magnitude < (toRight - transform.position).magnitude ? toLeft : toRight;
-
-        return nearest;
+        // Check for positions to left/right (always add the y-offset, since it should be the same height on both sides)
+        Vector3 toLeft = new Vector3(pos.x - xOffset, pos.y + yOffset);
+        Vector3 toRight = new Vector3(pos.x + xOffset, pos.y + yOffset);
+        if((toLeft - transform.position).magnitude < (toRight - transform.position).magnitude) {
+            return toLeft;
+        }
+        else {
+            return toRight;
+        }
     }
 
     /// <summary>

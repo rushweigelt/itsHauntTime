@@ -4863,7 +4863,7 @@ Transform:
   m_GameObject: {fileID: 4004832847163537810}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5015486, y: 0.5015486, z: 0.5015486}
   m_Children:
   - {fileID: 7392370169863443335}
   - {fileID: 140364094755341417}
@@ -4932,6 +4932,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canInteract: 1
   interactRange: {fileID: 3504902202628541271}
+  interactOffset: {x: 1, y: 0}
   interactPrompt: {fileID: 1203468636253423895}
   playSound: 0
   interactSound: 0

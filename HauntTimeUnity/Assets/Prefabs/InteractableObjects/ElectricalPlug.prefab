@@ -281,7 +281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canInteract: 1
   interactRange: {fileID: 7777256154730851305}
-  interactDistance: 1.5
+  interactOffset: {x: 1.5, y: 0}
   interactPrompt: {fileID: 1751385352}
   playSound: 1
   interactSound: 7

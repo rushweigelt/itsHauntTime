@@ -20,9 +20,9 @@ public abstract class InteractableObject : MonoBehaviour
     public BoxCollider2D interactRange;
 
     /// <summary>
-    /// Distance from which the player should stop before interacting
+    /// Relative offset used by PlayerMoveController to navigate to interact position
     /// </summary>
-    public float interactDistance;
+    public Vector2 interactOffset;
 
     /// <summary>
     /// Popup indicator that player can interact with this object
