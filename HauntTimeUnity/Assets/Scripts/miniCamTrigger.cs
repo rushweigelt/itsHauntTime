@@ -53,26 +53,34 @@ public class miniCamTrigger : MonoBehaviour
         //if the object is tagged as an interactaable, freeze Hatto(via invoke) and pan accordingly. Obj must have rigidbody.
         else if (other.gameObject.CompareTag("Interactable"))
         {
-            Vector2 collisionPoint = other.gameObject.transform.position;
-
-            // Collision from right
-            if (collisionPoint.x > transform.position.x)
-            {
-                Debug.Log("Interact Col Point: " + collisionPoint.x + " camera position: " + transform.position.x);
-                // Switch to left room
-                interactableLeft.Invoke();
-
-                // TODO: move player fully past trigger
+            // Don't pan camera for player-held object
+            InteractableObject interactable = other.GetComponent<InteractableObject>();
+            if(interactable == Player.Instance.heldObject) {
+                Debug.Log("CameraTrigger: Ignoring player held object " + other.name);
             }
+            
+            else {
+                Vector2 collisionPoint = other.gameObject.transform.position;
 
-            // Collision from left
-            else if (collisionPoint.x < transform.position.x)
-            {
-                Debug.Log("Interact Col Point: " + collisionPoint.x + " camera position: " + transform.position.x);
-                // Switch to right room
-                interactableRight.Invoke();
+                // Collision from right
+                if (collisionPoint.x > transform.position.x)
+                {
+                    Debug.Log("Interact Col Point: " + collisionPoint.x + " camera position: " + transform.position.x);
+                    // Switch to left room
+                    interactableLeft.Invoke();
 
-                // TODO: move player fully past trigger
+                    // TODO: move player fully past trigger
+                }
+
+                // Collision from left
+                else if (collisionPoint.x < transform.position.x)
+                {
+                    Debug.Log("Interact Col Point: " + collisionPoint.x + " camera position: " + transform.position.x);
+                    // Switch to right room
+                    interactableRight.Invoke();
+
+                    // TODO: move player fully past trigger
+                }
             }
         }
     }

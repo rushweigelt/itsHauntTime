@@ -93,11 +93,6 @@ public class Cat : InteractableObject
 
     public void SetHiss(bool hissing)
     {
-        Debug.Log("Cat hissing: " + hissing);
-
-        // Set hiss collider active
-        // hissBox.enabled = hissing;
-
         // Set player scared animation
         playerAnim.SetBool(PlayerAnimController.AnimState.SCARED, hissing);
 
@@ -105,26 +100,25 @@ public class Cat : InteractableObject
         anim.SetBool("Hissing", hissing);
     }
 
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Hiss");
-            SetHiss(true);
+    // void OnTriggerEnter2D(Collider2D col)
+    // {
+    //     if (col.gameObject.CompareTag("Player"))
+    //     {
+    //         SetHiss(true);
 
-            // Play hiss sound effect
-            SoundController.Instance.PlaySoundEffect(SoundController.SoundType.CAT_HISS);
-        }
-    }
+    //         // Play hiss sound effect
+    //         // TODO: this is also happening in HissComponent - resolve this
+    //         SoundController.Instance.PlaySoundEffect(SoundController.SoundType.CAT_HISS);
+    //     }
+    // }
 
-    void OnTriggerExit2D(Collider2D col)
-    {
-        if (col.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Hiss");
-            SetHiss(false);
-        }
-    }
+    // void OnTriggerExit2D(Collider2D col)
+    // {
+    //     if (col.gameObject.CompareTag("Player"))
+    //     {
+    //         SetHiss(false);
+    //     }
+    // }
 
     public void Jump(int target)
     {
