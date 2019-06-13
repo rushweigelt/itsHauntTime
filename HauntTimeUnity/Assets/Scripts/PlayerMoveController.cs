@@ -35,7 +35,7 @@ public class PlayerMoveController : Singleton<PlayerMoveController>
         touchInput = GetComponent<TouchInput>();
 
         // HandleMovement() and Animate() methods subscribe to first frame of touch input
-        touchInput.onGetTouchDown += (input) => HandleMovement(input);
+        touchInput.onGetTouchDown += (input) => MoveTowards(input);
         touchInput.onGetTouchDown += (input) => Animate(input - (Vector2)transform.position);
     }
 
@@ -43,14 +43,18 @@ public class PlayerMoveController : Singleton<PlayerMoveController>
     /// Starts movement coroutine towards user tap
     /// </summary>
     /// <param name="input"></param>
-    void HandleMovement(Vector2 input)
+    public void MoveTowards(Vector2 input)
     {
+        InteractableObject interactable = InteractableObject.GetInteractableAt(input);
+        if(interactable != null) {
+            Debug.Log("PlayerMoveController - moving towards interactable " + interactable.name);
+        }
         // Interrupt movement if coroutine already active
         if(movementCoroutine != null) {
-            Debug.Log("Interrupting movement coroutine");
+            //Debug.Log("Interrupting movement coroutine");
             StopCoroutine(movementCoroutine);
         }
-        movementCoroutine = StartCoroutine(MoveTowards(input));
+        movementCoroutine = StartCoroutine(MoveTowardsCoroutine(input));
     }
 
     /// <summary>
@@ -75,7 +79,7 @@ public class PlayerMoveController : Singleton<PlayerMoveController>
     /// Move towards position at fixed speed
     /// </summary>
     /// <param name="target"></param>
-    public IEnumerator MoveTowards(Vector2 target)
+    private IEnumerator MoveTowardsCoroutine(Vector2 target)
     {
         if(canMove) {
             // Get vector towards target

@@ -36,12 +36,10 @@ public abstract class InteractableObject : MonoBehaviour
 
     UnityEvent onPlayerEnterTrigger = new UnityEvent();
 
-    // Start is called before the first frame update. Leave empty, to not interfere with initializing subclasses
     protected virtual void Start()
     {
         // TODO: remove this start() method - it's cumbersome/risky for devs to remember to call this base method
     }
-    // Update is called once per frame. Again, leave empty to avoid interfering with subclass update functions
     protected virtual void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -49,9 +47,9 @@ public abstract class InteractableObject : MonoBehaviour
             // Reset listeners on click
             onPlayerEnterTrigger.RemoveAllListeners();
 
-            // Get touch position
+            // Get touch position (TODO: use TouchInput)
             Vector2 touchPos = Input.mousePosition;
-            if (CheckTouch(touchPos) && canInteract) {
+            if (CheckTouch(touchPos, this) && canInteract) {
                 // Interact immediately if already in range
                 if(inRange) {
                     // interactListener.Invoke();
@@ -95,27 +93,37 @@ public abstract class InteractableObject : MonoBehaviour
     }
 
     /// <summary>
-    /// Returns true if touch hit collider, false otherwise.
-    /// Object must be on Interactable layer to receive raycasts.
+    /// Returns true if user tapped the InteractableObject, false otherwise.
+    /// Object must be on Interactable layer and tagged as Interactable to receive raycasts.
     /// </summary>
     /// <param name="touchPos">Position of player touch</param>
-    private bool CheckTouch(Vector2 touchPos)
+    public static bool CheckTouch(Vector2 touchPos, InteractableObject interactable)
     {
         // Return false with warning if not tagged properly
-        if(!gameObject.CompareTag("Interactable")) {
-            Debug.LogWarningFormat("Warning: {0} not tagged as Interactable - will not receive touch input", name);
+        if(!interactable.gameObject.CompareTag("Interactable")) {
+            Debug.LogWarningFormat("Warning: {0} not tagged as Interactable - will not receive touch input", interactable.name);
             return false;
         }
 
-        // Get touch position in world space
+        // Convert touch position to world space (TODO: remove this when using world-space input from TouchInput)
         Vector2 touchPosWorld = Camera.main.ScreenToWorldPoint(touchPos);
+        return GetInteractableAt(touchPosWorld) == interactable;
+    }
 
-        // Check for raycast collisions (NOTE: only detects objects in Interacatable layer)
+    /// <summary>
+    /// Returns the InteractableObject located at position of touch, or null if none found
+    /// </summary>
+    /// <param name="touchPos">Position of user touch</param>
+    public static InteractableObject GetInteractableAt(Vector2 touchPos)
+    {
+        // Check for raycast collisions (NOTE: only detects objects in Interacatable layer & tagged as Interactable)
         int layermask = 1 << LayerMask.NameToLayer("Interactable");
-        RaycastHit2D raycast = Physics2D.Raycast(touchPosWorld, Camera.main.transform.forward, Mathf.Infinity, layermask);
-
-        // Return true if raycast hit collider
-        return raycast.collider == interactRange;
+        RaycastHit2D raycast = Physics2D.Raycast(touchPos, Camera.main.transform.forward, Mathf.Infinity, layermask);
+        if(raycast.collider != null) {
+            GameObject obj = raycast.collider.gameObject;
+            return obj.GetComponent<InteractableObject>();
+        }
+        return null;
     }
 
     /// <summary>
