@@ -20,6 +20,11 @@ public abstract class InteractableObject : MonoBehaviour
     public BoxCollider2D interactRange;
 
     /// <summary>
+    /// Distance from which the player should stop before interacting
+    /// </summary>
+    public float interactDistance;
+
+    /// <summary>
     /// Popup indicator that player can interact with this object
     /// </summary>
     public GameObject interactPrompt;

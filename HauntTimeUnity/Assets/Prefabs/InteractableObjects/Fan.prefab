@@ -117,13 +117,13 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3637598693426951992}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5073759, y: 0}
+  m_Offset: {x: 1.1487257, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -134,7 +134,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.7952476, y: 12.982358}
+  m_Size: {x: 3.512548, y: 12.982358}
   m_EdgeRadius: 0
 --- !u!1 &3637598693976061651
 GameObject:
@@ -237,6 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canInteract: 0
   interactRange: {fileID: 3637598693976061655}
+  interactDistance: 0
   interactPrompt: {fileID: 1711504272}
   playSound: 1
   interactSound: 5
@@ -267,7 +268,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3637598693976061651}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1

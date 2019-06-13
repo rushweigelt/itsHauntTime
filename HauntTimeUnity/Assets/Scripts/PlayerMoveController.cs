@@ -36,43 +36,65 @@ public class PlayerMoveController : Singleton<PlayerMoveController>
 
         // HandleMovement() and Animate() methods subscribe to first frame of touch input
         touchInput.onGetTouchDown += (input) => MoveTowards(input);
-        touchInput.onGetTouchDown += (input) => Animate(input - (Vector2)transform.position);
+        //touchInput.onGetTouchDown += (input) => FaceDirection(input - (Vector2)transform.position);
+
+        Debug.Log("World Position" + transform.position);
+        Debug.Log("Local Position" + transform.localPosition);
     }
 
     /// <summary>
     /// Starts movement coroutine towards user tap
     /// </summary>
-    /// <param name="input"></param>
-    public void MoveTowards(Vector2 input)
+    /// <param name="position"></param>
+    public void MoveTowards(Vector2 position)
     {
-        InteractableObject interactable = InteractableObject.GetInteractableAt(input);
-        if(interactable != null) {
-            Debug.Log("PlayerMoveController - moving towards interactable " + interactable.name);
+        // Face towards target position
+        Vector2 delta = position - (Vector2)transform.position;
+        if(delta.x < 0) {
+            FaceDirection(Direction.LEFT);
         }
+        else {
+            FaceDirection(Direction.RIGHT);
+        }
+
+        // Check if we're moving to interact with something
+        InteractableObject interactable = InteractableObject.GetInteractableAt(position);
+        if(interactable != null && interactable.canInteract) {
+            Debug.Log("PlayerMoveController - moving towards interactable " + interactable.name);
+
+            position = FindPositionNear(interactable);
+        }
+
         // Interrupt movement if coroutine already active
         if(movementCoroutine != null) {
             //Debug.Log("Interrupting movement coroutine");
             StopCoroutine(movementCoroutine);
         }
-        movementCoroutine = StartCoroutine(MoveTowardsCoroutine(input));
+        movementCoroutine = StartCoroutine(MoveTowardsCoroutine(position));
+    }
+
+    private Vector2 FindPositionNear(InteractableObject interactable)
+    {
+        // Find a convenient position next to interactable (left/right side)
+        float distanceFromInteractable = interactable.interactDistance;
+        Vector2 pos = interactable.transform.position;
+
+        Vector3 toLeft = new Vector3(pos.x - distanceFromInteractable, pos.y);
+        Vector3 toRight = new Vector3(pos.x + distanceFromInteractable, pos.y);
+        Vector2 nearest = (toLeft - transform.position).magnitude < (toRight - transform.position).magnitude ? toLeft : toRight;
+
+        return nearest;
     }
 
     /// <summary>
     /// SpriteRenderer faces direction of user tap
     /// </summary>
     /// <param name="input"></param>
-    private void Animate(Vector2 input)
+    private void FaceDirection(Direction direction)
     {
-        // Face left
-        if(input.x < 0) {
-            spriteRenderer.flipX = false;
-            facingDirection = Direction.LEFT;
-        }
-        // Face right
-        else if(input.x > 0) {
-            spriteRenderer.flipX = true;
-            facingDirection = Direction.RIGHT;
-        }
+        // Flip spriterenderer.x accordingly
+        spriteRenderer.flipX = direction.Equals(Direction.RIGHT);
+        facingDirection = direction;
     }
 
     /// <summary>
