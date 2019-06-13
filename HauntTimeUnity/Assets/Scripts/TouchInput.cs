@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// TouchInput - subscribe to the OnReceiveTouch() events to get user input
+/// </summary>
 public class TouchInput : MonoBehaviour {
 
 	/// <summary>
@@ -31,6 +34,20 @@ public class TouchInput : MonoBehaviour {
     /// </summary>
     public GameObject tapIndicator;
 
+    public delegate void OnReceiveTouch(Vector2 position);
+
+    /// <summary>
+    /// Touch event that fires immediately after detecting touch input
+    /// </summary>
+    public OnReceiveTouch onGetTouchDown;
+    
+    /// <summary>
+    /// Touch event that fires immediately after detecting user lifted finger
+    /// </summary>
+    public OnReceiveTouch onGetTouchEnded;
+
+    public OnReceiveTouch onGetTouch;
+
     /// <summary>
     /// Speed at which tap indicator animates
     /// </summary>
@@ -44,35 +61,47 @@ public class TouchInput : MonoBehaviour {
         lastTouchPos = Player.Instance.transform.position;
     }
 
-    /// <summary>
-    /// Get input from touch screen
-    /// </summary>
-    public Vector2 GetInput()
-	{
-		// Touch input
-		Vector2 touchDelta = Vector2.zero;
+    private void Update()
+    {
+        // First frame of user touch
+        if(Input.GetMouseButtonDown(0)) {
+            // Update last touch position
+            lastTouchPos = GetFollowTapInput();
+            Debug.Log("Received tap at " + lastTouchPos);
 
-        // Handle using selected control scheme
-        // TODO: determine platform and check for mouse/touch accordingly
-        switch (controlScheme) {
-			
-			// Follow drag
-			case ControlScheme.FOLLOW_DRAG:
-				if(Input.GetMouseButton(0)) {
-					return GetFollowClickDragInput();
-				}
-				else return GetFollowDragInput();
+            // Show tap indicator here
+            StartCoroutine(ShowTapIndicator(lastTouchPos));
 
-            // Follow tap (move towards last touched position)
-            case ControlScheme.FOLLOW_TAP:
-                return GetFollowClickTapInput();
+            // Fire delegate event
+            if (onGetTouchDown != null) {
+                onGetTouchDown.Invoke(lastTouchPos);
+            }
+        }
 
-			default:
-				break;
-		}
+        // User holds finger on screen
+        else if (Input.GetMouseButton(0)) {
+            // Update last touch position
+            lastTouchPos = GetFollowTapInput();
 
-		return touchDelta;
-	}
+            // Fire delegate event
+            if (onGetTouch != null) {
+                onGetTouch.Invoke(lastTouchPos);
+            }
+        }
+
+        // User lifts finger
+        else if(Input.GetMouseButtonUp(0)) {
+            // Update last touch position
+            lastTouchPos = GetFollowTapInput();
+
+            if (onGetTouchEnded != null) {
+                onGetTouchEnded.Invoke(lastTouchPos);
+            }
+        }
+
+        // TODO: update project solution to C# 6 so we can use this fancy null check operator:
+        // onGetTouch?.Invoke(lastTouchPos);
+    }
 
     // ------------------------------------------------------------------------------------
     // --------------------------------- FOLLOW TAP INPUT ---------------------------------
@@ -81,17 +110,15 @@ public class TouchInput : MonoBehaviour {
     /// Returns position of most recent touch
     /// </summary>
     /// <returns></returns>
-    private Vector2 GetFollowClickTapInput()
+    private Vector2 GetFollowTapInput()
     {
-        if (Input.GetMouseButtonDown(0)) {
-            lastTouchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            // Debug.Log("Received tap at " + lastTouchPos);
+        // Get position of touch in worldspace
+        Vector2 touchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            // Show tap indicator here
-            StartCoroutine(ShowTapIndicator(lastTouchPos));
-        }
+        //// Show tap indicator here
+        //StartCoroutine(ShowTapIndicator(lastTouchPos));
 
-        return lastTouchPos;
+        return touchPos;
     }
 
 

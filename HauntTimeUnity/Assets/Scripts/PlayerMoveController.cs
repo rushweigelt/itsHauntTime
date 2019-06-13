@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(TouchInput), typeof(SpriteRenderer), typeof(Rigidbody2D))]
 public class PlayerMoveController : Singleton<PlayerMoveController>
@@ -18,12 +19,13 @@ public class PlayerMoveController : Singleton<PlayerMoveController>
     /// </summary>
     public bool canMove = true;
 
+    Coroutine movementCoroutine;
+
 
     enum Direction {
         LEFT,
         RIGHT
     }
-
     Direction facingDirection;
 
     void Start()
@@ -31,25 +33,30 @@ public class PlayerMoveController : Singleton<PlayerMoveController>
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         touchInput = GetComponent<TouchInput>();
+
+        // HandleMovement() and Animate() methods subscribe to first frame of touch input
+        touchInput.onGetTouchDown += (input) => HandleMovement(input);
+        touchInput.onGetTouchDown += (input) => Animate(input - (Vector2)transform.position);
     }
 
-    void Update()
+    /// <summary>
+    /// Starts movement coroutine towards user tap
+    /// </summary>
+    /// <param name="input"></param>
+    void HandleMovement(Vector2 input)
     {
-        // Get input (position of last touch)
-        Vector2 input = touchInput.GetInput();
-
-        // Handle movement input if movement unlocked
-        MoveTowards(input);
-
-        // Handle animation based on touch input scheme
-        if(touchInput.controlScheme.Equals(TouchInput.ControlScheme.FOLLOW_TAP)) {
-            Animate(input - (Vector2)transform.position);
+        // Interrupt movement if coroutine already active
+        if(movementCoroutine != null) {
+            Debug.Log("Interrupting movement coroutine");
+            StopCoroutine(movementCoroutine);
         }
-        else {
-            Animate(input);
-        }
+        movementCoroutine = StartCoroutine(MoveTowards(input));
     }
 
+    /// <summary>
+    /// SpriteRenderer faces direction of user tap
+    /// </summary>
+    /// <param name="input"></param>
     private void Animate(Vector2 input)
     {
         // Face left
@@ -68,31 +75,29 @@ public class PlayerMoveController : Singleton<PlayerMoveController>
     /// Move towards position at fixed speed
     /// </summary>
     /// <param name="target"></param>
-    public void MoveTowards(Vector2 target)
+    public IEnumerator MoveTowards(Vector2 target)
     {
         if(canMove) {
             // Get vector towards target
             Vector2 delta = target - (Vector2)transform.position;
 
-            // Ignore if not long enough (to avoid jittering around target)
-            if (delta.magnitude > touchInput.touchThreshold) {
-                Move(delta);
+            // Continue moving towards target until close enough to avoid jittering (determined by touchThreshold)
+            while (delta.magnitude > touchInput.touchThreshold) {
+                // Normalize input and scale by move speed
+                Vector2 movement = delta.normalized;
+                movement.x *= horizontalSpeed;
+                movement.y *= verticalSpeed;
+
+                // Move towards target
+                rb.MovePosition((Vector2)transform.position + movement);
+
+                // Update our movement vector and wait a frame
+                delta = target - (Vector2)transform.position;
+                yield return null;
             }
         }
-    }
-
-    /// <summary>
-    /// Move in direction of input
-    /// </summary>
-    /// <param name="input"></param>
-    private void Move(Vector2 input)
-    {
-        // Normalize input and scale by move speed
-        Vector2 movement = input.normalized;
-        movement.x *= horizontalSpeed;
-        movement.y *= verticalSpeed;
-        
-        rb.MovePosition((Vector2)transform.position + movement);
+        // Set coroutine to null so we know it's not active (does this happen automatically after it's finished?)
+        movementCoroutine = null;
     }
 
     public void MoveOn()
