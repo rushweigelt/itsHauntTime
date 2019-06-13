@@ -55,7 +55,7 @@ public class SaltShaker : SpriteSwapInteraction
     public void BlowAway()
     {
         saltWall.SetActive(false);
-        animationTrigger.gameObject.SetActive(false);
+        animationTrigger.GetComponent<BoxCollider2D>().enabled = false; // Disabling gameobject doesn't call OnTriggerExit2D()
         fallingSaltParticleEffect.gameObject.SetActive(false);
     }
 }
